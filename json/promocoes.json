@@ -1,0 +1,131 @@
+[
+    {
+        "title": [
+            "Promoção"
+        ],
+        "subtitle": [],
+        "description": [],
+        "action": "./php/promotion.json",
+        "id": "promotion",
+        "method": "",
+        "target": "",
+        "container": [
+            [
+                {
+                    "disabled": false,
+                    "label": "nome",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "input",
+                    "type": "text",
+                    "value": ""
+                },
+                {
+                    "disabled": false,
+                    "label": "gênero",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "select",
+                    "type": "",
+                    "value": ""
+                }
+            ],
+            [
+                {
+                    "disabled": false,
+                    "label": "data de nascimento",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "input",
+                    "type": "date",
+                    "value": "- 1 * 18 * 365"
+                },
+                {
+                    "disabled": false,
+                    "label": "cpf",
+                    "maxlength": "123.456.789-10",
+                    "minlength": "123.456.789-10",
+                    "placeholder": "123.456.789-10",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "input",
+                    "type": "text",
+                    "value": ""
+                }
+            ],
+            [
+                {
+                    "disabled": false,
+                    "label": "email",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "input",
+                    "type": "email",
+                    "value": ""
+                },
+                {
+                    "disabled": false,
+                    "label": "whatsapp",
+                    "maxlength": "+55 (11) 9 4005-8153",
+                    "minlength": "+55 (11) 9 4005-8153",
+                    "placeholder": "+55 (11) 9 4005-8153",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "input",
+                    "type": "tel",
+                    "value": ""
+                }
+            ],
+            [
+                {
+                    "disabled": false,
+                    "label": "limpar",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "button",
+                    "type": "button",
+                    "value": ""
+                },
+                {
+                    "disabled": false,
+                    "label": "fechar",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "button",
+                    "type": "button",
+                    "value": ""
+                },
+                {
+                    "disabled": false,
+                    "label": "enviar",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "button",
+                    "type": "submit",
+                    "value": ""
+                }
+            ]
+        ]
+    }
+]

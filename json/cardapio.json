@@ -1,0 +1,2021 @@
+[
+    {
+        "title": [
+            "bebidas"
+        ],
+        "subtitle": [],
+        "description": [],
+        "container": [
+            {
+                "title": [
+                    "caipirinhas tradicionais"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Caipirinha de Cachaça"
+                        ],
+                        "subtitle": [
+                            "A clássica e autêntica caipirinha, feita com cachaça de qualidade, limão taiti e açúcar.",
+                            "Uma explosão de sabor que captura a essência do Brasil."
+                        ],
+                        "description": [
+                            "cachaça",
+                            "limão taiti",
+                            "açúcar"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Caipirinha de Frutas"
+                        ],
+                        "subtitle": [
+                            "Um toque tropical e refrescante com frutas frescas da estação, como limão, morango, maracujá ou manga.",
+                            "Uma explosão de cores e sabores para alegrar o seu dia."
+                        ],
+                        "description": [
+                            "limão",
+                            "morango",
+                            "maracujá",
+                            "manga"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Caipirinha de Saquê"
+                        ],
+                        "subtitle": [
+                            "Uma opção única e saborosa, combinando a cachaça com a delicadeza do saquê japonês.",
+                            "Ideal para quem busca uma experiência exótica e refinada."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Caipirinha de Vodka"
+                        ],
+                        "subtitle": [
+                            "Uma releitura moderna da caipirinha tradicional, substituindo a cachaça por vodka importada.",
+                            "Perfeita para quem aprecia um sabor mais suave e leve."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "caipirinhas especiais"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Caipirinha de Kiwi."
+                        ],
+                        "subtitle": [
+                            "Uma opção exótica e refrescante com o sabor cítrico do kiwi.",
+                            "Uma caipirinha leve e deliciosa, ideal para quem aprecia sabores diferentes."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Caipirinha de Maracujá"
+                        ],
+                        "subtitle": [
+                            "Um clássico tropical que combina a cachaça com a acidez doce do maracujá.",
+                            "Uma caipirinha refrescante e saborosa, perfeita para os dias quentes."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Caipirinha de Melancia."
+                        ],
+                        "subtitle": [
+                            "Um sabor único e refrescante com melancia fresca.",
+                            "Uma caipirinha leve e deliciosa, ideal para os dias mais quentes."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Caipirinha de Morango."
+                        ],
+                        "subtitle": [
+                            "Uma explosão de doçura e frescor com morangos frescos.",
+                            "Uma caipirinha leve e saborosa, perfeita para qualquer ocasião."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "caipirinhas gourmet"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Caipirinha de Cachaça Premium"
+                        ],
+                        "subtitle": [
+                            "Uma experiência luxuosa com cachaça envelhecida em barris de madeira, limão taiti e açúcar demerara.",
+                            "Uma caipirinha suave e complexa, perfeita para ocasiões especiais."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Caipirinha de Frutas Vermelhas com Hortelã"
+                        ],
+                        "subtitle": [
+                            "Uma explosão de cores e sabores com frutas vermelhas frescas e hortelã.",
+                            "Uma caipirinha refrescante e aromática, perfeita para um brunch ou um lanche da tarde."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Caipirinha de Manga com Pimenta"
+                        ],
+                        "subtitle": [
+                            "Uma combinação exótica e deliciosa com manga fresca, pimenta dedo-de-moça e açúcar mascavo.",
+                            "Uma caipirinha doce, picante e refrescante, ideal para quem busca uma experiência única."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Caipirinha de Saquê com Infusão de Gengibre"
+                        ],
+                        "subtitle": [
+                            "Um sabor único e intrigante com saquê infusionado com gengibre fresco, limão taiti e açúcar mascavo.",
+                            "Uma caipirinha picante e refrescante, ideal para quem aprecia sabores ousados."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "cervejas nacionais"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Antarctica"
+                        ],
+                        "subtitle": [
+                            "A Antarctica é a terceira cerveja mais vendida no Brasil, com uma participação de mercado de cerca de 10%",
+                            "A Antarctica é outra marca tradicional brasileira, conhecida por suas lagers leves e refrescantes",
+                            "É popular entre os consumidores que buscam uma cerveja com bom custo-benefício"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Bohemia"
+                        ],
+                        "subtitle": [],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Brahma"
+                        ],
+                        "subtitle": [
+                            "A Brahma é a segunda cerveja mais vendida no Brasil, com uma participação de mercado de cerca de 15%",
+                            "A Brahma é uma marca tradicional brasileira, que oferece uma variedade de lagers e ales",
+                            "É conhecida por seus patrocinios esportivos e eventos culturais"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Budweiser"
+                        ],
+                        "subtitle": [],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Colorado"
+                        ],
+                        "subtitle": [],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Itaipava"
+                        ],
+                        "subtitle": [
+                            "A Itaipava é a quarta cerveja mais vendida no Brasil, com uma participação de mercado de cerca de 5%",
+                            "A Itaipava é uma marca de cerveja artesanal brasileira, que oferece uma variedade de estilos diferentes, como lagers, ales, IPAs e stouts",
+                            "É popular entre os consumidores que apreciam cervejas com mais sabor e aroma"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Nova Schin"
+                        ],
+                        "subtitle": [
+                            "A Nova Schin é a quinta cerveja mais vendida no Brasil, com uma participação de mercado de cerca de 5%",
+                            "A Nova Schin é uma marca de cerveja brasileira, que oferece uma variedade de lagers e ales",
+                            "É conhecida por seu preço acessível e boa qualidade"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Original"
+                        ],
+                        "subtitle": [],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Skol"
+                        ],
+                        "subtitle": [
+                            "É a cerveja mais vendida do Brasil, com uma participação de mercado de cerca de 25%",
+                            "A Skol é uma cerveja pilsen clara e refrescante, com um sabor leve e suave",
+                            "É popular entre os brasileiros por seu preço acessível e boa qualidade"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Way Beer"
+                        ],
+                        "subtitle": [],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "cervejas importadas"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Amstel (Holanda)"
+                        ],
+                        "subtitle": [
+                            "A Amstel é uma lager holandesa clara e refrescante, com um sabor leve e maltado.",
+                            "É uma cerveja popular na Europa e é conhecida por seu sabor suave e fácil de beber."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Beck's (Alemanha)"
+                        ],
+                        "subtitle": [
+                            "A Beck's é uma pilsner alemã clara e refrescante, com um sabor leve e maltado.",
+                            "É uma das cervejas mais populares da Alemanha e é conhecida por sua garrafa verde distintiva e logotipo do cisne."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Bud Light (Estados Unidos)"
+                        ],
+                        "subtitle": [
+                            "A Bud Light é uma lager americana leve e refrescante, com um sabor ainda mais leve e maltado do que a Budweiser original.",
+                            "É uma das cervejas mais populares dos Estados Unidos e é conhecida por seu baixo teor alcoólico e por ser fácil de beber."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Budweiser (Estados Unidos)"
+                        ],
+                        "subtitle": [
+                            "A Budweiser é uma lager americana clara e refrescante, com um sabor leve e maltado.",
+                            "É uma das cervejas mais populares do mundo e é conhecida por seu logotipo de águia e slogan \"King of Beers\"."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Carlsberg (Dinamarca)"
+                        ],
+                        "subtitle": [
+                            "A Carlsberg é uma lager dinamarquesa clara e refrescante, com um sabor leve e maltado.",
+                            "É uma das cervejas mais populares da Europa e é conhecida por seu logotipo da coroa e slogan \"Probably the best beer in the world\"."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Corona (México)"
+                        ],
+                        "subtitle": [
+                            "A Corona é uma lager mexicana clara e refrescante, com um sabor leve e cítrico.",
+                            "É frequentemente servida com uma rodela de limão e é popular entre os consumidores que apreciam uma cerveja leve e fácil de beber."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Guinness (Irlanda)"
+                        ],
+                        "subtitle": [
+                            "A Guinness é uma stout irlandesa escura e cremosa, conhecida por seu sabor maltado e torrado com notas de café e chocolate.",
+                            "É uma das cervejas mais populares do mundo e é frequentemente servida em um copo tulipa para realçar seu sabor e aroma."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Heineken (Holanda)"
+                        ],
+                        "subtitle": [
+                            "A Heineken é uma lager holandesa clara e refrescante, com um sabor leve e maltado.",
+                            "É uma das cervejas mais populares do mundo e é conhecida por sua garrafa verde distintiva e estrela vermelha."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Peroni Nastro Azzurro (Itália)"
+                        ],
+                        "subtitle": [
+                            "A Peroni Nastro Azzurro é uma lager italiana clara e refrescante, com um sabor leve e maltado com notas de limão.",
+                            "É uma cerveja popular na Europa e é conhecida por sua garrafa azul distintiva e logotipo da fita."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Stella Artois (Bélgica)"
+                        ],
+                        "subtitle": [
+                            "A Stella Artois é uma lager belga clara e dourada, com um sabor leve e maltado com notas de especiarias.",
+                            "É uma cerveja popular entre os consumidores que apreciam uma cerveja com um pouco mais de sabor e aroma do que uma lager típica."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "drinks clássicos"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Cosmopolitan"
+                        ],
+                        "subtitle": [
+                            "Um coquetel elegante com vodka, licor Cointreau, suco de cranberry e suco de limão."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Daiquiri"
+                        ],
+                        "subtitle": [
+                            "Um coquetel refrescante com rum branco, suco de limão e xarope simples."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Margarita"
+                        ],
+                        "subtitle": [
+                            "Um coquetel clássico com tequila, licor Cointreau, suco de limão e sal na borda do copo."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Mojito"
+                        ],
+                        "subtitle": [
+                            "Um clássico refrescante com rum branco, hortelã, limão, açúcar e água com gás."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Old Fashioned"
+                        ],
+                        "subtitle": [
+                            "Um drink atemporal com bourbon ou whisky, açúcar, bitters e água com gás."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "Drinks Modernos e Criativos"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Aperol Spritz"
+                        ],
+                        "subtitle": [
+                            "Um drink italiano refrescante com Aperol, prosecco, água com gás e uma rodela de laranja."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Caipiroska"
+                        ],
+                        "subtitle": [
+                            "Uma variação da caipirinha com vodka no lugar da cachaça, oferecendo as mesmas opções de frutas."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Gin Tônica"
+                        ],
+                        "subtitle": [
+                            "Um drink clássico e versátil com gin, água tônica e guarnição de limão ou lima."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Moscow Mule"
+                        ],
+                        "subtitle": [
+                            "Um drink saboroso com vodka, suco de limão, cerveja de gengibre e gengibre fresco."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Negroni"
+                        ],
+                        "subtitle": [
+                            "Um coquetel italiano amargo com gin, Campari e vermute rosso."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Sangria"
+                        ],
+                        "subtitle": [
+                            "Uma bebida refrescante à base de vinho tinto ou branco com frutas picadas, especiarias e conhaque (opcional)."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "Drinks sem Álcool"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Caipirinha sem Álcool"
+                        ],
+                        "subtitle": [
+                            "Utilize água com gás no lugar da cachaça e mantenha o limão e o açúcar para um sabor similar."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Cosmopolitan sem Álcool"
+                        ],
+                        "subtitle": [
+                            "Utilize suco de cranberry sem açúcar, suco de limão e água com gás no lugar da vodka e do licor Cointreau."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Daiquiri sem Álcool"
+                        ],
+                        "subtitle": [
+                            "Utilize suco de manga ou outro suco de fruta no lugar do rum branco, mantenha o suco de limão e o xarope simples."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Margarita sem Álcool"
+                        ],
+                        "subtitle": [
+                            "Substitua a tequila por suco de laranja, mantenha o licor Cointreau, o suco de limão e o sal na borda do copo."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Mojito sem Álcool"
+                        ],
+                        "subtitle": [
+                            "Substitua o rum branco por água com gás, mantenha a hortelã, o limão, o açúcar e a água com gás."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Old Fashioned sem Álcool"
+                        ],
+                        "subtitle": [
+                            "Substitua o bourbon ou whisky por xarope de hibisco, mantenha o açúcar, os bitters e a água com gás."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "Vinho Branco"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Chardonnay"
+                        ],
+                        "subtitle": [
+                            "Um vinho branco clássico, conhecido por sua cor dourada, aromas cítricos e de frutas tropicais, e sabor encorpado com notas de maçã verde, abacaxi e mel.",
+                            "Harmoniza perfeitamente com pratos de frango, peixes, massas e queijos cremosos."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Moscato"
+                        ],
+                        "subtitle": [
+                            "Um vinho branco doce e aromático, com notas de frutas cítricas, flores brancas e mel.",
+                            "Ideal para acompanhar sobremesas, queijos azuis e frutas frescas."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Pinot Grigio"
+                        ],
+                        "subtitle": [
+                            "Um vinho branco leve e frutado, com notas de maçã verde, pera, cítricos e flores brancas.",
+                            "Perfeito para acompanhar saladas, peixes grelhados, massas e risoto."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Riesling"
+                        ],
+                        "subtitle": [
+                            "Um vinho branco versátil, com variações de doçura que vão do seco ao doce.",
+                            "Os Riesling secos apresentam notas cítricas, maçã verde e mineral, enquanto os doces revelam aromas de mel, pêssego e damasco.",
+                            "Harmoniza com pratos de carne branca, peixes, queijos e sobremesas."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Sauvignon Blanc"
+                        ],
+                        "subtitle": [
+                            "Um vinho branco refrescante e aromático, com notas de grama fresca, maracujá, groselha e especiarias.",
+                            "Ideal para acompanhar saladas, frutos do mar, pratos leves e aperitivos."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "vinhos tinto"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Cabernet Sauvignon"
+                        ],
+                        "subtitle": [
+                            "Um vinho tinto encorpado e complexo, conhecido por seus aromas de frutas escuras, especiarias, couro e tabaco.",
+                            "Harmoniza perfeitamente com carnes vermelhas grelhadas, assadas ou ensopadas, queijos maturados e pratos condimentados."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Malbec"
+                        ],
+                        "subtitle": [
+                            "Um vinho tinto macio e frutado, com notas de ameixa, cereja preta, especiarias e chocolate.",
+                            "Ideal para acompanhar carnes vermelhas, massas com molho vermelho, queijos meia-cura e pizzas."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Merlot"
+                        ],
+                        "subtitle": [
+                            "Um vinho tinto elegante e equilibrado, com notas de frutas vermelhas, ameixa, cedro e especiarias.",
+                            "Harmoniza perfeitamente com carnes vermelhas, massas com molho de carne, queijos macios e risoto de cogumelos."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Pinot Noir"
+                        ],
+                        "subtitle": [
+                            "Um vinho tinto leve e frutado, com notas de cereja vermelha, framboesa, especiarias e terroso.",
+                            "Ideal para acompanhar carnes brancas, salmão grelhado, queijos frescos e pratos vegetarianos."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Syrah"
+                        ],
+                        "subtitle": [
+                            "Um vinho tinto encorpado e especiado, com notas de frutas escuras, pimenta preta, café e bacon.",
+                            "Harmoniza perfeitamente com carnes vermelhas grelhadas, assadas ou ensopadas, queijos maturados e pratos condimentados."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "Vinho Rosé"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Cabernet Sauvignon Rosé"
+                        ],
+                        "subtitle": [
+                            "Um vinho rosé seco e estruturado, com notas de frutas vermelhas, especiarias e ervas.",
+                            "Ideal para acompanhar carnes brancas, massas com molho leve e queijos meia-cura."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Grenache"
+                        ],
+                        "subtitle": [
+                            "Um vinho rosé leve e refrescante, com notas de morango, framboesa, melão e especiarias.",
+                            "Ideal para acompanhar saladas, petiscos, pizzas e pratos leves."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Pinot Noir Rosé"
+                        ],
+                        "subtitle": [
+                            "Um vinho rosé elegante e frutado, com notas de cereja, morango, melão e especiarias.",
+                            "Perfeito para acompanhar saladas, peixes grelhados, queijos frescos e aperitivos."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "Vinho Espumante"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Cava"
+                        ],
+                        "subtitle": [
+                            "Um vinho espumante espanhol elegante e estruturado, com notas de maçã verde, pera, brioche e toques minerais.",
+                            "Ideal para acompanhar entradas."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Champagne"
+                        ],
+                        "subtitle": [
+                            "Um vinho espumante clássico, conhecido por suas borbulhas finas e persistentes, aromas de frutas cítricas, maçã verde, brioche e toques minerais.",
+                            "Ideal para celebrar ocasiões especiais, brindar e acompanhar entradas e frutos do mar."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Prosecco"
+                        ],
+                        "subtitle": [
+                            "Um vinho espumante italiano leve e frutado, com notas de maçã verde, pera, flores brancas e cítricos.",
+                            "Perfeito para aperitivos, festas e acompanhar saladas e pratos leves."
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": [
+            "comidas"
+        ],
+        "subtitle": [],
+        "description": [],
+        "container": [
+            {
+                "title": [
+                    "açaís"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Açaí 350ml."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Banana",
+                            "Morango",
+                            "Abacaxi",
+                            "Kiwi",
+                            "Manga"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Açaí 450ml."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Banana",
+                            "Morango",
+                            "Abacaxi",
+                            "Kiwi",
+                            "Manga"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Açaí 500ml."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Banana",
+                            "Morango",
+                            "Abacaxi",
+                            "Kiwi",
+                            "Manga"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Açaí 700ml."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Banana",
+                            "Morango",
+                            "Abacaxi",
+                            "Kiwi",
+                            "Manga"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "porções clássicas"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Anéis de cebola"
+                        ],
+                        "subtitle": [
+                            "Fatias de cebola empanadas em uma massa crocante e fritas até dourar, servidas com um molho saboroso, como maionese temperada ou barbecue",
+                            "Uma opção vegetariana deliciosa que também conquista os carnívoros"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Batata frita"
+                        ],
+                        "subtitle": [
+                            "Perfeita para compartilhar, sequinha por fora e macia por dentro, com um toque de sal a gosto",
+                            "Ideal para acompanhar um chope gelado ou uma cerveja"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Bolinho de carne"
+                        ],
+                        "subtitle": [
+                            "Recheio saboroso de carne moída temperada com especiarias, envolto em uma massa crocante e frita até dourar",
+                            "Combina com diversos molhos, como vinagrete, maionese temperada ou barbecue"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Coxinha de frango"
+                        ],
+                        "subtitle": [
+                            "Massa crocante e recheio cremoso de frango desfiado com catupiry, uma explosão de sabor que conquista a todos",
+                            "Perfeita para um lanche rápido ou para acompanhar um happy hour"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Esfiha"
+                        ],
+                        "subtitle": [
+                            "Massa fina e recheio suculento de carne moída temperada com especiarias e ervas, assada no forno",
+                            "Uma opção saborosa e prática para uma refeição rápida ou para um lanche"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Frango a passarinho"
+                        ],
+                        "subtitle": [
+                            "Pedaços pequenos e crocantes de frango temperados e fritos, perfeitos para petiscar sem parar",
+                            "Uma delícia para acompanhar um bate-papo com os amigos"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Kibe"
+                        ],
+                        "subtitle": [
+                            "Recheio saboroso de carne moída temperada com especiarias e ervas, envolto em uma massa de trigo fina e frito até dourar",
+                            "Combina com diversos molhos, como vinagrete, maionese temperada ou tahine"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Mandioca frita"
+                        ],
+                        "subtitle": [
+                            "Crocante por fora e macia por dentro, a mandioca frita é um clássico que nunca sai de moda",
+                            "Ideal para acompanhar um churrasco ou uma feijoada"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Pastel"
+                        ],
+                        "subtitle": [
+                            "Massa fina e recheio suculento de carne, queijo, frango, palmito ou legumes, frito até dourar",
+                            "Uma opção versátil que agrada a todos os paladares"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Torresmo"
+                        ],
+                        "subtitle": [
+                            "Pedaços crocantes de bacon temperados com sal e pimenta do reino, fritos até dourar",
+                            "Uma opção irresistível para quem aprecia um sabor defumado"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "porções vegetarianas e veganas"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Batata recheada"
+                        ],
+                        "subtitle": [
+                            "Batatas cozidas e recheadas com diversos ingredientes, como frango desfiado"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Bruschettas"
+                        ],
+                        "subtitle": [
+                            "Fatias de pão italiano grelhadas com tomates frescos, manjericão, azeite de oliva e um toque de sal e pimenta do reino",
+                            "Uma opção leve, refrescante e saborosa"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Falafel"
+                        ],
+                        "subtitle": [
+                            "Bolinhos de grão de bico temperados com especiarias e fritos até dourar",
+                            "Uma opção vegana rica em proteínas e saborosa",
+                            "Combina com pão pita, tahine e salada"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Homus"
+                        ],
+                        "subtitle": [
+                            "Pasta de grão de bico temperada com tahine, azeite de oliva, suco de limão, alho e especiarias",
+                            "Uma opção vegana rica em proteínas e saborosa. Combina com pão sírio,  legumes crus ou tortilhas"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Pão de alho"
+                        ],
+                        "subtitle": [
+                            "Fatias de pão italiano grelhadas com manteiga, alho picado e queijo parmesão ralado",
+                            "Uma opção saborosa e prática para um lanche rápido ou para acompanhar um churrasco"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Salada de batata"
+                        ],
+                        "subtitle": [
+                            "Batatas cozidas e esmagadas temperadas com maionese, cebola picada, salsinha e cebolinha",
+                            "Uma opção leve e saborosa para acompanhar um churrasco ou uma feijoada"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Salada de legumes"
+                        ],
+                        "subtitle": [
+                            "Legumes frescos picados temperados com azeite de oliva, limão, sal e pimenta do reino",
+                            "Uma opção leve, refrescante e nutritiva"
+                        ],
+                        "description": [],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "sanduíches"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Sanduíche Cubano"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "feito com pão cubano",
+                            "presunto fatiado",
+                            "queijo suíço",
+                            "picles",
+                            "mostarda",
+                            "molho chimichurri"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Sanduíche de Atum"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "pão integral",
+                            "atum em lata amassado",
+                            "tomate",
+                            "cebola",
+                            "azeitonas",
+                            "maionese"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Sanduíche de Churrasco"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "feito com pão francês",
+                            "carne de churrasco fatiada",
+                            "queijo",
+                            "tomate",
+                            "cebola"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Sanduíche de Frango Desfiado"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "frango",
+                            "feito com pão francês",
+                            "frango desfiado",
+                            "catupiry",
+                            "tomate",
+                            "orégano"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Sanduíche de Mortadela"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "feito com focaccia",
+                            "mortadela fatiada",
+                            "provolone",
+                            "pesto",
+                            "rúcula"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Sanduíche de Pernil"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "feito com pão francês",
+                            "pernil desfiado",
+                            "vinagrete",
+                            "repolho roxo",
+                            "maionese"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Sanduíche de Presunto e Queijo"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "pão de forma",
+                            "presunto fatiado",
+                            "queijo mussarela",
+                            "manteiga"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Sanduíche de Salmão Defumado"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "pão de centeio",
+                            "salmão defumado",
+                            "cream cheese",
+                            "rúcula",
+                            "alcaparras"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Sanduíche Vegetariano"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "pão integral",
+                            "pasta de grão de bico",
+                            "legumes grelhados",
+                            "queijo feta",
+                            "pesto"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "X-Tudo"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "pão francês",
+                            "hambúrguer",
+                            "presunto",
+                            "calabresa",
+                            "bacon",
+                            "ovo",
+                            "queijo",
+                            "alface",
+                            "tomate",
+                            "cebola",
+                            "maionese"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "7BBACD54-F087-492D-97E1-A1498AB0BCF8.jpg",
+                            "27A0F80A-161F-42B5-8134-73BDE92608B0.jpg",
+                            "2480BFB3-1AC4-49EF-A331-75B63CD83A07.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 25,
+                        "discount": 10
+                    }
+                ]
+            }
+        ]
+    }
+]

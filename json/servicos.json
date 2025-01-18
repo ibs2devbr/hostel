@@ -1,0 +1,222 @@
+[
+    {
+        "title": [
+            "serviços"
+        ],
+        "subtitle": [],
+        "description": [],
+        "container": [
+            {
+                "title": [
+                    "Café da manhã"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Pães e Torradas"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Pão integral com manteiga e geleia",
+                            "Pão de queijo caseiro ou comprado pronto",
+                            "Torrada com avocado amassado e ovo pochê",
+                            "Panqueca integral com banana e mel",
+                            "Tapioca com queijo coalho e banana"
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ],
+                        "value": 100,
+                        "discount": 10
+                    },
+                    {
+                        "title": [
+                            "Frutas"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Salada de frutas frescas da estação",
+                            "Banana amassada com granola e chia",
+                            "Iogurte natural com frutas vermelhas e granola",
+                            "Smoothie de frutas com leite vegetal e proteína em pó"
+                        ],
+                        "gallery": [],
+                        "value": 0,
+                        "discount": 0
+                    },
+                    {
+                        "title": [
+                            "Ovos"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Ovos mexidos com espinafre e tomate",
+                            "Ovo mexido no pão",
+                            "Ovo pochê com salada verde",
+                            "Omelete com queijo e legumes"
+                        ],
+                        "gallery": [],
+                        "value": 0,
+                        "discount": 0
+                    },
+                    {
+                        "title": [
+                            "Outras Opções"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Mingau de aveia com leite vegetal e frutas secas",
+                            "Granola caseira com mel e castanhas",
+                            "Chia pudding com leite vegetal e frutas frescas",
+                            "Café ou chá com leite vegetal e adoçante natural"
+                        ],
+                        "gallery": [],
+                        "value": 0,
+                        "discount": 0
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "Comodidades"
+                ],
+                "subtitle": [],
+                "description": [],
+                "thumbnail": [],
+                "gallery": [],
+                "container": [
+                    {
+                        "title": [
+                            "Cozinha compartilhada"
+                        ],
+                        "subtitle": [],
+                        "description": [],
+                        "gallery": [],
+                        "value": 0,
+                        "discount": 0
+                    },
+                    {
+                        "title": [
+                            "Quartos feminino"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Ar-condicionado",
+                            "Beliches de alvenaria projetados",
+                            "Colchoes Twin Americanos 2,03 m x 0,97 m com densidade 33",
+                            "Lençóis com tecido Percal de 180 fios",
+                            "Luzes de led nos armários individuais",
+                            "Luzes de led nos quartos para indicação do caminho",
+                            "Luzes de led para leitura nas cabeceiras das camas",
+                            "Quartos com banheiros privativos",
+                            "Tomadas nos armários individuais"
+                        ],
+                        "gallery": [],
+                        "value": 0,
+                        "discount": 0
+                    },
+                    {
+                        "title": [
+                            "Quartos misto"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Ar-condicionado",
+                            "Beliches de alvenaria projetados",
+                            "Colchoes Twin Americanos 2,03 m x 0,97 m com densidade 33",
+                            "Lençóis com tecido Percal de 180 fios",
+                            "Luzes de led nos armários individuais",
+                            "Luzes de led nos quartos para indicação do caminho",
+                            "Luzes de led para leitura nas cabeceiras das camas",
+                            "Quartos com banheiros privativos",
+                            "Tomadas nos armários individuais"
+                        ],
+                        "gallery": [],
+                        "value": 0,
+                        "discount": 0
+                    },
+                    {
+                        "title": [
+                            "Quartos para família"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Ar-condicionado",
+                            "Beliches de alvenaria projetados",
+                            "Colchoes Twin Americanos 2,03 m x 0,97 m com densidade 33",
+                            "Lençóis com tecido Percal de 180 fios",
+                            "Luzes de led nos armários individuais",
+                            "Luzes de led nos quartos para indicação do caminho",
+                            "Luzes de led para leitura nas cabeceiras das camas",
+                            "Quartos com banheiros privativos",
+                            "Tomadas nos armários individuais"
+                        ],
+                        "gallery": [],
+                        "value": 0,
+                        "discount": 0
+                    },
+                    {
+                        "title": [
+                            "Lavanderia"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "lavagem",
+                            "secagem"
+                        ],
+                        "gallery": [],
+                        "value": 0,
+                        "discount": 0
+                    },
+                    {
+                        "title": [
+                            "Recepção 24 horas"
+                        ],
+                        "subtitle": [],
+                        "description": [],
+                        "gallery": [],
+                        "value": 0,
+                        "discount": 0
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "Segurança"
+                ],
+                "subtitle": [],
+                "description": [],
+                "thumbnail": [],
+                "gallery": [],
+                "container": [
+                    {
+                        "title": [
+                            "CCTV nas áreas comuns"
+                        ],
+                        "subtitle": [],
+                        "description": [],
+                        "gallery": [],
+                        "value": 0,
+                        "discount": 0
+                    },
+                    {
+                        "title": [
+                            "Cartão de acesso"
+                        ],
+                        "subtitle": [],
+                        "description": [],
+                        "gallery": [],
+                        "value": 0,
+                        "discount": 0
+                    }
+                ]
+            }
+        ]
+    }
+]

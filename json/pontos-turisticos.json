@@ -1,0 +1,476 @@
+[
+    {
+        "title": [
+            "pontos turísticos"
+        ],
+        "subtitle": [],
+        "description": [],
+        "container": [
+            {
+                "title": [
+                    "Diversos."
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Avenida Paulista."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "A Avenida Paulista é uma das principais avenidas da cidade de São Paulo, Brasil.",
+                            "Ela se estende por cerca de 2,8 km, ligando a região central da cidade ao bairro de Jardins.",
+                            "A avenida é conhecida por ser um importante centro financeiro e cultural da cidade, abrigando diversos edifícios comerciais, museus, teatros e cinemas.",
+                            "Aos domingos, a avenida é fechada para carros e se torna um espaço de lazer para pedestres, com diversas atividades culturais e esportivas.",
+                            "Além disso, a Avenida Paulista é um importante ponto de encontro para manifestações políticas e sociais."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Estádio do Pacaembu."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Estádio do Pacaembu é um dos mais tradicionais e importantes estádios de futebol do Brasil. Localizado na cidade de São Paulo, foi inaugurado em 1940 e tem capacidade para 40.199 espectadores.",
+                            "O estádio já sediou diversas partidas importantes, incluindo jogos da Copa do Mundo de 1950 e da Copa Libertadores da América.",
+                            "Além disso, é a casa de alguns dos principais clubes de futebol da cidade, como Corinthians, Palmeiras e São Paulo.",
+                            "Além de jogos de futebol, o Pacaembu também é utilizado para outros eventos esportivos e culturais."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Jardim Botânico de São Paulo."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Jardim Botânico de São Paulo é um parque ecológico localizado na zona sul da cidade de São Paulo.",
+                            "Foi inaugurado em 1928 e possui uma área de aproximadamente 360 mil metros quadrados, sendo considerado um dos mais importantes jardins botânicos do país.",
+                            "O parque conta com diversas espécies de plantas, como orquídeas, bromélias, cactos, além de árvores e arbustos nativos da Mata Atlântica.",
+                            "Também é possível encontrar animais como macacos, capivaras e aves.",
+                            "Além da área verde, o Jardim Botânico de São Paulo possui um centro de pesquisa e conservação da flora brasileira, que realiza estudos e projetos de preservação da biodiversidade.",
+                            "O parque oferece diversas atividades para os visitantes, como trilhas, exposições, e cursos."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Mercado Municipal de São Paulo."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Mercado Municipal de São Paulo, também conhecido como Mercadão, é um dos mais famosos mercados da cidade de São Paulo.",
+                            "Localizado no centro da cidade, próximo à estação de metrô São Bento, o Mercadão é um ponto turístico muito visitado por turistas e moradores locais.",
+                            "O Mercado Municipal foi inaugurado em 1933 e é um dos mais antigos mercados da cidade.",
+                            "O prédio em que está localizado é uma construção histórica, com arquitetura em estilo neoclássico e vitrais coloridos em seu teto.",
+                            "O Mercadão é conhecido por sua grande variedade de produtos, como frutas, legumes, verduras, carnes, peixes, queijos, vinhos, temperos e especiarias.",
+                            "Além disso, há diversos restaurantes e lanchonetes que oferecem pratos típicos."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "Igrejas."
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Catedral da Sé."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "A Catedral da Sé é uma igreja localizada no centro histórico da cidade de São Paulo, Brasil.",
+                            "É a sede da Arquidiocese de São Paulo e uma das principais atrações turísticas da cidade.",
+                            "Foi construída em estilo neogótico entre 1913 e 1954 e é considerada uma das maiores catedrais góticas do mundo.",
+                            "Seu interior é ricamente decorado com vitrais, esculturas, pinturas e mosaicos.",
+                            "A catedral possui capacidade para acomodar cerca de 8.000 pessoas e é um importante centro de peregrinação e devoção católica na cidade.",
+                            "Além disso, a Catedral da Sé é um marco histórico e cultural de São Paulo, tendo sido palco de importantes eventos ao longo dos anos, como a posse de governadores e prefeitos."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Mosteiro de São Bento."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Mosteiro de São Bento é um dos mais importantes e antigos mosteiros do Brasil.",
+                            "Localizado no centro histórico de São Paulo, foi fundado em 1598 pelos monges beneditinos que vieram de Portugal.",
+                            "O mosteiro é conhecido por sua arquitetura barroca e neoclássica, com destaque para a igreja que possui uma fachada imponente e um interior ricamente decorado com pinturas e esculturas.",
+                            "Além da igreja, o mosteiro abriga uma biblioteca com mais de 100 mil volumes, um museu com peças sacras e uma escola de música que é referência nacional.",
+                            "O mosteiro é um importante centro de espiritualidade e cultura, recebendo milhares de visitantes e fiéis todos os anos.",
+                            "Suas missas são famosas pela beleza e solenidade."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Pátio do Colégio."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Pátio do Colégio é um importante marco histórico da cidade de São Paulo, localizado no centro da cidade.",
+                            "Foi ali que, em 1554, o padre jesuíta Manuel da Nóbrega fundou o Colégio de São Paulo de Piratininga, que deu origem à cidade de São Paulo.",
+                            "O Pátio do Colégio é considerado o berço da cidade e um importante centro cultural e religioso. O local abriga a primeira igreja construída na cidade, a Igreja de Nossa Senhora da Assunção, que foi reconstruída diversas vezes ao longo dos séculos.",
+                            "Hoje, o Pátio do Colégio é um espaço aberto ao público, onde é possível visitar o museu do colégio, que conta a história da cidade e dos jesuítas, além de abrigar exposições temporárias."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "Edifícios."
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Edifício Copan."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Edifício Copan é um icônico edifício residencial localizado no centro da cidade de São Paulo, Brasil.",
+                            "Foi projetado pelo arquiteto Oscar Niemeyer e construído entre os anos de 1951 e 1966.",
+                            "Com 115 metros de altura e 38 andares, o Copan é um dos maiores edifícios residenciais da América Latina, com mais de 1.160 apartamentos e cerca de 5.000 moradores.",
+                            "O edifício tem uma forma sinuosa e uma fachada de concreto aparente, com janelas em forma de trapézio que permitem uma vista panorâmica da cidade. O Copan também é conhecido por sua grande variedade de lojas, bares e restaurantes localizados no térreo e no primeiro andar.",
+                            "O Copan é considerado um marco arquitetônico da cidade de São Paulo."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Edifício Martinelli."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Edifício Martinelli é um dos marcos arquitetônicos mais importantes da cidade de São Paulo, Brasil.",
+                            "Localizado no centro histórico da cidade, o edifício foi construído entre 1922 e 1929 pelo empresário italiano Giuseppe Martinelli, e na época de sua inauguração, foi o maior arranha-céu da América Latina, com 30 andares e 105 metros de altura.",
+                            "O edifício foi projetado pelo arquiteto húngaro Vilmos Fillinger, e é uma mistura de estilos arquitetônicos, incluindo o neoclássico, o art déco e o gótico.",
+                            "A fachada do edifício é adornada com esculturas e ornamentos, e o interior é decorado com mármore, vitrais e pinturas murais."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "Museus."
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Memorial da América Latina."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Memorial da América Latina é um complexo cultural localizado na cidade de São Paulo, Brasil, inaugurado em 1989.",
+                            "Foi idealizado pelo antropólogo Darcy Ribeiro e projetado pelo arquiteto Oscar Niemeyer, com o objetivo de promover a integração e valorização das culturas latino-americanas.",
+                            "O complexo é composto por diversos espaços, como a Biblioteca Latino-Americana, o Auditório Simón Bolívar, o Pavilhão da Criatividade, o Salão de Atos Tiradentes, o Espaço Cultural da América Latina, entre outros.",
+                            "Além disso, o Memorial abriga diversas exposições, eventos culturais, shows, feiras e festivais ao longo do ano.",
+                            "O Memorial da América Latina é um importante centro cultural e turístico da cidade de São Paulo, que celebra e valoriza a diversidade."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Museu da Língua Portuguesa."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Museu da Língua Portuguesa é um museu interativo localizado na cidade de São Paulo, Brasil.",
+                            "Inaugurado em 2006, o museu tem como objetivo promover a língua portuguesa e a cultura brasileira através de exposições, atividades educativas e eventos culturais.",
+                            "O museu está localizado na Estação da Luz, um dos principais pontos turísticos da cidade de São Paulo, e ocupa um prédio histórico que foi completamente reformado para abrigar as exposições e atividades do museu.",
+                            "As exposições do Museu da Língua Portuguesa são interativas e exploram a história, a evolução e a diversidade da língua portuguesa, além de destacar a importância da língua como uma ferramenta de comunicação e expressão cultural."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Museu de Arte de São Paulo (MASP)."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Museu de Arte de São Paulo (MASP) é um dos mais importantes museus de arte da América Latina.",
+                            "Fundado em 1947 pelo empresário Assis Chateaubriand, o MASP é conhecido pela sua coleção de arte europeia e brasileira, com obras que vão desde o século XIV até a contemporaneidade.",
+                            "O prédio do museu, localizado na Avenida Paulista, é um marco arquitetônico da cidade de São Paulo.",
+                            "Projetado pela arquiteta Lina Bo Bardi, o edifício é suspenso por quatro pilares vermelhos, o que permite a criação de um espaço livre embaixo dele, que é utilizado para eventos e atividades culturais.",
+                            "A coleção do MASP conta com mais de oito mil obras, incluindo pinturas, esculturas, fotografias e objetos de arte decorativa."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Museu do Futebol."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Museu do Futebol é um museu localizado no Estádio do Pacaembu, na cidade de São Paulo, Brasil.",
+                            "Foi inaugurado em setembro de 2008 e tem como objetivo preservar e divulgar a história do futebol brasileiro, além de promover a cultura e o esporte.",
+                            "O acervo do museu conta com mais de 15 mil peças, entre fotos, vídeos, objetos, documentos e obras de arte relacionadas ao futebol.",
+                            "A exposição é dividida em sete áreas temáticas, que abordam desde a origem do futebol até os dias atuais, passando por momentos marcantes da história do esporte no Brasil, como as Copas do Mundo e os principais times e jogadores.",
+                            "Além das exposições permanentes, o Museu do Futebol também promove exposições temporárias, eventos e atividades educativas."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Pinacoteca do Estado de São Paulo."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "A Pinacoteca do Estado de São Paulo é um museu de arte localizado na cidade de São Paulo, Brasil.",
+                            "Fundada em 1905, a Pinacoteca é um dos museus mais antigos do Brasil e abriga uma das mais importantes coleções de arte brasileira do século XIX e XX.",
+                            "O prédio da Pinacoteca foi construído em 1900 e abrigou a antiga Escola de Belas Artes de São Paulo.",
+                            "Em 1911, foi inaugurada a primeira exposição de arte brasileira na Pinacoteca, que desde então se tornou um importante espaço de exposição e promoção da arte brasileira.",
+                            "A coleção da Pinacoteca inclui obras de artistas como Almeida Júnior, Victor Meirelles, Cândido Portinari, Anita Malfatti, Tarsila do Amaral, Di Cavalcanti, Lasar Segall, entre outros."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "Parques."
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Parque da Luz e Estação da Luz."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Parque da Luz e a Estação da Luz estão localizados no centro da cidade de São Paulo, Brasil.",
+                            "O Parque da Luz é um dos mais antigos parques públicos da cidade, inaugurado em 1825, e é um dos principais pontos turísticos da região.",
+                            "Já a Estação da Luz é uma das estações ferroviárias mais importantes do país, inaugurada em 1867, e é considerada um patrimônio histórico e cultural de São Paulo.",
+                            "O Parque da Luz é um espaço verde com diversas atrações, como o Museu da Língua Portuguesa, a Pinacoteca do Estado de São Paulo, o Jardim da Luz e a Fonte Luminosa.",
+                            "É um local ideal para caminhadas, piqueniques e atividades ao ar livre.",
+                            "A Estação da Luz é um marco histórico da cidade de São Paulo e um importante ponto turístico."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Parque do Ibirapuera."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Parque do Ibirapuera é um dos maiores parques urbanos da cidade de São Paulo, Brasil.",
+                            "Foi inaugurado em 1954 para comemorar o quarto centenário da cidade. O parque tem uma área de 1.584.000 m² e é frequentado por cerca de 14 milhões de pessoas por ano.",
+                            "O parque conta com diversas atrações, como o Museu de Arte Moderna de São Paulo (MAM), o Museu Afro Brasil, o Auditório Ibirapuera, a Oca, a Bienal de São Paulo, o Planetário e o Jardim Japonês.",
+                            "Além disso, o parque tem várias áreas para prática de esportes, como ciclovia, quadras de tênis, pista de corrida e campos de futebol."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "Sescs."
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Sesc Paulista."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Sesc Paulista é uma unidade do Serviço Social do Comércio (Sesc) localizada na Avenida Paulista, em São Paulo.",
+                            "Inaugurado em 2018, o espaço conta com uma ampla programação cultural e de lazer, incluindo exposições, shows, espetáculos teatrais, cursos, oficinas e atividades esportivas.",
+                            "O prédio do Sesc Paulista foi projetado pelo arquiteto Paulo Mendes da Rocha e conta com 17 andares, sendo que 12 deles são destinados às atividades culturais e de lazer.",
+                            "O espaço conta com teatros, salas de cinema, galerias de arte, biblioteca, restaurante, café e uma vista panorâmica da cidade de São Paulo.",
+                            "Além da programação cultural, o Sesc Paulista também oferece serviços de saúde, como consultas médicas e odontológicas."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Sesc Pompeia."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Sesc Pompeia é um centro cultural localizado em São Paulo, Brasil.",
+                            "Fundado em 1982, o espaço foi projetado pelo arquiteto Lina Bo Bardi e é considerado um marco da arquitetura moderna brasileira.",
+                            "O centro cultural oferece uma ampla variedade de atividades, incluindo shows de música, teatro, dança e cinema, exposições de arte, oficinas, cursos e palestras.",
+                            "Além disso, o Sesc Pompeia possui uma piscina olímpica, quadras esportivas, biblioteca e restaurante.",
+                            "O espaço é conhecido por sua programação diversa e acessível, com preços populares e descontos para trabalhadores do comércio e seus dependentes.",
+                            "O Sesc Pompeia também é um importante centro de pesquisa e documentação sobre a cultura brasileira, com acervos de música, teatro e literatura."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "Teatros."
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "Teatro Municipal de São Paulo."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Teatro Municipal de São Paulo é um dos mais importantes teatros da cidade e do país.",
+                            "Inaugurado em 1911, foi inspirado na Ópera de Paris e é considerado um dos mais belos prédios da cidade.",
+                            "Com capacidade para mais de 1.500 pessoas, o teatro é o palco de grandes apresentações de ópera, ballet, música clássica e teatro.",
+                            "Alguns dos maiores artistas do mundo já se apresentaram no Teatro Municipal de São Paulo, como Maria Callas, Plácido Domingo, Rudolf Nureyev e Mikhail Baryshnikov.",
+                            "Além das apresentações, o Teatro Municipal de São Paulo também é um importante centro cultural, com exposições, palestras e outras atividades.",
+                            "O prédio é aberto para visitação, com tours guiados que mostram a beleza de sua arquitetura."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Theatro São Pedro."
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O Theatro São Pedro é um teatro localizado no centro histórico da cidade de Porto Alegre, no Rio Grande do Sul, Brasil.",
+                            "Inaugurado em 1858, é considerado o teatro mais antigo em atividade no Brasil.",
+                            "Com capacidade para 690 pessoas, é um espaço dedicado à produção e difusão das artes cênicas, musicais e visuais.",
+                            "O prédio do teatro passou por diversas reformas e ampliações ao longo dos anos, mantendo sua arquitetura original neoclássica.",
+                            "Em seu palco já se apresentaram grandes nomes da cultura brasileira, como Carlos Gomes, Villa-Lobos, Chico Buarque, Elis Regina, entre outros."
+                        ],
+                        "gallery": [
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg",
+                            "0E065983-D2C7-451A-AC08-9404B1A5D29B.jpg"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

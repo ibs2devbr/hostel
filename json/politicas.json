@@ -1,0 +1,420 @@
+[
+    {
+        "title": [
+            "Politicas"
+        ],
+        "subtitle": [],
+        "description": [],
+        "container": [
+            {
+                "title": [
+                    "Politicas de trabalho"
+                ],
+                "subtitle": [],
+                "description": [],
+                "container": [
+                    {
+                        "title": [
+                            "anti-spam"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "a Cloud Tool, em sincronia com as melhores práticas da internet e dos órgãos não-governamentais mais influentes da internet, e seguindo o apelo de seus usuários, vem expor seu compromisso anti-spam.",
+                            "esse compromisso sempre existiu, e é aceito automaticamente no ato da contratação de qualquer serviço prestado pela Cloud Tool, por meio do contrato de hospedagem.",
+                            "o e-mail é um dos componentes da internet, e hoje em dia é um dos principais meios de comunicação dentro dela. entretanto, este meio de comunicação vem sendo cada vez mais degradado pelo elevado número de e-mails de propagandas, piadas, correntes, enviados a torto e a direito, sem que tenham sido pedidos pelos destinatários.",
+                            "isso é o spam, que é definido como sendo o envio de e-mails não solicitados.",
+                            "essa degradação se traduz em elevado uso de espaço para armazenamento das mensagens, sobrecarga dos servidores que administram e transmitem os e-mails, sobrecarga das redes de comunicação, etc. além disso, cada vez mais os e-mails não solicitados são ignorados pelos destinatários e aumentam o repúdio dos destinatários contra as empresas que os enviam. assim, até mesmo comercialmente o spam está se tornando algo repudiável",
+                            "todos os clientes da Cloud Tool seguem a norma de repúdio ao spam, responsabilizando-se pelo cumprimento da regra de não fazer spam em hipótese alguma e sob nenhum pretexto.",
+                            "caso seja constatado o envio de spam por algum cliente, serão seguidas as punições previstas em nossas políticas de uso: suspensão da conta por 24 horas na primeira ocorrência e cancelamento da conta em caso de reincidência.",
+                            "esta regra é válida mesmo que não sejam utilizados os nossos servidores smtp para o envio dos e-mails, mas tenham sido enviados com o objetivo de divulgar um site hospedado em nossos servidores.",
+                            "o e-mail: denuncia@cloudtool.com.br está a disposição para se fazer denúncias. as seguintes precauções devem ser levadas em consideração por todos os usuários de nossos serviços.",
+                            "RECOMENDAÇÕES",
+                            [
+                                "não compre listas de e-mails. isso no mínimo é ilegal, e certamente gerará reclamações de envio de spam por seu site.",
+                                "não acredite se algum vendedor garantir que sua lista de e-mails está aprovada pelos destinatários para receberem mensagens. isso é mentira.",
+                                "se algum visitante de seu site se cadastrar como seu cliente, isso não quer dizer que ele aceitou receber propaganda sua. ele deve explicitamente pedir para receber seus e-mails de propaganda.",
+                                "se você tem um programa que cadastra todos os endereços de e-mails das pessoas que enviam perguntas para seu site e usa essa lista para enviar e-mails, certamente será acusado de spam.",
+                                "não existe nenhuma legislação brasileira sobre o assunto e nos estados unidos spam é considerado crime em alguns estados, portanto não é válido nenhum argumento de que os e-mails enviados não podem ser considerados spam devido a algum congresso ou legislação, tanto nacional como estrangeira.",
+                                "o email não é um meio de propaganda viável. apesar de ser muito tentador usá-lo como meio publicitário, seu abuso está forçando toda a internet a uma mudança nos regulamentos de uso e aumentando suas restrições e punições contra as empresas que o praticam. é importante também sempre denunciar o spam, que é uma prática negativa para a internet e somente por meio das denúncias poderemos combatê-la."
+                            ]
+                        ]
+                    },
+                    {
+                        "title": [
+                            "ilimitado"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "nossos planos de manutenção de websites e lojas virtuais são armazenados em regime de compartilhamento de servidor com o objetivo de reduzir custos aos clientes. e isto porque dividir recursos de um servidor de grande porte entre vários websites e lojas virtuais é bem mais em conta do que a hospedagem de páginas em ambiente dedicado exclusivo",
+                            "para que o servidor possa funcionar neste regime compartilhado, faz-se necessário o controle de alguns de seus limites físicos como, por exemplo, a utilização de processamento ou memória para evitar que se consumam recursos em excesso, causando problemas aos demais clientes no mesmo servido",
+                            "sabendo-se que trafego é a quantidade de dados transferidos entre nosso servidor e o usuário do website ou loja virtual, temos que conceito de ?ilimitado? significa que não haverá cobrança adicional por transferência de dados, tanto em volume, quanto velocidade",
+                            "todavia, ocorre que em razão do compartilhamento do servidor dentre vários clientes, o uso concomitante exige razoabilidade na divisão dos recursos e até mesmo a imposição de certas limitações físicas decorrentes, por exemplo, da capacidade de processador e da memória disponível do equipamento",
+                            "por oportuno, então, frisamos que tráfego ilimitado não significa que o plano de manutenção contratado autoriza o uso indiscriminado, que sobrecarregue ou mesmo prejudique o funcionamento do servidor, nem tampouco que afronte a legislação vigente. ao contrário, apenas em caráter exemplificativo e não taxativo, não serão permitidas as seguintes situações",
+                            "a utilização da hospedagem como um disco virtual, ou seja, como espaço para armazenamento ou backup de arquivos que não sejam elementos de seu website ou loja virtual. para essa finalidade, é necessária a contratação de hospedagem apartada",
+                            "o armazenamento de filmes, séries de tv, música, aplicativos ou qualquer tipo de material com direitos autorais, caracterizados como ?pirataria?, armazenadas em quaisquer formatos ou extensão de arquivos",
+                            "com o intuito de espelhar outros websites/lojas ou mesmo para uploads e como distribuidor em massa de multimídia de grande porte, casos em que também se exige a contratação de hospedagem apartada",
+                            "o compartilhamento de arquivos com o público em geral com a disponibilização dos seus dados de login e senha para o painel administrativo, ssh, ftp (em casos de fóruns, listas de discussão, canais de chat, etc)",
+                            "ao final, esperamos que você compreenda que a adoção destas cautela e limitações gerais são revertidas em benefício de todos os clientes pois esta é a garantia de que outros websites/lojas armazenadas no mesmo servidor não prejudicarão a sua página pelas mesmas razões"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "privacidade"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "privacidade é uma das grandes preocupações da maioria dos usuários da internet e é fundamental para o uso proveitoso e satisfatório da rede",
+                            "a Cloud Tool tem consciência disso e está muito sensível às preocupações de nossos clientes e dos visitantes de nosso site",
+                            "você pode visitar nosso site e conhecer os serviços que oferecemos, obter informações e notícias, sem nos dar nenhuma informação sobre si mesmo",
+                            "caso você forneça alguma informação, este documento procura esclarecer como a Cloud Tool coleta e trata suas informações individuais",
+                            "as informações pessoais que nos forem passadas pelos usuários serão coletadas por meios éticos e legais, podendo ter um ou mais propósitos, sobre os quais nossos usuários serão informados no momento em que informarem seus dados",
+                            "a menos que tenhamos determinação legal ou judicial, suas informações nunca serão transferidas a terceiros ou usadas para finalidades diferentes daquelas para as quais foram coletadas",
+                            "os usuários serão avisados de quais informações suas estaremos coletando, ficando a opção de escolha para fornecimento ou não dessas informações sob responsabilidade do usuário",
+                            "o acesso às informações coletadas está restrito apenas a funcionários da Cloud Toolautorizados para o uso adequado dessas informações",
+                            "a Cloud Tool não exibe em seu site os domínios de seus usuários, respeitando plenamente seu direito à privacidade",
+                            "a Cloud Tooldisponibiliza a todos os seus clientes um meio de contato seguro através do chamado técnico. não nos responsabilizamos pelo tráfego de informações confidenciais, inclusive usuário e senha de acesso aos serviços contratados, se o assinante insistir em enviar estes dados através de e-mail"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "utilização dos serviços"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "fica vedado ao contratante",
+                            [
+                                "a penalidade para as infrações das condições abaixo podem resultar em suspensão ou término da conta, sem nenhum reembolso de valores pagos.",
+                                "transmitir ou armazenar qualquer informação, dado ou material que viole qualquer lei federal, estadual ou municipal, brasileiras, norte-americanas ou de seu país de origem.",
+                                "em razão dos conhecidos fatos ocorridos na manhã de 11/09/2001 em território norte-americano, quando do ataque de grupos extremistas praticantes de terrorismo, que levaram a grande perda de vidas inocentes, não será permitida a hospedagem de qualquer site baseado em idealismo proveniente de entidade, pessoa, grupo, partido político, ong ou representação governamental que adote postura de defesa de tais práticas novamente no solo dos eua ou em qualquer outro país. é dever da Cloud Tool alertar para os que aderirem a estes pensamentos que não caberá recurso sequer para a tentativa intencional ou não de uso de nossos servidores.",
+                                "não serão permitidos anúncios de qualquer tipo incluindo pop-ups, banners e outros junto aos servidores cloudtool.com.br relativos à venda de armas de fogo ou incrementos de uso exclusivo das forças armadas nacionais ou estrangeiras. a violência assintomática de nossos dias por si só nos condiciona a esta postura. tais critérios estão intimamente ligados à política de desarmamento praticada pelo governo brasileiro a partir do segundo semestre de 2004.",
+                                "disponibilizar ou armazenar quaisquer materiais com direitos reservados, de propriedade intelectual ou com copyright, incluindo mp3, mpeg, rom ou emuladores rom, vídeos, animes, distribuição ou divulgação de senhas para acesso de programas alheios, difamação de pessoas ou negócios, alegações consideradas perigosas ou obscenas, protegido por segredo de estado ou outro estatuto legal.",
+                                "promover ou prover informação instrutiva sobre atividades ilegais, que promovam ou induzam dano físico ou moral contra qualquer grupo ou indivíduo.",
+                                "disponibilizar, utilizar ou armazenar qualquer material que explore de alguma forma, crianças ou adolescentes menores de 18 anos de idade",
+                                "disponibilizar, utilizar ou armazenar qualquer material de conteúdo grotesco ou ofensivo para a comunidade web, que pode incluir, mas não se limitando a isso, fanatismo, racismo, ódio ou profanação.",
+                                "também não serão tolerados textos, imagens de qualquer tipo e formato incluindo vídeos nas opções avi, mpg, mpeg, mpa, wmv, rom e outras mídias em formato midi, mp3 e asf oriundos de entidades à margem da sociedade que preguem qualquer tipo de preconceito a minorias praticantes, participantes ou simpatizantes de posturas consideradas como sexualmente não comuns ao meio em que vivemos.",
+                                "a Cloud Tool condena a intolerância e será o único árbitro, para as devidas providências de bloqueio no servidor sem necessidade de ordem judicial. aos responsáveis por tais divulgações não caberá defesa. segue os padrões da onu, oea e ue.",
+                                "domínios com conteúdo que incentivem maus tratos a animais, como exemplo, de jogos estimulados por violência e assemelhados, serão terminantemente proibidos e sujeitos a suspensão definitiva sem opção de retorno. caberá a Cloud Tool denunciar às autoridades competentes destas práticas. em caso de domínio vinculado a jogos de azar ou loterias, deverá o detentor do domínio possuir cnpj próprio (em caso de domínio nacional) e de domínio internacional primeiro submeter-se a avaliação junto ao depto. de suporte através do e-mail: suporte@cloudtool.com.br.",
+                                "domínios com conteúdo de natureza sentimental ou amorosa, ainda que o conteúdo não contenha imagens ou textos impróprios serão constantemente monitorados para segurança da comunidade web. caberá aos responsáveis por conteúdo destes domínios disponibilizar avisos de responsabilidade por faixa etária que sejam de interesse exclusivo de maiores de idade para evitar inconvenientes com a legislação nacional e de outros países.",
+                                "se houver divulgação de imagens impróprias de menor de idade em situação sexual comprometedora a Cloud Tool decretará a suspensão definitiva da hospedagem. nenhum tipo de anúncio poderá conter frases estimulantes de contato que promovam liberdade sexual excessiva para menores de idade, e se ocorrer será imediatamente denunciado. havendo avaliação positiva de nosso departamento de suporte, a Cloud Tool permitirá a hospedagem.",
+                                "transmitir, armazenar ou divulgar qualquer material relacionado a hacking/cracking ou material adulto relacionado com pornografia e propaganda relacionada a sexo, incluindo links para outros sites com conteúdo desse tipo. a contratada será o único árbitro na avaliação do que constitua violação desta medida.",
+                                "enviar abusiva e generalizadamente e-mails ou enviá-los sem solicitação do(s) destinatário(s), partindo de um servidor cloudtool.com.br. nossos servidores são monitorados 24 horas por dia quanto à utilização de smtp. para entender bem a nossa política, caracteriza como spam um único e-mail não solicitado de propaganda ou divulgação que seja enviado a mais de 5 endereços de uma só vez.",
+                                "enviar abusiva e generalizadamente e-mails ou enviá-los sem solicitação do(s) destinatário(s), partindo de qualquer outro servidor, externo à rede cloudtool.com.br, com a intenção de promover qualquer domínio hospedado nos servidores cloudtool.com.br, ou cujo e-mail de retorno pertença a um domínio hospedado nos servidores cloudtool.com.br.",
+                                "enviar mais de 50 e-mails por hora, mesmo que sejam e-mails legítimos e solicitados, como por exemplo, newsletters. se o contratante enviar mais de 50 e-mails por hora (por conta de hospedagem), a conta será encerrada por abuso de rede",
+                                "tentar operar irc ou bots de irc em nossos servidores. qualquer tentativa resultará em cancelamento imediato da conta",
+                                "abuso de tarefas cron. a contratada permite a utilização de tarefas cron em seus servidores. contudo, reserva-se o direito de cancelar qualquer tarefa que possa comprometer a performance dos servidores. caso o usuário insista em abusar de tarefas cron após ser notificado, terá a sua conta encerrada por abuso do servidor.",
+                                "utilizar programas ou scripts que, por qualquer razão, prejudiquem o funcionamento normal do servidor ou exijam excesso de recursos de sistema. neste caso, ocorrerá a imediata suspensão da prestação dos serviços contratados, independentemente de aviso ou notificação",
+                                "a cloudtool não dá auxílio a criação/manutenção/adição/customização de sites e scripts de terceiros, todo script é de total responsabilidade do cliente 1.22) transferir a tercei,ros ou permitir que se utilizem a conta, que é de uso exclusivo do contratante.",
+                                "só serão permitidos os pedidos de alteração de dados cadastrais do usuário e responsável pelo domínio que vierem a ser comprovados e oriundos do próprio responsável. obrigatoriamente serão solicitados: login e senha dos usuários, para comprovação. a avaliação será criteriosa, mesmo sendo o webmaster o responsável cadastrado.",
+                                "tentar, ou efetivamente quebrar as senhas ou invadir os sites alheios, a partir de um servidor cloudtool.com.br. neste caso, ocorrerá o imediato cancelamento da prestação dos serviços contratados, independentemente de aviso ou notificação, sem prejuízo das medidas judiciais cabíveis.",
+                                "não cumprir acordos previamente estabelecidos entre a contratante e seus consumidores, bem como não cumprir com compromissos divulgados no site do contratante (propaganda enganosa). qualquer ilegalidade nesse sentido será punida com a imediata suspensão da prestação dos serviços contratados, independentemente de aviso ou notificação",
+                                "fornecer à contratada, dados falsos através do formulário de solicitação de serviços. essa atitude será punida com a imediata suspensão da prestação dos serviços contratados, independentemente de aviso ou notificação."
+                            ],
+                            "obrigações da contratada",
+                            [
+                                "zelar pela eficiência e efetividade da rede cloudtool.com.br, adotando junto a todos os usuários todas as medidas necessárias para evitar prejuízos ao funcionamento da mesma.",
+                                "fornecer suporte técnico ao contratante consistente de informações de configuração para publicação das páginas, leitura e envio de e-mails e acesso a outros serviços. não está incluído na presente prestação de serviço o suporte técnico de desenvolvimento ou instalação de páginas html ou de scripts cgi, fantástico, perl, php, java, javascript, mysql, ou qualquer outra linguagem de desenvolvimento em internet, nem mesmo operação de aplicativos como front page, dreamweaver, flash ou quaisquer outros. o suporte técnico limita-se apenas à prestação do serviço de hospedagem de arquivos web. também não serão atendidas solicitações de alterações personalizadas no software de comércio eletrônico disponibilizado, configurações do servidor.",
+                                "o suporte técnico será prestado via e-mail: suporte@cloudtool.com.br e será atendido até o próximo dia-útil á solicitação.",
+                                "informar o contratante com 3 (três) dias de antecedência sobre as interrupções necessárias para ajustes técnicos ou manutenções que demandem mais de 6 (seis) horas de duração e que possa causar prejuízo à operacionalidade do site hospedado, salvo em casos de urgência, assim entendido aquele que coloque em risco o regular funcionamento de nossa rede.",
+                                "manter o “site” hospedado no ar durante 99.9% do tempo (garantia de uptime – média mensal). excluem-se da garantia às interrupções necessárias para ajustes técnicos ou manutenção, interrupção dos serviços causados por negligência das empresas envolvidas no processo de conexão à internet, falha de linha de comunicação de acesso de responsabilidade da crossingtm, embrateltm, at&ttm, worldcomtm, sprinttm, cogenttm ou qualquer outra empresa de telefonia, pelo provedor de acesso do usuário, má-confecção das páginas, erros do contratante, furto ou destruição por algum acesso não autorizado, fracasso de disco rígido (hardware defeituoso é raro, mas não pode ser predito nem pode ser evitado) e situações imprevistas como guerras, terremotos, tufões, e outros casos fortuitos. caso o servidor ou site fique off-line por outros motivos que não os citados acima, o contratante terá descontos proporcionais ao tempo off-line em sua mensalidade. a Cloud Tool não creditará o serviço de um mês cheio se nós só tivermos 99.5% de uptime. isto não seria financeiramente saudável para a Cloud Tool, e em troca só afetaria negativamente o serviço que a Cloud Tool provê a seus clientes. “reembolsos parciais” para “tempo de manutenção parcial” é a nossa política.",
+                                "efetuar “backups” diários e mensais todas as noites, de todas as contas hospedadas. nenhuma garantia é concedida, sob nenhuma forma, a respeito da integridade desses backups. backups são feitos com o único propósito de restauração dos servidores, caso algum dano físico fortuito ocorra no hd principal de uma máquina. é de responsabilidade do contratante manter cópias locais do conteúdo publicado em nossas plataformas. se houver perda de dados devido a erro por parte da contratada, a contratada irá tentar recuperar os dados sem cobrar nada do contratante. se a perda de dados ocorrer devido à negligência ou falta do contratante, a contratada irá tentar restaurar os dados do arquivo pelo backup mais recente, mediante o pagamento de uma taxa de r$ 300,00."
+                            ],
+                            "abertura de conta, upgrades e instalações de serviços",
+                            [
+                                "todas as contas de hospedagem e instalações serão realizadas apenas quando a contratada receber a comprovação do pagamento inicial. o pagamento será realizado através de boleto bancário ou por meios digitais como PagSeguro instalação em até 5 dias úteis após a contratada receber a comprovação do pagamento.",
+                                "todas as solicitações reparos ou serviços extras deverão ser obrigatoriamente encaminhadas através do e-mail: suporte@cloudtool.com.br. o mesmo poderá ser acompanhado não só por nossos profissionais do departamento de suporte técnico e financeiro, como também pelo próprio cliente, permitindo tirar dúvidas quanto a valores e o tempo médio para o serviço solicitado.",
+                                "o cliente poderá modificar seu plano de hospedagem buscando uma configuração que atenda sua necessidade, com mais ou menos recursos que a Cloud Tool descreve como up-grades ou down-grades.",
+                                "caso o cliente solicite down-grade deverá efetuar pagamento antecipado de fatura deste plano mesmo que o valor atual de seu plano em uso seja superior ao solicitado. o mesmo acontecerá com o up-grade, ainda que o cliente já tenha efetuado a quitação mensal de sua hospedagem.",
+                                "nos casos em que a hospedagem do cliente esteja em débito, a fatura de up-grade substituirá a do plano em cobrança atual.",
+                                "para o down-grade não haverá reversão: primeiramente o cliente deverá efetuar o pagamento da fatura atual e somente no mês subseqüente e com quinze dias de antecedência poderá solicitar esta mudança",
+                                "ao contratar os serviços, ficará registrado no banco de dados da contratada, a plena aceitação por parte do contratante, de todas estas políticas de uso",
+                                "não é permitida a alteração do plano inicialmente contratado, antes de transcorridos primeiro período da assinatura do contrato",
+                                "todos os serviços adicionais solicitados pelo contratante deverão ser comunicados pelo mesmo ao departamento de suporte da contratada através de e-mail: suporte@cloudtool.com.br e somente serão ativados quando da comprovação de pagamento através do site Cloud Tool. obrigatoriamente o contratante deverá informar claramente a que domínio se refere o pagamento e principalmente a que serviço se relaciona."
+                            ],
+                            "pagamentos",
+                            [
+                                "o pagamento das parcelas deverá ser efetuado pelo contratante rigorosamente nas datas de vencimento",
+                                "findo o primeiro período de contratação o cliente poderá solicitar a alteração de data de vencimento de sua hospedagem desde que com 15 dias de antecedência para o próximo vencimento.",
+                                "o cliente pode solicitar uma das 4 datas de vencimento disponíveis: 5, 10, 15 ou 20.",
+                                "a solicitação deverá ser encaminhada por e-mail: suporte@cloudtool.com.br a fim de que se providencie a tempo de emitir a nova fatura para conveniência do cliente. não serão aceitas solicitações de clientes em débito até que o mesmo seja devidamente quitado",
+                                "nota: quando houver a suspensão temporária de nossos serviços de hospedagem (bloqueio de site) em virtude de falta de pagamento por parte do cliente, e a quitação for efetuada somente a partir do dia 20 (vinte) do mês corrente, será obrigatória a quitação do mês em curso somada a do mês subseqüente. caso contrário não haverá o desbloqueio de hospedagem.",
+                                "não poderão ser solicitadas alterações para faturas a vencer no mesmo mês em curso. em caso de alteração, serão adicionados os dias de prolongamento de uso do servidor para compensação de valor. a fatura seguirá para o cliente juntamente com a atual com mesmo dia de vencimento e só será adotada a mudança de data para o próximo mês quando do reconhecimento de pagamento de ambas.",
+                                "o não cumprimento do disposto acima até a data do vencimento, será considerado como infração contratual, sujeitando-se o contratante a uma multa de 10% sobre o valor devido.",
+                                "após 3 (três) dias da data de vencimento, a prestação dos serviços será interrompida, sem isentar o contratante da obrigação de cumprir os encargos mensais, sendo o acesso, arquivos, informações e e-mails referentes à conta do contratante bloqueados. para a reabilitação do serviço, deverá o contratante pagar os valores devidos, e aguardar a compensação bancária do pagamento em nosso sistema (24 a 48 horas após o pagamento).",
+                                "após 7 (sete) dias da data do vencimento, a contratada poderá apagar todos os dados, arquivos ou outras informações que estiverem armazenadas na conta daquele contratante. para a reativação do serviço, deverá o contratante realizar nova, contratação. a contratada reserva-se o direito de não aceitar novas contas de clientes devedores ou retorno de clientes excluídos por inadimplência, ou poderá condicionar o retorno ao pagamento dos débitos anteriores em atraso antes de proceder à apreciação da nova solicitação."
+                            ],
+                            "sobre login e senha de acesso",
+                            [
+                                "o login e senha do serviço em questão serão criados pela contratada durante a abertura da conta no sistema. o contratante poderá alterar sua senha caso deseje. a contratada reserva-se o direito de trocar a senha a qualquer momento. neste caso a contratada informará o contratante à nova senha, exceto se o contratante estiver com pagamentos em atraso. o login não poderá ser trocado. a senha poderá ser trocada a qualquer tempo pelo próprio contratante, não necessitando o pagamento de nenhuma taxa adicional.",
+                                "a guarda da senha para acesso ao sistema é de exclusiva responsabilidade do contratante. não caberá à contratada nenhuma responsabilidade pelo seu uso indevido.",
+                                "com a intenção de identificar o webmaster de uma conta e permitir que o mesmo tenha total acesso ao painel de usuário, com login e senha próprios, a Cloud Tool criou um anexo ao cadastro de usuário para permitir que os dados do profissional responsável por uma conta fiquem registrados.",
+                                "se o cliente tem um webmaster e deseja que este possua login e senha independente dos seus, deverá solicitar ao email: suporte@cloudtool.com.br ATRAVÉS ÚNICA E EXCLUSIVAMENTE USANDO SEU E-MAIL DE CADASTRO DA CONTRATANTE, para efetivação de cadastro.",
+                                "este cadastro alternativo poderá ser efetuado a qualquer tempo. no momento do cadastramento o webmaster deverá apenas informar nome completo, cpf ou cnpj, e-mails de contato e telefones."
+                            ],
+                            "valores e cancelamento",
+                            [
+                                "o serviço provido pela contratada poderá ser cancelado por escrito, explicando o motivo e informando a senha e o login através de e-mail: suporte@cloudtool.com.br , a qualquer momento, sem penalidade, desde que findo o período contratado e seus débitos devidamente quitados. a solicitação de cancelamento deverá ser feita com antecedência mínima de 15 (quinze) dias do vencimento da próxima mensalidade.",
+                                "quando o cliente desrespeitar o período de antecedência do cancelamento e o solicitar faltando menos de quinze dias para o próximo vencimento, ficará sujeito à cobrança de fatura mensal relativa ao mês subseqüente. caso a opção do cliente seja trimestral, semestral ou anual, a cobrança será de apenas um mês subseqüente.",
+                                "é obrigatório para o cliente desistente de nossos serviços informar através de e-mail: financeiro@cloudtool.com.br todos os seus dados de cadastro original para maior segurança na realização de cancelamento de hospedagem pelo departamento de suporte da Cloud Tool.",
+                                "nome completo, endereço completo com cep do logradouro, cpf ou cnpj, além de login e senha de acesso, são os dados fundamentais que virão a identificar o cliente para fins de cancelamento de hospedagem de um domínio e ficarão também válidos, para também comprovar a veracidade do contato. todos os serviços atrelados ao serviço de hospedagem como redirecionamento de url, domínio adicional, e demais serviços extras instalados junto à conta do cliente, serão tão logo se comprove situação financeira de total quitação e confirmação de dados cadastrais.",
+                                "o cliente poderá programar o cancelamento para uma data específica mesmo na vigência do mês em curso desde que confirme os dados com antecedência, informe corretamente seus pagamentos ao departamento financeiro e esteja de acordo com as políticas de uso da Cloud Tool.",
+                                "no caso de cancelamento de conta durante o primeiro período da assinatura do contrato, não será devolvido o valor pago nem os serviços adicionais solicitados",
+                                "a contratada reserva-se o direito de alterar os valores de seus serviços mediante notificação ao contratante com 15 (quinze) dias de antecedência à data em que estas entrarão em vigor, bem como prover serviços adicionais somente ao assinante que estiver em dia com suas mensalidades"
+                            ],
+                            "disposições finais",
+                            [
+                                "a contratada reserva-se o direito de mudar qualquer procedimento técnico referente aos serviços contratados sem prévio aviso",
+                                "caso seja introduzida alguma alteração nas políticas de uso, as cláusulas e condições alteradas passarão a ter validade após 30 (trinta) dias da data da alteração",
+                                "o contratante tem ciência e concorda com o fato de que a contratada poderá apagar todos os dados, arquivos ou outras informações que estiverem armazenadas na conta daquele e nas contas adicionais dos clientes do contratante, se porventura a(s) conta(s) estiver(em) suspensa(s) a mais de 10 dias por falta de pagamento",
+                                "o contratante tem ciência e concorda com o fato de que a contratada poderá apagar todos os dados, arquivos ou outras informações que estiverem armazenadas na conta daquele e nas contas adicionais dos clientes da contratante, se porventura houver ordem ou solicitação de autoridades legalmente constituídas ou ordem judicial",
+                                "o contratante se responsabiliza por todos os danos oriundos de sua utilização dos serviços, e se compromete a indenizar e inocentar a contratada de qualquer reivindicação legal, incluindo-se as perdas e danos requeridos por terceiros",
+                                "a contratada reserva-se o direito de suspender o serviço do contratante a qualquer momento, por qualquer razão, sem notificação, quando for constatada qualquer infração ou violação ao contrato ou normas de uso aceitáveis",
+                                "o contratante obriga-se a manter seus dados cadastrais devidamente atualizados. toda e qualquer alteração deverá ser comunicada à contratada"
+                            ]
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": [
+                    "Politicas de privacidade."
+                ],
+                "subtitle": [],
+                "description": [
+                    "A privacidade dos visitantes de nosso website é assunto de extrema importância e estamos comprometidos em protegê-la.",
+                    "A presente Política de Privacidade explica como tratamos, total ou parcialmente, de forma automatizada ou não, os dados pessoais dos usuários que acessam o nosso website. Seu objetivo é esclarecer os interessados acerca dos tipos de dados que são coletados, dos motivos da coleta e da forma como o usuário poderá atualizar, gerenciar ou excluir estas informações.",
+                    "Esta Política de Privacidade foi elaborada em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD ou LGPDP) nº 13.709, de 14 de Agosto de 2018, e com a Lei Federal do Marco Civil da Internet nº 12.965 de Abril de 2014. A presente poderá ser alterada em decorrência de eventual atualização normativa, razão pela qual se convida o usuário a consultar periodicamente esta seção."
+                ],
+                "container": [
+                    {
+                        "title": [
+                            "direitos do usuário"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Este website se compromete a cumprir as normas previstas na LGPD, em respeito aos seguintes princípios:",
+                            [
+                                "Os dados pessoais do usuário serão processados de forma lícita, leal e transparente (licitude, lealdade e transparência);",
+                                "Os dados pessoais dos usuários serão coletados apenas para finalidades determinadas, explícitas e legítimas, não podendo ser tratados posteriormente de uma forma incompatível com essas finalidades (limitação e finalidades);",
+                                "Os dados pessoais do usuário serão coletados de forma adequada, pertinente e limitada às necessidades do objetivo para os quais eles são processados (minimização dos dados);",
+                                "Os dados pessoais do usuário serão exatos e atualizados sempre que necessário, de maneira que os dados inexatos sejam apagados ou retificados quando possível (exatidão);",
+                                "Os dados dos usuários serão tratados de forma segura, protegidos do tratamento não autorizado ou ilícito e contra a sua perda, destruição ou danificação acidental, adotando as medidas técnicas ou organizativas adequadas (integridade e confidencialidade)."
+                            ],
+                            "O usuário do site possui os seguintes direitos, conferidos pela LGPD:",
+                            [
+                                "Direito de confirmação de acesso: é o direito do usuário de obter do website a confirmação de que os dados pessoais que lhe digam respeito são ou não objeto de tratamento e, se for esse o caso, o direito de acessar seus dados pessoais;",
+                                "Direito de retificação: é o direito do usuário de obter do website, sem demora injustificada, a retificação dos dados pessoais inexatos que lhe digam respeito;",
+                                "Direito à eliminação dos dados: é o direito do usuário ter seus dados apagados do site;",
+                                "Direito à limitação do tratamento de dados: é o direito do usuário de limitar o tratamento de seus dados pessoais, podendo obtê-la quando contesta a exatidão dos dados, quando o tratamento for ilícito, quando o website não precisar mais dos dados para as finalidades propostas e quando tiver se oposto ao tratamento dos dados e em caso de tratamento de dados desnecessários;",
+                                "Direito de oposição: é o direito do usuário de, a qualquer momento, se opor por motivos relacionados com a sua situação particular, ao tratamento dos dados pessoais que lhe digam respeito, podendo se opor ainda ao uso de seus dados pessoais para definição de perfil de marketing;",
+                                "Direito de portabilidade dos dados: é o direito do usuário de receber os dados pessoais que lhe digam respeito e que tenha fornecido ao website, num formato estruturado, de uso corrente e de leitura automática, e o direito de transmitir esses dados a outro website;",
+                                "Direito de não ser submetido a decisões automatizadas:é o direito do usuário de não ficar sujeito a nenhuma decisão tomada exclusivamente com base no tratamento automatizado, incluindo a definição de perfis, que produza efeitos na sua esfera jurídica ou que o afete significativamente de forma similar."
+                            ],
+                            "O usuário poderá exercer os seus direitos por meio de comunicação escrita enviada a este website com o assunto “LGPD - solicitação”, especificando:",
+                            [
+                                "Nome completo ou Razão Social, número do CPF ou CNPJ, endereço de email do usuário e, se for o caso, do seu representante;",
+                                "Direito que deseja exercer junto ao website;",
+                                "Data do pedido e assinatura do usuário;",
+                                "Todo documento que possa demonstrar ou justificar o exercício de seu direito."
+                            ],
+                            "O pedido deverá ser enviado ao email rajanyfreixo@gmail.com, ou por correio, ao seguinte endereço:",
+                            [
+                                "R. Visconde de Nacar, 315 ap 61- Real Parque - 05685-010, São Paulo - SP, Brasil"
+                            ]
+                        ]
+                    },
+                    {
+                        "title": [
+                            "dever de não fornecer dados de terceiros"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Durante a utilização deste website, a fim de resguardar e proteger os direitos de terceiros, o usuário do website deverá fornecer apenas seus dados pessoais, e não os de terceiros."
+                        ]
+                    },
+                    {
+                        "title": [
+                            "tipos de dados coletados"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Os dados eventualmente informados pelo usuário para realização de cadastro ou inscrição, como nome, telefone, endereOs seguintes tipos de dados pessoais do usuário podem ser coletados, armazenados e utilizados:",
+                            [
+                                "Informações sobre o computador do usuário, incluindo seu endereço IP, localização geográfica, sistema operacional, tipo e versão do navegador;",
+                                "Os registros de acesso do usuário e uso deste website, incluindo fonte de tráfego, duração da visita, visualizações de página e caminhos de navegação no site. Em atendimento às disposições do art. 15, caput e parágrafos, da Lei Federal nº 12.965/2014 - Marco Civil da Internet, os registros de acesso do usuário serão coletados e armazenados por, pelo menos, seis meses;",
+                                "Os dados eventualmente informados pelo usuário que utilizar o formulário de contato disponibilizado no website, incluindo o teor da mensagem enviada, serão coletados e armazenados;",
+                                "endereço de email e detalhes de redes sociais, para o recebimento de boletins eletrônicos periódicos e outras comunicações do website com o usuário;",
+                                "Dados relacionados à execução de contratos firmados com o usuário, como a execução de compra e venda ou de prestação de serviços entre o website e o usuário, poderão ser coletados e armazenados outros dados relacionados ou necessários a sua execução, incluindo o teor de eventuais comunicações tidas com o usuário;",
+                                "Dados sensíveis: NÃO serão coletados dados sensíveis dos usuários, assim entendidos aqueles definidos na LGPD. Assim, dentre outros, não haverá coleta dos seguintes dados:",
+                                [
+                                    "dados que revelem origem racial ou étnica, as opiniões políticas, as convicções religiosas ou filosóficas, ou a filiação sindical do usuário;",
+                                    "dados genéticos;",
+                                    "dados biométricos para identificar uma pessoa de forma inequívoca;",
+                                    "dados relativos à saúde do usuário;",
+                                    "dados relativos à vida sexual ou à orientação sexual do usuário;",
+                                    "dados relacionados à condenações penais ou a infrações ou com medida de segurança conexas."
+                                ]
+                            ],
+                            "Dados ou informações que o usuário publica neste website com a intenção de publicá-las na internet, incluindo seu nome de usuário, fotos de perfil e o eventual conteúdo de suas publicações."
+                        ]
+                    },
+                    {
+                        "title": [
+                            "fundamento jurídico para o tratamento dos dados pessoais"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Ao utilizar os serviços deste website, o usuário está consentindo com a presente Política de Privacidade.",
+                            "O usuário tem direito de retirar seu consentimento a qualquer momento, não comprometendo a licitude do tratamento de seus dados pessoais antes da retirada. A retirada do consentimento poderá ser feita pelo email rajanyfreixo@gmail.com ou por correio , enviado ao seguinte endereço:",
+                            [
+                                "ENDEREÇO COMPLETO",
+                                "O consentimento dos relativamente ou absolutamente incapazes, especialmente crianças menores de 16 (dezesseis) anos, apenas poderá ser feito, respectivamente, se devidamente assistidos e representados.",
+                                "Poderão ainda ser coletados dados pessoais necessários para execução e cumprimento dos serviços contratados pelo usuário no website.",
+                                "O tratamento dos dados pessoais sem consentimento do usuário apenas será realizado em razão de interesse legítimo ou para as hipóteses previstas em lei, ou seja, dentre outras, as seguintes:",
+                                [
+                                    "Para o cumprimento de obrigação legal ou regulatória pelo controlador;",
+                                    "Para realização de estudos por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais;",
+                                    "Quando necessário para a execução de contrato ou de procedimentos preliminares relacionados a contrato do qual seja parte o usuário, a pedido do titular dos dados;",
+                                    "Para o exercício regular de direitos em processo judicial, administrativo ou arbitral, esse último nos termos da Lei nº 9.307, de 23 de Setembro de 1996 (Lei de Arbitragem);",
+                                    "Para a proteção da vida ou da incolumidade física do titular dos dados, ou de terceiro;",
+                                    "Para a tutela da saúde, em procedimento realizado por profissionais da área da saúde ou por entidades sanitárias;",
+                                    "Quando necessário para atender os interesses legítimos do controlador ou de terceiro, exceto no caso de prevalecerem direitos e liberdades fundamentais do titular dos dados que exijam a proteção dos dados pessoais;",
+                                    "Para a proteção do crédito, inclusive quanto ao disposto na legislação pertinente."
+                                ]
+                            ]
+                        ]
+                    },
+                    {
+                        "title": [
+                            "finalidades do tratamento dos dados pessoais"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Os dados pessoais do usuário coletados por este website têm por finalidade facilitar, agilizar e cumprir os compromissos estabelecidos com o usuário e a fazer cumprir as solicitações realizadas por meio do preenchimento de formulários.",
+                            "Os dados pessoais poderão ser utilizados também com uma finalidade comercial, para personalização do conteúdo oferecido ao usuário, bem como para dar subsídio ao website para a melhora da qualidade e funcionamento de seus serviços.",
+                            "Este website recolhe os dados do usuário para que seja realizada a definição de perfis, ou seja, tratamento automatizado de dados pessoais que consista em utilizar esse dados para avaliar certos aspectos pessoais do usuário, principalmente para analisar ou prever características relacionadas ao seu desempenho profissional, a sua situação econômica, saúde, preferências pessoais, interesses, fiabilidade, comportamento, localização ou deslocamento.",
+                            "Os dados de cadastro serão utilizados para permitir o acesso do usuário a determinados conteúdos do website, exclusivo para usuários cadastrados.",
+                            "A coleta de dados relacionados ou necessários à execução de um contrato de compra e venda ou de prestação de serviços eventualmente firmado com o usuário terá a finalidade de conferir às partes segurança jurídica, além de facilitar e viabilizar a conclusão do negócio.",
+                            "O tratamento dos dados pessoais para finalidades não previstas nesta Política de Privacidade somente ocorrerá mediante comunicação prévia ao usuário, sendo que, em qualquer caso, os direitos e obrigações aqui previstos permanecerão aplicáveis."
+                        ]
+                    },
+                    {
+                        "title": [
+                            "prazo de conservação dos dados pessoais"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Os dados pessoais do usuário serão conservados por um período não superior ao exigido, para cumprir os objetivos em razão dos quais eles são processados.  Os dados serão armazenados pelo tempo necessário para a prestação dos serviços fornecidos pelo website, que pode variar entre 6 e 24 meses.",
+                            "Os dados pessoais dos usuários apenas poderão ser conservados após o término de seu tratamento nas seguintes hipóteses:",
+                            [
+                                "Para o cumprimento de obrigação legal ou regulatória pelo controlador;",
+                                "Para estudo por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais;",
+                                "Para a transferência a terceiro, desde que respeitados os requisitos de tratamento de dados dispostos na legislação;",
+                                "Para uso exclusivo do controlador, vedado seu acesso por terceiro, e desde que anonimizados os dados."
+                            ]
+                        ]
+                    },
+                    {
+                        "title": [
+                            "destinatários e transferência dos dados pessoais"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Os dados pessoais do usuário poderão ser compartilhados com as seguintes pessoas ou empresas:",
+                            [
+                                "https://automattic.com/",
+                                "https://calendly.com/",
+                                "https://www.elegantthemes.com/",
+                                "https://analytics.google.com/analytics/web/",
+                                "https://www.whatsapp.com/"
+                            ],
+                            "A transferência apenas poderá ser feita para outro país caso o país ou território em questão ou a organização internacional em causa assegurem um nível de proteção adequado dos dados do usuário.",
+                            "Caso não haja nível de proteção adequado, o website se compromete a garantir a proteção dos seus dados de acordo com as regras mais rigorosas, por meio de cláusulas contratuais específicas para determinada transferência, cláusulas-padrão contratuais, normas corporativas globais ou selos, certificados e códigos de conduta regularmente emitidos."
+                        ]
+                    },
+                    {
+                        "title": [
+                            "do responsáveis pelo tratamento e proteção dos dados (data controller e data protection officer)"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "O controlador, responsável pelo tratamento dos dados pessoais do usuário (data controller), é a pessoa física ou jurídica, a autoridade pública, a agência ou outro organismo que, individualmente ou em conjunto com outras, determina as finalidades e os meios de tratamento de dados pessoais.",
+                            "Neste website, o responsável pelo tratamento dos dados pessoais coletados é Raj Treinamentos Gerenciais e Profissionais, de CNPJ 17.023.023/0001-14, representada por Cristiana Freixo de Faria, que poderá ser contatada pelo email rajanyfreixo@gmail.com.",
+                            "O responsável pelo tratamento dos dados se encarregará diretamente do tratamento dos dados pessoais do usuário.",
+                            "O encarregado de proteção de dados (data protection officer) é o profissional encarregado de informar, aconselhar e controlar o responsável pelo tratamento de dados, bem como os trabalhadores que tratem os dados, a respeito das obrigações do website nos termos da LGPD e de outras disposições de proteção de dados presentes na legislação nacional e internacional, em cooperação com a autoridade de controle competente.",
+                            "Neste website, o encarregado de proteção de dados é Cristiana Freixo de Faria, que pode ser contactado pelo email rajanyfreixo@gmail.com."
+                        ]
+                    },
+                    {
+                        "title": [
+                            "segurança no tratamento dos dados pessoais do usuário"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Este website se compromete a aplicar as medidas técnicas e organizacionais aptas a proteger os dados pessoais de acessos não autorizados e de situações de destruição, perda, alteração, comunicação ou difusão de tais dados.",
+                            "Para a garantia da segurança, serão adotadas soluções que levem em consideração: as técnicas adequadas; os custos de aplicação, a natureza, o âmbito, o contexto e as finalidades do tratamento; e os riscos para os direitos e liberdades do usuário.",
+                            "No entanto, este website se exime de responsabilidade por culpa exclusiva de terceiro, como em caso de ataque de hackers ou crackers ou culpa exclusiva do usuário, como no caso em que ele mesmo transfere seus dados a terceiro. Este website se compromete, ainda, a comunicar o usuário em prazo adequado caso ocorra algum tipo de violação da segurança de seus dados pessoais que possa lhe causar um alto risco para seus direitos e liberdades pessoais.",
+                            "A violação de dados pessoais é uma violação de segurança que provoque, de modo acidental ou ilícito, a destruição, a perda, a alteração, a divulgação e o acesso não autorizado a dados pessoais transmitidos, conservados ou sujeitos a qualquer outro tipo de tratamento.",
+                            "Por fim, este website se compromete a tratar os dados pessoais do usuário com confidencialidade, dentro dos limites legais."
+                        ]
+                    },
+                    {
+                        "title": [
+                            "dados de navegação (cookies)"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Cookies são pequenos arquivos de texto enviados pelo website ao computador do usuário e que nele ficam armazenados, com informações relacionadas à navegação do website.",
+                            "Por meio dos cookies, pequenas quantidades de informação são armazenadas pelo navegador do usuário para que nosso servidor possa lê-las posteriormente. Podem ser armazenados, por exemplo, dados sobre o dispositivo utilizado pelo usuário, bem como seu local e horário de acesso ao website",
+                            "Os cookies não permitem que qualquer arquivo ou informação sejam extraídos do disco rígido do usuário, não sendo possível, ainda, que, por meio deles, se tenha acesso a informações pessoais que não tenham partido do usuário ou da forma como utiliza os recursos do website.",
+                            "É importante ressaltar que nem todo cookie contém informações que permitam identificar um usuário, sendo que determinados tipos de cookies podem ser empregados simplesmente para que o website seja carregado corretamente ou para que suas funcionalidades operem de modo esperado.",
+                            "As informações eventualmente armazenadas em cookies que permitam identificar um usuário são consideradas dados pessoais. Dessa forma, todas as regras previstas nesta Política de Privacidade também lhe são aplicáveis.",
+                            "Cookies do website: são aqueles enviados ao computador ou dispositivo do usuário e administrados exclusivamente pelo website. As informações coletadas por meio desses cookies são utilizadas para melhorar e personalizar a experiência do usuário, sendo que alguns cookies podem, por exemplo,ser utilizados para lembrar as preferências e escolhas do usuário, bem como para oferecimento conteúdo personalizado. Estes dados de navegação poderão, ainda, ser compartilhados com eventuais parceiros do website, buscando o aprimoramento dos produtos e serviços ofertados ao usuário.",
+                            "Cookies  de redes sociais: este website utiliza plugins de redes sociais, que permitem acessá-las através do website. Assim, ao fazê-lo, os cookies utilizados por essas redes poderão ser armazenados no navegador do usuário.",
+                            "Cada rede social possui sua própria política de privacidade e de proteção de dados pessoais, sendo as pessoas físicas ou jurídicas que as mantêm responsáveis pelos dados coletados e pelas práticas de privacidade adotadas. O usuário pode pesquisar, junto às redes sociais, informações sobre como seus dados pessoais são tratados. A título informativo, disponibilizamos os seguintes links, a partir dos quais poderão ser consultadas as políticas de privacidade e de cookies adotadas por algumas das principais redes sociais:",
+                            [
+                                "https://www.facebook.com/policies/cookies",
+                                "https://help.instagram.com/519522125107875",
+                                "https://www.linkedin.com/legal/cookie-policy",
+                                "https://policy.pinterest.com/pt-br/privacy-policy",
+                                "https://twitter.com/pt/privacy",
+                                "https://policies.google.com/privacy?hl=pt-GB&gl=uk"
+                            ],
+                            "Gestão dos cookies e configurações do navegador: O usuário poderá se opor ao registro de cookies pelo nosso website, bastando que desative esta opção em seu próprio navegador. A desativação dos cookies, no entanto, pode afetar a disponibilidade de algumas ferramentas e funcionalidades do website, comprometendo seu correto e esperado funcionamento. Outra consequência possível é a remoção das preferências do usuário que eventualmente tiverem sido salvas, prejudicando sua experiência.",
+                            "A seguir, são disponibilizados alguns links para as páginas de ajuda e suporte dos navegadores mais utilizados, que poderão ser acessadas pelo usuário interessado em obter mais informações sobre a gestão de cookies  em seu navegador:",
+                            [
+                                "https://brave.com/privacy/browser/",
+                                "https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=pt-BR",
+                                "https://support.microsoft.com/pt-br/help/17442/windows-internet-explorer-delete-manage-cookies",
+                                "https://support.mozilla.org/pt-BR/kb/limpe-cookies-e-dados-de-sites-no-firefox",
+                                "https://help.opera.com/en/latest/security-and-privacy/",
+                                "https://support.apple.com/pt-br/guide/safari/sfri11471/mac"
+                            ]
+                        ]
+                    },
+                    {
+                        "title": [
+                            "das alterações"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "A presente versão desta Política de Privacidade foi atualizada pela última vez em 07/07/2023",
+                            "O editor se reserva no direito de modificar, a qualquer momento e sem qualquer aviso prévio, as presentes normas, especialmente para adaptá-las às evoluções do website MOMENTO CONEXÃO, seja pela disponibilização de novas funcionalidades, seja pela supressão ou modificação daquelas já existentes.",
+                            "Dessa forma, convida-se o usuário a consultar periodicamente esta página para verificar as atualizações.",
+                            "Ao utilizar o serviço após eventuais modificações, o usuário demonstra sua concordância com as novas normas. Caso discorde de alguma das modificações, deverá pedir, imediatamente, o cancelamento de sua conta e apresentar sua ressalva ao serviço de atendimento, se assim desejar."
+                        ]
+                    },
+                    {
+                        "title": [
+                            "do direito aplicável e do foro"
+                        ],
+                        "subtitle": [],
+                        "description": [
+                            "Para a solução das controvérsias decorrentes do presente instrumento, será aplicado integralmente o Direito Brasileiro.",
+                            "Os eventuais litígios deverão ser apresentados no foro da comarca em que se encontra a sede do proprietário do website."
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

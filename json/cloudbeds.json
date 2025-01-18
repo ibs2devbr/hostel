@@ -1,0 +1,67 @@
+[
+    {
+        "title": [
+            "Qual período você deseja hospedar-se?"
+        ],
+        "subtitle": [],
+        "description": [],
+        "action": "https://hotels.cloudbeds.com/en/reservation/nW1c28",
+        "id": "cloudbeds",
+        "method": "GET",
+        "target": "blank",
+        "container": [
+            [
+                {
+                    "disabled": false,
+                    "label": "checkin",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "input",
+                    "type": "date",
+                    "value": "+ 1"
+                },
+                {
+                    "disabled": false,
+                    "label": "checkout",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "input",
+                    "type": "date",
+                    "value": "+ 2"
+                },
+                {
+                    "disabled": false,
+                    "label": "reservar",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "button",
+                    "type": "submit",
+                    "value": ""
+                }
+            ],
+            [
+                {
+                    "disabled": false,
+                    "label": "limpar",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "button",
+                    "type": "button",
+                    "value": ""
+                }
+            ]
+        ]
+    }
+]

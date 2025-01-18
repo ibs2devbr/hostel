@@ -1,0 +1,153 @@
+$color-name: 'blue';
+$color-value: #0d6efd;
+$color-array: ();
+@for $i from 10 through 100 { @if $i % 10 == 0 { $color-array: append($color-array, mix($color-value, white, $i*1%)); }; };
+@for $i from 10 through 90 { @if $i % 10 == 0 { $color-array: append($color-array, mix(black, $color-value, $i*1%)); }; };
+$i: 10;
+@each $color in $color-array {
+    .#{$color-name}-#{if($i < 100, '0' + $i, $i)} {
+        // color: invert($color);
+        background-color: $color;
+    };
+    $i: $i + 10;
+};
+
+$color-name: 'indigo';
+$color-value: #6610f2;
+$color-array: ();
+@for $i from 10 through 100 { @if $i % 10 == 0 { $color-array: append($color-array, mix($color-value, white, $i*1%)); }; };
+@for $i from 10 through 90 { @if $i % 10 == 0 { $color-array: append($color-array, mix(black, $color-value, $i*1%)); }; };
+$i: 10;
+@each $color in $color-array {
+    .#{$color-name}-#{if($i < 100, '0' + $i, $i)} {
+        // color: invert($color);
+        background-color: $color;
+    };
+    $i: $i + 10;
+};
+
+$color-name: 'purple';
+$color-value: #6f42c1;
+$color-array: ();
+@for $i from 10 through 100 { @if $i % 10 == 0 { $color-array: append($color-array, mix($color-value, white, $i*1%)); }; };
+@for $i from 10 through 90 { @if $i % 10 == 0 { $color-array: append($color-array, mix(black, $color-value, $i*1%)); }; };
+$i: 10;
+@each $color in $color-array {
+    .#{$color-name}-#{if($i < 100, '0' + $i, $i)} {
+        // color: invert($color);
+        background-color: $color;
+    };
+    $i: $i + 10;
+};
+
+$color-name: 'pink';
+$color-value: #d63384;
+$color-array: ();
+@for $i from 10 through 100 { @if $i % 10 == 0 { $color-array: append($color-array, mix($color-value, white, $i*1%)); }; };
+@for $i from 10 through 90 { @if $i % 10 == 0 { $color-array: append($color-array, mix(black, $color-value, $i*1%)); }; };
+$i: 10;
+@each $color in $color-array {
+    .#{$color-name}-#{if($i < 100, '0' + $i, $i)} {
+        // color: invert($color);
+        background-color: $color;
+    };
+    $i: $i + 10;
+};
+
+$color-name: 'red';
+$color-value: #dc3545;
+$color-array: ();
+@for $i from 10 through 100 { @if $i % 10 == 0 { $color-array: append($color-array, mix($color-value, white, $i*1%)); }; };
+@for $i from 10 through 90 { @if $i % 10 == 0 { $color-array: append($color-array, mix(black, $color-value, $i*1%)); }; };
+$i: 10;
+@each $color in $color-array {
+    .#{$color-name}-#{if($i < 100, '0' + $i, $i)} {
+        // color: invert($color);
+        background-color: $color;
+    };
+    $i: $i + 10;
+};
+
+$color-name: 'orange';
+$color-value: #fd7e14;
+$color-array: ();
+@for $i from 10 through 100 { @if $i % 10 == 0 { $color-array: append($color-array, mix($color-value, white, $i*1%)); }; };
+@for $i from 10 through 90 { @if $i % 10 == 0 { $color-array: append($color-array, mix(black, $color-value, $i*1%)); }; };
+$i: 10;
+@each $color in $color-array {
+    .#{$color-name}-#{if($i < 100, '0' + $i, $i)} {
+        // color: invert($color);
+        background-color: $color;
+    };
+    $i: $i + 10;
+};
+
+$color-name: 'yellow';
+$color-value: #ffc107;
+$color-array: ();
+@for $i from 10 through 100 { @if $i % 10 == 0 { $color-array: append($color-array, mix($color-value, white, $i*1%)); }; };
+@for $i from 10 through 90 { @if $i % 10 == 0 { $color-array: append($color-array, mix(black, $color-value, $i*1%)); }; };
+$i: 10;
+@each $color in $color-array {
+    .#{$color-name}-#{if($i < 100, '0' + $i, $i)} {
+        // color: invert($color);
+        background-color: $color;
+    };
+    $i: $i + 10;
+};
+
+$color-name: 'green';
+$color-value: #198754;
+$color-array: ();
+@for $i from 10 through 100 { @if $i % 10 == 0 { $color-array: append($color-array, mix($color-value, white, $i*1%)); }; };
+@for $i from 10 through 90 { @if $i % 10 == 0 { $color-array: append($color-array, mix(black, $color-value, $i*1%)); }; };
+$i: 10;
+@each $color in $color-array {
+    .#{$color-name}-#{if($i < 100, '0' + $i, $i)} {
+        // color: invert($color);
+        background-color: $color;
+    };
+    $i: $i + 10;
+};
+
+$color-name: 'teal';
+$color-value: #20c997;
+$color-array: ();
+@for $i from 10 through 100 { @if $i % 10 == 0 { $color-array: append($color-array, mix($color-value, white, $i*1%)); }; };
+@for $i from 10 through 90 { @if $i % 10 == 0 { $color-array: append($color-array, mix(black, $color-value, $i*1%)); }; };
+$i: 10;
+@each $color in $color-array {
+    .#{$color-name}-#{if($i < 100, '0' + $i, $i)} {
+        // color: invert($color);
+        background-color: $color;
+    };
+    $i: $i + 10;
+};
+
+$color-name: 'cyan';
+$color-value: #0dcaf0;
+$color-array: ();
+@for $i from 10 through 100 { @if $i % 10 == 0 { $color-array: append($color-array, mix($color-value, white, $i*1%)); }; };
+@for $i from 10 through 90 { @if $i % 10 == 0 { $color-array: append($color-array, mix(black, $color-value, $i*1%)); }; };
+$i: 10;
+@each $color in $color-array {
+    .#{$color-name}-#{if($i < 100, '0' + $i, $i)} {
+        // color: invert($color);
+        background-color: $color;
+    };
+    $i: $i + 10;
+};
+
+$color-name: 'gray';
+$color-value: #adb5bd;
+$color-array: ();
+@for $i from 10 through 100 { @if $i % 10 == 0 { $color-array: append($color-array, mix($color-value, white, $i*1%)); }; };
+@for $i from 10 through 90 { @if $i % 10 == 0 { $color-array: append($color-array, mix(black, $color-value, $i*1%)); }; };
+$i: 10;
+@each $color in $color-array {
+    .#{$color-name}-#{if($i < 100, '0' + $i, $i)} {
+        // color: invert($color);
+        background-color: $color;
+    };
+    $i: $i + 10;
+};

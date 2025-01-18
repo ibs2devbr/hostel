@@ -1,0 +1,67 @@
+[
+    {
+        "title": [],
+        "subtitle": [],
+        "description": [],
+        "action": "https://booking.com/hotel/br/viva-hostel-design.pt-br.html",
+        "id": "booking",
+        "method": "GET",
+        "target": "blank",
+        "container": [
+            [
+                {
+                    "disabled": false,
+                    "label": "nome",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "input",
+                    "type": "text",
+                    "value": ""
+                }
+            ],
+            [
+                {
+                    "disabled": false,
+                    "label": "email",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "input",
+                    "type": "email",
+                    "value": ""
+                }
+            ],
+            [
+                {
+                    "disabled": false,
+                    "label": "whatsapp",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "input",
+                    "type": "tel",
+                    "value": ""
+                },
+                {
+                    "disabled": false,
+                    "label": "enviar",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "required": true,
+                    "rows": 1,
+                    "selector": "button",
+                    "type": "submit",
+                    "value": ""
+                }
+            ]
+        ]
+    }
+]

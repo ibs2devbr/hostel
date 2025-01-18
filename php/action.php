@@ -56,6 +56,23 @@
         return true;
     };
 
+    function HasFilledKeys ($is_input = []) {
+        foreach ($is_input as $is_key_i => $is_value_i):
+            if (IsArray ($is_value_i)):
+                if (IsIndexedArray ($is_value_i)): return true; else:
+                    foreach ($is_value_i as $is_key_j => $is_value_j):
+                        if (HasFilledKeys ($is_value_j)):
+                            return true;
+                        endif;
+                    endforeach;
+                endif;
+            elseif (IsTrue ($is_value_i)):
+                return true;
+            endif;
+        endforeach;        
+        return false;
+    };
+
     function IsButtonRow ($is_input = []) {
         if (isset ($is_input))
             if (is_array ($is_input))
@@ -87,22 +104,7 @@
         ];
     };
 
-    function HasFilledKeys ($is_input = []) {
-        foreach ($is_input as $is_key_i => $is_value_i):
-            if (IsArray ($is_value_i)):
-                if (IsIndexedArray ($is_value_i)): return true; else:
-                    foreach ($is_value_i as $is_key_j => $is_value_j):
-                        if (HasFilledKeys ($is_value_j)):
-                            return true;
-                        endif;
-                    endforeach;
-                endif;
-            elseif (IsTrue ($is_value_i)):
-                return true;
-            endif;
-        endforeach;        
-        return false;
-    };
+    
 
     function IsTrue ($is_input = []) {
         if (!isset ($is_input)) return false;

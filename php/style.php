@@ -51,18 +51,13 @@
 
     function GetPool () {
 
-
         $is_array = [];
 
         $is_border_ = [ 'border', 'border-1' ];
         $is_button_ = [ 'btn', 'button', 'cursor-pointer', 'm-0', 'p-2' ];
-        $is_text_ = [ 'd-inline-block', 'lh-1', 'm-0', 'p-0', 'text-center' ];
+        $is_text_ = [ 'd-inline', 'lh-1', 'm-0', 'p-0', 'text-center' ];
         $is_link_ = [ 'fw-medium', 'text-decoration-none', 'link-opacity-50-hover', 'nav-link' ];
         $is_wrap_ = [ 'd-flex', 'justify-content-center', 'm-0', 'w-100' ];
-
-
-
-
 
         foreach (FullCollection as $is_key => $is_color):
             $is_array = array_merge ($is_array, [ SetKey ([ 'button', $is_color ]) => [ ...$is_button_, ButtonSolid[$is_key] ] ]);
@@ -70,16 +65,8 @@
             $is_array = array_merge ($is_array, [ SetKey ([ 'link', $is_color ]) => [ ...$is_text_, ...$is_link_, LinkSolid[$is_key] ] ]);
         endforeach;
 
-
-
-
         foreach (Direction as $is_direction)
             $is_array = array_merge ($is_array, [ SetKey ([ 'wrap', 'set', $is_direction ]) => [ ...$is_wrap_, ...SetFlex ($is_direction) ] ]);
-
-
-
-
-
 
         foreach (SmallCollection as $is_key => $is_color):
             $is_emphasi = [ BackgroundSubtle[$is_key], BorderSubtle[$is_key], TextEmphasis[$is_key] ];
@@ -145,7 +132,7 @@
                     implode ('-', [ 'col', 'lg', $is_col ]),
                     'col-12',
                     'd-flex',
-                    'justify-content-center', 
+                    'justify-content-center',
                     'm-0'
                 ],
             ]);
@@ -185,14 +172,14 @@
     };
 
     if (IsPathExist ('pool.json')):
-        if (GetJsonFileComparator (GetPool (), 'pool.json')): else:
-            GetJsonFileCreator (GetPool (), 'pool.json');
+        if (SetJsonFileComparator (GetPool (), 'pool.json')): else:
+            SetJsonFileCreator (GetPool (), 'pool.json');
         endif;
     else:
-        GetJsonFileCreator (GetPool (), 'pool.json');
+        SetJsonFileCreator (GetPool (), 'pool.json');
     endif;
 
-    define ('P', GetFileArray ('pool.json'));
+    define ('P', ConvertFileToArray ('pool.json'));
 
     function GetClass ($is_input = '') {
         if (is_string ($is_input))
@@ -203,10 +190,9 @@
 
     function SetClass ($is_input = []) {
         if (IsArray (SetArray ($is_input))):
-            $is_input = SetArray ($is_input);
-            $is_input = array_unique ($is_input);
+            $is_input = array_values (array_unique (SetArray ($is_input)));
             sort ($is_input);
-            return SetAttrib (implode (' ', $is_input), 'class');
+            return SetAttrib ($is_input, 'class');
         endif;
         return [];
     };

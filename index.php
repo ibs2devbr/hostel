@@ -2,6 +2,11 @@
 
     include_once ('php/_include.php');
 
+    define ('Footer', [
+        ...GetWrapper (GetWidgetContainer ()),
+        ...GetWrapper (GetSignatureContainer ()),
+    ]);
+
     define ('Main', [
         ...GetWrapper (GetHeaderContainer ('headline'), [
             'selector' => 'header',
@@ -26,16 +31,11 @@
         ...GetWrapper (GetModalArticleContainer ('pontos turísticos')),
     ]);
 
-    define ('Footer', [
-        ...GetWrapper (GetWidgetContainer ()),
-        ...GetWrapper (GetSignatureContainer ()),
-    ]);
-
     define ('Body', [
-        // ...GetWrapper (GetNavbarContainer ([ 'serviços', 'cardápio', 'empresa', 'pontos turisticos' ]), [
-        //     'selector' => 'nav', 
-        //     'id' => 'navbar',
-        // ]),
+        ...GetWrapper (GetNavbarContainer ([ 'serviços', 'cardápio', 'empresa', 'pontos turisticos' ]), [
+            'selector' => 'nav', 
+            'id' => 'navbar',
+        ]),
         ...GetWrapper ([
             ...GetWrapper (Main, [ 'selector' => 'main' ]),
             ...GetWrapper (Footer, [ 'selector' => 'footer' ]),

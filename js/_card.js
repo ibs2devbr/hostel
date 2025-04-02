@@ -37,7 +37,7 @@ export const GetCardLoaded = () => {
                     if (CardWrapper.querySelector ('.card-content')) {
                         SetDisplayWrapper (Wrapper, {
                             'father' : CardWrapper.querySelector ('.card-content'),
-                            'wrapper-mouseover' : [ 'bg-black', 'border-black', 'shadow' ],
+                            'mouseover' : [ 'bg-black', 'border-black', 'shadow' ],
                         });
                     };
                     if (CardWrapper.querySelector ('.carousel'))

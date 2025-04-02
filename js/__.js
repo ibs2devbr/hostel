@@ -391,21 +391,19 @@ export const GetWindowHeight = () => Math.max (window['innerHeight'], window['sc
 
 export const GetWindowWidth = () => Math.max (window['innerWidth'], window['screen']['width']);
 
-export const GetFunction = {
-    'IsArray' : (Input = '') => IsArray (Input),
-    'IsBoolean' : (Input = '') => IsBoolean (Input),
-    'IsNumber' : (Input = '') => IsNumber (Input),
-    'IsString' : (Input = '') => IsString (Input),
-};
+// export const GetFunction = {
+//     'IsArray' : (Input = '') => IsArray (Input),
+//     'IsBoolean' : (Input = '') => IsBoolean (Input),
+//     'IsNumber' : (Input = '') => IsNumber (Input),
+//     'IsString' : (Input = '') => IsString (Input),
+// };
 
-export const GetNumber = (Input = '') => Input ? Input.match (/\d+/g).join('') : Input;
+export const GetNumber = (Input = '') => Input ? Input.match (/\d+/g).join ('') : Input;
 
 export const GetLetter = (Input = '') => Input.replace (/[^a-zA-Z]/, '').toString ();
 
-export const IsHex = Input => /^#[0-9a-fA-F]{6}$/.test (Input);
-
-export const HEXTORGB = (Input = '#ffffff') => {
-    if (!IsHex (Input)) return false;
+export const SetHexToRGB = (Input = '#ffffff') => {
+    if (!/^#[0-9a-fA-F]{6}$/.test (Input)) return false;
     const HexColor = Input.replace ('#', '');
     return {
         Red : parseInt (HexColor.slice (0, 2), 16),
@@ -414,15 +412,20 @@ export const HEXTORGB = (Input = '#ffffff') => {
     };
 };
 
-export const RGBTOHEX = (Red, Green, Blue) => {
-    const R = Red.toString (16).padStart (2, '0');
-    const G = Green.toString (16).padStart (2, '0');
-    const B = Blue.toString (16).padStart (2, '0');
+export const SetRGBToHex = (Color = []) => {
+    const R = Color[0].toString (16).padStart (2, '0');
+    const G = Color[1].toString (16).padStart (2, '0');
+    const B = Color[2].toString (16).padStart (2, '0');
     return `#${ R }${ G }${ B }`;
 };
 
+export const GetRGBArray = (Color = '') => {
+    const Array = Color.match (/\d+/g);
+    return Array ? Array.map (Number) : null;
+};
+
 export const GetGradient = (StartColor = '#ffff00', EndColor = '#ff0000', Step = 100) => {
-    const Array = [], Interval = {}, Gap = {}, Key = [ 'Red', 'Green', 'Blue' ], Start = HEXTORGB (StartColor), End = HEXTORGB (EndColor);
+    const Array = [], Interval = {}, Gap = {}, Key = [ 'Red', 'Green', 'Blue' ], Start = SetHexToRGB (StartColor), End = SetHexToRGB (EndColor);
     for (let i = 0; i < Key['length']; i++) {
         const Index = Key[i];
         Interval[Index] = (End[Index] - Start[Index]) / Step,
@@ -435,7 +438,7 @@ export const GetGradient = (StartColor = '#ffff00', EndColor = '#ff0000', Step =
             Color[Index] = Start[Index] + Gap[Index] * i;
             Target[Index] = Gap[Index] <= 0 ? (Color[Index] <= 0 ? 0 : Color[Index]) : (Color[Index] <= 255 ? Color[Index] : 255);
         };
-        Array.push (RGBTOHEX (Target['Red'], Target['Green'], Target['Blue']));
+        Array.push (SetRGBToHex ([ Target['Red'], Target['Green'], Target['Blue'] ]));
     };
     return Array;
 };
@@ -1307,11 +1310,11 @@ export const SetGlobalVariable = (Variable = '', Value = '') => {
 export const SetDisplayWrapper = (Append = '', Propertie = {}, CallBack = () => SetDisplayStartPosition ()) => {
     const Proper = {
         'father' : 'father' in Propertie ? Propertie['father'] : '',
-        'wrapper-mouseout' : 'wrapper-mouseout' in Propertie ? Propertie['wrapper-mouseout'] : [ 'bg-transparent', 'border-white' ],
-        'wrapper-mouseover' : 'wrapper-mouseover' in Propertie ? Propertie['wrapper-mouseover'] : [ 'bg-info', 'border-info', 'shadow' ],
+        'mouseout' : 'mouseout' in Propertie ? Propertie['mouseout'] : [ 'bg-transparent', 'border-white' ],
+        'mouseover' : 'mouseover' in Propertie ? Propertie['mouseover'] : [ 'bg-info', 'border-info', 'shadow' ],
     };
-    const DisplayWrapperMouseout = Proper['wrapper-mouseout'];
-    const DisplayWrapperMouseover = Proper['wrapper-mouseover'];
+    const DisplayWrapperMouseout = Proper['mouseout'];
+    const DisplayWrapperMouseover = Proper['mouseover'];
     const TextFrame = [ 'd-inline-block', 'font-monospace', 'fw-semibold', 'lh-1', 'm-0', 'p-0', 'text-white', 'text-start' ];
     const TextColorMouseout = [];
     const TextColorMouseover = [];

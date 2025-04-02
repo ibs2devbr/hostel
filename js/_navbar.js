@@ -5,15 +5,21 @@ import {
     GetScrollNumber,
     SetStyle,
     SetStyleTransition,
+    GetRGBArray,
+    SetRGBToHex
 } from './__.js';
-
 
 // export const ScrollBar = '#scroll';
 // export const Menu = '#menu';
 // export const PlusButton = '#plusbutton';
 // export const Wrapper = '#wrapper';
 
-export const ScrollGradient = GetGradient ('#ffc107', '#dc3545');
+export const ScrollColor = {
+    Start : SetRGBToHex (GetRGBArray (GetComputedStyle (document.querySelector ('#scroll'), 'background-color'))),
+    End : '#dc3545',
+};
+
+export const ScrollGradient = GetGradient (ScrollColor['Start'], ScrollColor['End']);
 
 export const GetScroller = () => {
     const ScrollNumber = GetScrollNumber () < 100 ? GetScrollNumber () : 100;
@@ -24,15 +30,13 @@ export const GetScroller = () => {
 };
 
 // export const PlusButtonBackground = {
-//     Start : GetComputedStyle (document.querySelector (Menu), 'background-color'),
+    // Start : GetComputedStyle (document.querySelector (Menu), 'background-color'),
 //     End : 'rgba(255, 255, 255, calc(.5 + .25 / 2))',
 // };
 
 // let Larger = 8 * 7;
 // let Smaller = parseInt (GetComputedStyle (document.querySelector (PlusButton), 'height').replace (/\D/g, ''));
 //     Smaller += 8 * 5;
-
-
 
 // export const SetPlusButton = (Input = 'Start') => {
 //     const True = [ 'Start' ].includes (Input);

@@ -374,7 +374,7 @@
         'top'
     ]);
 
-    define ('Pretext', [
+    define ('NoCamel', [
         'a',
         'à',
         'ante',
@@ -751,13 +751,21 @@
 
     function SetAttrib ($is_input = '', $is_attrib = 'id') {
         $is_input = SetArray ($is_input);
-        return array_map (function ($is_index) use ($is_input) {
-            return implode ('', [
-                ' ', $is_index, '=\'',
-                    in_array ($is_index, [ 'class', 'style' ]) ? implode (' ', $is_input) : implode ('', $is_input),
-                '\'',
-            ]);
-        }, SetArray ($is_attrib));
+        return [
+            ...IsArray ($is_input) ? [
+                ...IsArray (SetArray ($is_attrib)) ? [
+                    ...array_map (function ($is_index) use ($is_input) {
+                        return implode ('', [
+                            ' ', $is_index, '=\'',
+                                in_array ($is_index, [ 'class', 'style' ]) ? implode (' ', $is_input) : implode ('', $is_input),
+                            '\'',
+                        ]);
+                    }, SetArray ($is_attrib)),
+                ] : [
+                ],
+            ] : [
+            ],
+        ];
     };
 
     function SetID ($is_input = '') {
@@ -806,7 +814,7 @@
         $is_input = explode (' ', $is_input);
         return implode (' ', array_map (function ($is_index) use ($is_input) {
             if (sizeof ($is_input) < 2): return ucfirst ($is_index);
-            elseif (in_array ($is_index, Pretext)): return strtolower ($is_index);
+            elseif (in_array ($is_index, NoCamel)): return strtolower ($is_index);
             else: return ucfirst ($is_index); endif;
         }, $is_input));
     };
@@ -938,7 +946,7 @@
     function SetLink ($is_href = '', $is_textnode = '') {
         if (IsURL ($is_href))
             return implode ('', [
-                '<a', ...SetAttrib ($is_href, 'href'), ...SetAttrib ('_blank', 'target'), ...SetClass ([]), '>',
+                '<a', ...SetAttrib ($is_href, 'href'), ...SetAttrib ('_blank', 'target'), '>',
                     IsString ($is_textnode) ? SetCamel ($is_textnode) : SetCamel ($is_href),
                 '</a>',
             ]);
@@ -1176,11 +1184,11 @@
         ];
     };
 
-    function GetModalContainerList ($is_input = '') {
+    function GetModalListContainer ($is_input = '') {
         return IsArray (GetJsonFile ($is_input)) ? array_map (function ($is_index) use ($is_input) {
             $is_function = SetTarget ([ 'get', 'modal', $is_input, 'container' ]);
             if (function_exists ($is_function))
-                return implode ('', GetModalContainer ([ 'content' => ($is_function) ($is_index, 'modal'), 'title' => $is_index ]));
+                return implode ('', GetModalContainer ([ 'content' => ($is_function) ($is_index), 'title' => $is_index ]));
         }, GetJsonFile ($is_input)) : [];
     };
 
@@ -1188,32 +1196,19 @@
         $is_content = ConvertFileToArray (SetJsonFilename ($is_input));
         return IsArray ($is_content) ? [
             '<main',
-                ...SetClass ([
-                    ...in_array ($is_stage, [ 'card' ]) ? [ 'card-inner' ] : [],
-                    ...in_array ($is_stage, [ 'modal' ]) ? [] : [],
-                    ...in_array ($is_stage, [ 'front' ]) ? [ 'mt-3' ] : [],
-                    ...in_array ($is_stage, [ 'inside' ]) ? [] : [],
-                    ...P['Gap05'],
-                    ...P['WrapSetCol'],
-                    'p-0',
-                ]),
+                ...SetClass ([ 'mt-3', 'p-0', ...P['Gap05'], ...P['WrapSetCol'] ]),
             '>',
                 ...array_map (function ($is_index, $is_key) use ($is_stage) {
                     return implode ('', [
                         '<section', ...SetClass ([ 'p-0', ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
                             ...in_array ($is_stage, [ 'modal' ]) ? GetHeadline ([ 'lineup' => 'start', 'content' => $is_index, 'heading' => 3 ]) : [],
                             '<article',
-                                ...SetClass ([
-                                    ...in_array ($is_stage, [ 'card' ]) ? [ 'card-item' ] : [],
-                                    ...in_array ($is_stage, [ 'card', 'inside' ]) ? [ ...$is_key ? [ 'mt-3' ] : [], 'p-0' ] : [],
-                                    ...in_array ($is_stage, [ 'front' ]) ? [ 'p-3', ...P['WrapSetCol'], ...P['WrapColorLight'] ] : [],
-                                    ...P['Gap03'],
-                                ]),
+                                ...SetClass ([ 'p-3', ...P['WrapSetCol'], ...P['WrapColorLight'], ...P['Gap03'] ]),
                             '>',
-                                ...in_array ($is_stage, [ 'card', 'inside', 'front' ]) ? GetHeadline ([ 'content' => $is_index, 'heading' => 3 ]) : [],
+                                ...GetHeadline ([ 'content' => $is_index, 'heading' => 3 ]),
                                 ...IsKeyFilled ($is_index, 'container') ? [
                                     '<form',
-                                        ...SetClass ([ ...in_array ($is_stage, [ 'card' ]) ? [ 'card-form' ] : [], ...P['Gap02'], ...P['WrapSetCol'] ]),
+                                        ...SetClass ([ ...P['Gap02'], ...P['WrapSetCol'] ]),
                                         ...GetFormAttrib (GetProper ($is_index, [ 'action', 'id', 'method', 'target' ])),
                                     '>',
                                         ...array_map (function ($is_index) {
@@ -1451,60 +1446,52 @@
         ];
     };
 
-    function GetButton () {
-        return [
-            '<div',
-                ...SetAttrib ('navbar-icon'),
-                ...SetClass ([
-                    'align-items-center',
-                    'd-lg-none',
-                    'd-flex',
-                    'justify-content-center',
-                    'bg-secondary',
-                ]),
-                ...SetStyle ([
-                    'border-radius' => '50%', 
-                    'cursor' => 'default', 
-                    'height' => '3rem',
-                    'width' => '3rem',
-                ]),
-            '>',
-                '<i',
-                    ...SetClass ([ 'bi-arrow-down-up', 'bi', 'fw-bold', 'text-white' ]),
-                    ...SetStyle ([ 'font-size' => '1.25rem' ]),
-                '>',
-                '</i>',
-            '</div>',
-        ];
-    };
+    // FABIO
 
     function GetScrollBar () {
         return [
             '<div',
                 ...SetAttrib ('scroll-bar'),
-                ...SetClass ([
-                    'bg-black',
-                    'd-flex',
-                    'fixed-top',
-                    'justify-content-start',
-                    'position-fixed',
-                    'start-0',
-                    'top-0',
-                    'w-100',
-                ]),
+                ...SetClass ([ 'bg-black', 'd-flex', 'fixed-top', 'justify-content-start', 'position-fixed', 'start-0', 'top-0', 'w-100' ]),
                 ...SetStyle ([ 'height' => '.5rem', 'z-index' => 5 ]),
             '>',
                 '<div', 
                     ...SetAttrib ('scroll'),
                     ...SetClass ([ 'd-flex', 'justify-content-end' ]),
-                    ...SetStyle ([
-                        'background-color' => '#ffff00',
-                        'height' => '.25rem',
-                        'width' => '0',
-                    ]),
+                    ...SetStyle ([ 'background-color' => '#ffc107', 'height' => '.25rem', 'width' => '0' ]),
                 '>',
                 '</div>',
             '</div>',
+        ];
+    };
+
+    function GetDotButton ($is_input = []) {
+        $is_proper = GetProper ($is_input, [ 'class', 'id' ], '');
+        return [
+            ...IsString ($is_proper['class']) ? [
+                '<div',
+                    ...SetAttrib ($is_proper['id']),
+                    ...SetClass ([
+                        'align-items-center',
+                        'd-flex',
+                        'justify-content-center',
+                        'bg-secondary',
+                    ]),
+                    ...SetStyle ([
+                        'border-radius' => '50%', 
+                        'cursor' => 'default', 
+                        'height' => '3rem',
+                        'width' => '3rem',
+                    ]),
+                '>',
+                    '<i',
+                        ...SetClass ([ 'bi', 'fw-bold', 'text-white', $is_proper['class'] ]),
+                        ...SetStyle ([ 'font-size' => '1.25rem' ]),
+                    '>',
+                    '</i>',
+                '</div>',
+            ] : [
+            ],
         ];
     };
 
@@ -1520,7 +1507,8 @@
                     'd-flex',
                     'flex-column',
                     'justify-content-center',
-                    'p-3',
+                    'px-3',
+                    'py-0',
                     'position-fixed',
                     'w-100',
                 ]),
@@ -1530,21 +1518,44 @@
                     'z-index' => 5,
                 ]),
             '>',
-                ...GetButton (),
-                '<div', ...SetClass ([ 'justify-content-center', ...P['Gap02'], ...P['WrapSetRow'] ]), '>',
-                    ...array_map (function ($is_index) {
-                        return implode ('', [
-                            '<a',
-                                ...SetClass ([ 'text-lg-start', ...P['Link'] ]),
-                                ...SetAttrib ('#', 'href'),
-                                ...SetAttrib ([ '#', SetTarget ([ $is_index, 'target' ]) ], 'data-bs-target'),
-                                ...SetAttrib ('modal', 'data-bs-toggle'),
-                                ...SetStyle ([ 'color' => '#212529' ]),
-                            '>',
-                                SetCamel ($is_index),
-                            '</a>',
-                        ]);
-                    }, SetArray ($is_input)),
+
+                '<div', ...SetClass ([ 'align-items-center', 'd-flex', 'd-lg-none', 'flex-column', 'justify-content-center', 'my-3', 'w-100' ]), '>',
+                    ...GetDotButton ([ 'class' => 'bi-arrow-down-up', 'id' => 'navbar-icon' ]),
+                '</div>',
+
+                '<div',
+                    ...SetAttrib ('hidden'),
+                    ...SetClass ([ 'd-flex', 'flex-column', 'justify-content-center', 'overflow-hidden', 'w-100' ]),
+                    // ...SetStyle ([ 'height' => '0' ]),
+                '>',
+                    '<div',
+                        ...SetClass ([
+                            'd-flex',
+                            'flex-column',
+                            'flex-lg-row',
+                            'flex-lg-wrap',
+                            'gap-3',
+                            'row-gap-2',
+                            'grid',
+                            'justify-content-center',
+                            'm-0',
+                            'w-100',
+                        ]),
+                    '>',
+                        ...array_map (function ($is_index) {
+                            return implode ('', [
+                                '<a',
+                                    ...SetClass ([ ...P['Link'] ]),
+                                    ...SetAttrib ('#', 'href'),
+                                    ...SetAttrib ([ '#', SetTarget ([ $is_index, 'target' ]) ], 'data-bs-target'),
+                                    ...SetAttrib ('modal', 'data-bs-toggle'),
+                                    ...SetStyle ([ 'color' => '#212529' ]),
+                                '>',
+                                    SetCamel ($is_index),
+                                '</a>',
+                            ]);
+                        }, SetArray ($is_input)),
+                    '</div>',
                 '</div>',
             '</div>',
         ] : [
@@ -1572,19 +1583,10 @@
 
     function GetDisplay ($is_input = []) {
         $is_proper = GetProper ($is_input, [ 'discount', 'url', 'value' ]);
-        $is_divisor = 3;
-        $is_discount = 0;
-        if (is_numeric ($is_proper['discount'])):
-            $is_discount = $is_proper['discount'];
-        endif;
-        $is_url = '';
-        if (is_string ($is_proper['url'])):
-            $is_url = preg_match ('/^https:\/\/mpago\.la\/[a-zA-Z0-9]+$/', $is_proper['url']) ? $is_proper['url'] : '';
-        endif;
-        $is_value = 0;
-        if (is_numeric ($is_proper['value'])):
-            $is_value = $is_proper['value'];
-        endif;
+        $is_divisor = 3; $is_discount = 0; $is_url = ''; $is_value = 0;
+        if (is_numeric ($is_proper['discount'])): $is_discount = $is_proper['discount']; endif;
+        if (is_string ($is_proper['url'])): $is_url = preg_match ('/^https:\/\/mpago\.la\/[a-zA-Z0-9]+$/', $is_proper['url']) ? $is_proper['url'] : ''; endif;
+        if (is_numeric ($is_proper['value'])): $is_value = $is_proper['value']; endif;
         $is_final = $is_value - $is_value / 100 * $is_discount;
         return [
             ...$is_final && $is_url ? [
@@ -2188,6 +2190,18 @@
         }));
     };
 
+    function GetModalContratoContainer ($is_input = []) {
+        return GetModalAccordionContentTemplate ($is_input, 'GetModalContratoContent');
+    };
+
+    function GetModalCatalogoContainer ($is_input = []) {
+        return GetModalAccordionContentTemplate ($is_input, 'GetModalCatalogoContent');
+    };
+
+    function GetModalInstitutionalContainer ($is_input = []) {
+        return GetModalAccordionContentTemplate ($is_input, 'GetModalInstitutionalContent');
+    };
+
     function GetModalContratoContent ($is_input = []) {
         return IsArray ($is_input) ? [
             ...GetAccordionHeadline ([
@@ -2208,8 +2222,7 @@
                 'content' => $is_input,
                 'heading' => 5,
                 'lineup' => 'start',
-            ]),            
-            ...GetDisplay (GetProper ($is_input, [ 'discount', 'url', 'value' ])),
+            ]),
         ] : [
         ];
     };
@@ -2223,34 +2236,6 @@
             ]),
         ] : [
         ];
-    };
-
-    function GetModalLocalizacaoContent ($is_input = []) {
-        return IsArray ($is_input) ? [
-            ...KeyExist ($is_input, 'gallery') ? GetSlider ($is_input['gallery'], 15) : [],
-            ...GetAccordionHeadline ([
-                'content' => $is_input,
-                'heading' => 5,
-                'lineup' => 'start',
-            ]),
-        ] : [
-        ];
-    };
-
-    function GetModalContratoContainer ($is_input = []) {
-        return GetModalAccordionContentTemplate ($is_input, 'GetModalContratoContent');
-    };
-
-    function GetModalCatalogoContainer ($is_input = []) {
-        return GetModalAccordionContentTemplate ($is_input, 'GetModalCatalogoContent');
-    };
-
-    function GetModalInstitutionalContainer ($is_input = []) {
-        return GetModalAccordionContentTemplate ($is_input, 'GetModalInstitutionalContent');
-    };
-
-    function GetModalLocalizacaoContainer ($is_input = []) {
-        return GetModalAccordionContentTemplate ($is_input, 'GetModalLocalizacaoContent');
     };
 
     function GetModalAccordionContentTemplate ($is_input = [], $is_function = '') {

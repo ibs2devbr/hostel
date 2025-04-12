@@ -454,12 +454,6 @@ export const SetAttribNode = (Propertie = {}) => {
     Proper['element'].setAttributeNode (Attrib);
 };
 
-export const SetAttribNode_ = (Element = '', Attribute = '', Value = '') => {
-    var Attrib = document.createAttribute (Attribute);
-    Attrib['value'] = Value;
-    Element.setAttributeNode (Attrib);
-};
-
 export const SetStyle = (Element = '', Propertie = {}) => {
     Object.keys (Propertie).map (Key => {
         if (AttributeCamelCase.includes (Key))

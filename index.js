@@ -2,19 +2,15 @@ import cssnano from 'cssnano';
 
 import { readFileSync, writeFileSync } from 'fs';
 
-async function SetMinify () {
-    const FilePath = './css/';
-    const FileExtension = '.css';
-    const FileName = [ FilePath, 'style', FileExtension ].join ('');
-    const FileMinified = [ FilePath, 'minify', FileExtension ].join ('');
+async function setMinify () {
     try {
-        const Result = await cssnano.process (readFileSync (FileName, 'utf8'), {
-            from : FileName,
+        const result = await cssnano.process (readFileSync ('./css/style.css', 'utf8'), {
+            from : './css/style.css',
         });
-        writeFileSync (FileMinified, Result.css);
-    } catch (Error) {
-        console.error (Error);
+        writeFileSync ('./css/minify.css', result.css);
+    } catch (error) {
+        console.error (error);
     };
 };
 
-SetMinify ();
+setMinify ();

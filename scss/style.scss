@@ -1,11 +1,11 @@
-$size: 12px;
-
 $color-black: #131314;
 $color-white: #ffffff;
 $color-dark: #1e1f20;
 $color-light: #f4f2ee;
 $color-info: #0dcaf0;
 $color-danger: #dc3545;
+
+@import 'button.scss';
 
 @import 'color.scss';
 

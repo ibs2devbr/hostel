@@ -1,7 +1,11 @@
 <?php
-
-    include_once ('php/_include.php');
-
+    $is_array = array_values (array_filter (scandir ('php'), function ($is_index) {
+        if (!preg_match ('/^_/', $is_index)) return pathinfo ($is_index)['extension'] === 'php'; }));
+    if (!empty ($is_array))
+        for ($i = 0; $i < sizeof ($is_array); $i++)
+            include_once (implode ('/', [ '.', 'php', $is_array[$i] ]));
+?>
+<?php
     function SetGroupContainer ($is_input = [], $is_button = [ 'copiar' ]) {
         return [
             ...IsArray(SetArray ($is_input)) ? [ 
@@ -59,7 +63,7 @@
     ]);
 
     echo implode ('', GetHtmlContainer (Body, [
-        'left-margin' => 5,
+        'margin' => 5,
         'style' => 'minify.css',
         'script' => [ 'pool.js', 'script.js' ],
     ]));

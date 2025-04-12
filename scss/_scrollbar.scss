@@ -4,7 +4,7 @@
     position: fixed;
     right: 0;
     top: 0;
-    width: $size;
+    width: 12px;
 }
 
 ::-webkit-scrollbar-track {
@@ -13,7 +13,7 @@
 
 ::-webkit-scrollbar-thumb {
     background-color: #{ $color-black };
-    border-radius: $size / 2;
+    border-radius: 6px;
     width: 100%;
 }
 

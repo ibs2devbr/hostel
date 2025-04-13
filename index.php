@@ -231,6 +231,7 @@
     ]);
 
     define ('defineSelector', [
+        ...array_map (function ($i) { return implode ('', [ 'h', $i ]); }, range (1, 6)),
         'a',
         'abbr',
         'acronym',
@@ -276,12 +277,6 @@
         'form',
         'frame',
         'frameset',
-        'h1',
-        'h2',
-        'h3',
-        'h4',
-        'h5',
-        'h6',
         'head',
         'header',
         'hgroup',
@@ -551,7 +546,7 @@
             elseif (isTrue ($is_value_i)):
                 return true;
             endif;
-        endforeach;        
+        endforeach;
         return false;
     };
 
@@ -675,15 +670,11 @@
             return $is_number;
     };
 
-    function validExpressionPattern (string $is_input = ''): bool|string {
+    function isExpression (string $is_input = ''): bool|string {
         $is_pattern = '/^';
         $is_pattern .= '[+-]?';
         $is_pattern .= ' ';
         $is_pattern .= '(0|[1-9][0-9]{0,2})';
-        // $is_pattern .= ' ';
-        // $is_pattern .= implode (' ', array_map (function ($is_index) {
-        //     return implode (' ', [ '[+\-*\/]', '(0|[1-9][0-9]{0,2})' ]);
-        // }, range (1, 2)));
         $is_pattern .= ' ';
         $is_pattern .= '[+\-*\/]';
         $is_pattern .= ' ';
@@ -701,10 +692,10 @@
     };
 
     function setExpressionDate (string $is_input = '- 1 * 18'): string {
-        if (validExpressionPattern ($is_input)):
+        if (isExpression ($is_input)):
             $is_result = 0;
             date_default_timezone_set ('America/Sao_Paulo');
-            $is_array = explode (' ', validExpressionPattern ($is_input));
+            $is_array = explode (' ', isExpression ($is_input));
             for ($i = 0; $i < sizeof ($is_array); $i++):
                 if (in_array ($is_array[$i], [ '+' ])) $is_result += floatval ($is_array[$i + 1]);
                 if (in_array ($is_array[$i], [ '-' ])) $is_result -= floatval ($is_array[$i + 1]);
@@ -730,10 +721,8 @@
         return false;
     };
 
-    // FABIO
-
-    function setStyleLines (string $is_input = 'style.json'): array {
-        $is_input = [ ...convertJsonfileToArray ($is_input), ...isThereAnyPath ('css') ];
+    function setStyleArray (string $is_input = 'style.json'): array {
+        $is_input = [ ...jsonfileToArray ($is_input), ...isThereAnyPath ('css') ];
         if (isArray (setArray ($is_input))):
             return array_map (function ($is_index) {
                 return implode ('', [
@@ -748,8 +737,8 @@
         return [];
     };
 
-    function setScriptLines (string $is_input = 'script.json'): array {
-        $is_input = [ ...convertJsonfileToArray ($is_input), ...isThereAnyPath ('js') ];
+    function setScriptArray (string $is_input = 'script.json'): array {
+        $is_input = [ ...jsonfileToArray ($is_input), ...isThereAnyPath ('js') ];
         if (isArray (setArray ($is_input))):
             return array_map (function ($is_index) {
                 return implode ('', [
@@ -764,14 +753,7 @@
         return [];
     };
 
-
-
-
-
-
-
-
-    function SetResize ($is_input = '') {
+    function setResize ($is_input = '') {
         if (!is_dir ('./temp'))
             mkdir ('./temp', 0777, true);
         $is_filename = pathinfo ($is_input)['filename'] . '.' . pathinfo ($is_input)['extension'];
@@ -782,7 +764,7 @@
         return str_replace (rootAddress (), './', $is_to);
     };
 
-    function setAttrib ($is_input = '', $is_attrib = 'id') {
+    function setAttrib (array|string $is_input = '', array|string $is_attrib = 'id'): array {
         $is_input = setArray ($is_input);
         return [
             ...isArray ($is_input) ? [
@@ -821,10 +803,6 @@
         return implode ('', $is_input);
     };
 
-    function SetKey (array|string $is_input = ''): string {
-        return setTarget ($is_input);
-    };
-
     function setCamelcase (array|string $is_input = ''): string {
         $is_input = implode (' ', setArray ($is_input));
         $is_input = preg_replace ('/\s+/', ' ', $is_input);
@@ -838,7 +816,7 @@
 
     function SetHead ($is_input = [], $is_head = 5) {
         $is_head = in_array ($is_head, range (1, 6)) ? $is_head : 5;
-        return [ '<h' . $is_head, ...SetClass (P['H' . $is_head]), '>', setCamelcase ($is_input), '</h' . $is_head . '>' ];
+        return [ '<h' . $is_head, ...setClass (P['H' . $is_head]), '>', setCamelcase ($is_input), '</h' . $is_head . '>' ];
     };
 
     function setTonicSyllable (string $is_input = ''): string {
@@ -864,8 +842,18 @@
         return trim ($is_input);
     };
 
-    function convertJsonfileToArray (string $is_input = ''): array {
-        return getFileContents ($is_input) ? objectToArray (json_decode (getFileContents ($is_input))) : [];
+    function isFiletype (string $is_input = '', string $is_type = 'json'): bool {
+        if (in_array ($is_type, [ 'html', 'jpeg', 'jpg', 'json', 'php', 'png', 'txt' ])):
+            return preg_match ('/^.*\.(' . $is_type . ')$/i', $is_input);
+        endif;
+        return false;
+    };
+
+    function jsonfileToArray (string $is_input = ''): array {
+        if (isFiletype ($is_input, 'json')):
+            return getFileContents ($is_input) ? objectToArray (json_decode (getFileContents ($is_input))) : [];
+        endif;
+        return [];
     };
 
     function getFileContents (string $is_input = ''): string {
@@ -874,13 +862,13 @@
         return [];
     };
 
-    function setJsonfileCreator (array $is_array = [], string $is_filename = '') {
+    function arrayToJsonfile (array $is_array = [], string $is_input = '') {
         if (isArray ($is_array)):
-            if (isTheKeyExists (pathinfo ($is_filename), 'extension')):
-                if (pathinfo ($is_filename)['extension'] === 'json'):
-                    $is_dir = setDir (pathinfo ($is_filename)['extension']);
+            if (isTheKeyExists (pathinfo ($is_input), 'extension')):
+                if (pathinfo ($is_input)['extension'] === 'json'):
+                    $is_dir = setDir (pathinfo ($is_input)['extension']);
                     if (!is_dir ($is_dir)) mkdir ($is_dir, 0755, true);
-                    $is_fopen = fopen (implode ('/', [ '.', $is_dir, $is_filename ]), 'w');
+                    $is_fopen = fopen (implode ('/', [ '.', $is_dir, $is_input ]), 'w');
                     fwrite ($is_fopen, json_encode ($is_array));
                     fclose ($is_fopen);
                 endif;
@@ -888,16 +876,16 @@
         endif;
     };
 
-    function SetJsonFileComparator (array $is_array = [], string $is_filename = ''): bool {
+    function jsonfileComparator (array $is_array = [], string $is_input = ''): bool {
         if (isArray ($is_array)):
-            if (isString ($is_filename)):
-                return json_encode ($is_array) === json_decode (getFileContents ($is_filename));
+            if (isFiletype ($is_input, 'json')):
+                return json_encode ($is_array) === json_decode (getFileContents ($is_input));
             endif;
         endif;
         return false;
     };
 
-    function doesThePathExist ($is_input = []) {
+    function doesThePathExist (array|string $is_input = []): string {
         return file_exists (setPath ($is_input)) ? setPath ($is_input) : '';
     };
 
@@ -908,9 +896,9 @@
         }, setArray ($is_input)));
     };
 
-    function setPath ($is_filename = '') {
-        if (isFilename ($is_filename))
-            return implode ('/', [ setDir (pathinfo ($is_filename)['extension']), isFilename ($is_filename) ]);
+    function setPath (string $is_input = ''): string {
+        if (isFilename ($is_input))
+            return implode ('/', [ '.', setDir (pathinfo ($is_input)['extension']), isFilename ($is_input) ]);
         return '';
     };
 
@@ -933,7 +921,7 @@
         return $is_result;
     };
 
-    function getFileArray (string $is_input = 'html'): array {
+    function getFileAddressesArray (string $is_input = 'html'): array {
         if (isString ($is_input))
             return array_values (array_filter (scandir (setDir ($is_input)), function ($is_index) use ($is_input) {
                 if (in_array (pathinfo ($is_index)['extension'], [ $is_input ]))
@@ -945,7 +933,7 @@
     };
 
     function isThereAnyPath (string $is_input = 'html'): array {
-        return array_map (function ($i) { return doesThePathExist ($i); }, getFileArray ($is_input));
+        return array_map (function ($i) { return doesThePathExist ($i); }, getFileAddressesArray ($is_input));
     };
 
     function formAttrib (array $is_input = []): array {
@@ -997,7 +985,7 @@
     function GetCarouselIndicator ($is_input = []) {
         $is_proper = setProper ($is_input, [ 'content', 'id' ]);
         return sizeof ($is_proper['content']) > 1 ? [
-            '<div', ...SetClass ([ 'carousel-indicators', 'mx-auto', 'mb-3', ...P['Gap01'] ]), '>',
+            '<div', ...setClass ([ 'carousel-indicators', 'mx-auto', 'mb-3', ...P['Gap01'] ]), '>',
                 ...array_map (function ($is_index, $is_key) use ($is_proper) {
                     return implode ('', [
                         '<button',
@@ -1005,7 +993,7 @@
                             ...setAttrib (implode (' ', [ 'Slide', ($is_key + 1) ]), 'aria-label'),
                             ...setAttrib (implode ('', [ '#', $is_proper['id'] ]), 'data-bs-target'),
                             ...setAttrib ('button', 'type'),
-                            ...SetClass ([ 'border', 'border-0', ...!$is_key ? [ 'active' ] : [] ]),
+                            ...setClass ([ 'border', 'border-0', ...!$is_key ? [ 'active' ] : [] ]),
                             ' data-bs-slide-to=\'', $is_key, '\'',
                         '>',
                         '</button>',
@@ -1018,10 +1006,10 @@
 
     function GetCarouselContainer ($is_input = []) {
         $is_id = setRandomPassword ();
-        $is_input = convertJsonfileToArray (SetJsonFilename ($is_input));
+        $is_input = jsonfileToArray (SetJsonFilename ($is_input));
         $is_attrib = [ 'content' => $is_input, 'id' => $is_id ];
         return isArray ($is_input) ? [
-            '<div', ...setAttrib ($is_id, 'id'), ...SetClass (SetCarouselWrapper ()), '>',
+            '<div', ...setAttrib ($is_id, 'id'), ...setClass (SetCarouselWrapper ()), '>',
                 ...GetCarouselIndicator ($is_attrib),
                 ...GetCarouselInner ($is_input),
                 ...GetCarouselButton ($is_attrib),
@@ -1031,7 +1019,16 @@
     };
 
     function GetDivider () {
+
+        // FABIO
+
         return [
+
+
+            // ...setWrapper ([
+
+            // ]),
+
             '<div',
                 ...SetStyle ([
                     'height' => '3rem',
@@ -1050,14 +1047,14 @@
         return [
             ...isArray ($is_input) ? [
                 '<article',
-                    ...SetClass ([ 'carousel-inner', 'h-100', 'w-100' ]),
+                    ...setClass ([ 'carousel-inner', 'h-100', 'w-100' ]),
                     ...SetStyle (GetStyle ('min-height')),
                 '>',
                     ...array_map (function ($is_index, $is_key) {
                         return implode ('', [
                             '<div',
                                 ...setAttrib (5000, 'data-bs-interval'),
-                                ...SetClass ([ ...!$is_key ? [ 'active' ] : [], 'carousel-item', 'h-100', 'w-100' ]),
+                                ...setClass ([ ...!$is_key ? [ 'active' ] : [], 'carousel-item', 'h-100', 'w-100' ]),
                                 ...SetStyle ([
                                     ...GetStyle ('box-shadow'),
                                     ...GetStyle ('min-height'),
@@ -1065,7 +1062,7 @@
                                 ]),
                             '>',
                                 '<div',
-                                    ...SetClass ([
+                                    ...setClass ([
                                         'align-items-center',
                                         'carousel-caption',
                                         'd-flex',
@@ -1084,7 +1081,7 @@
                                         'width' => 'calc(100% - 4rem * 2)',
                                     ]),
                                 '>',
-                                    '<div', ...SetClass (P['Col06']), '>',
+                                    '<div', ...setClass (P['Col06']), '>',
                                         ...GetHeadline ([
                                             'color' => 'white',
                                             'content' => $is_index,
@@ -1109,7 +1106,7 @@
         return sizeof ($is_proper['content']) > 1 ? array_map (function ($is_index) use ($is_proper) {
             return implode ('', [
                 '<button',
-                    ...SetClass ([ implode ('-', [ 'carousel', 'control', $is_index ]), 'mx-3', 'p-0' ]),
+                    ...setClass ([ implode ('-', [ 'carousel', 'control', $is_index ]), 'mx-3', 'p-0' ]),
                     ...SetStyle ([ 'width' => 'auto' ]),
                     ...setAttrib ('button', 'type'),
                     ...setAttrib ($is_index, 'data-bs-slide'),
@@ -1117,7 +1114,7 @@
                 '>',
                     '<span',
                         ...setAttrib ('true', 'aria-hidden'),
-                        ...SetClass ([ implode ('-', [ 'carousel', 'control', $is_index, 'icon' ]) ]),
+                        ...setClass ([ implode ('-', [ 'carousel', 'control', $is_index, 'icon' ]) ]),
                     '>',
                     '</span>',
                     '<span class=\'visually-hidden\'>', '</span>',
@@ -1127,27 +1124,27 @@
         ];
     };
 
-    function GetModalContainer ($is_input = []) {
+    function getModalContainer ($is_input = []) {
         $is_proper = setProper ($is_input, [ 'content', 'title', 'type' ]);
         return isTrue ($is_proper['title']) && isTrue ($is_proper['content']) ? [
             '<div',
-                ...SetClass ([ 'modal', 'fade' ]),
+                ...setClass ([ 'modal', 'fade' ]),
                 ...setAttrib (setTarget ([ $is_proper['title'], 'label' ]), 'aria-labelledby'),
                 ...setAttrib ('true', 'aria-hidden'),
                 ...setAttrib ('-1', 'tabindex'),
                 ' id=\'', setTarget ([ $is_proper['title'], 'target' ]), '\'',
             '>',
-                '<div', ...SetClass ([ 'modal-dialog-centered', 'modal-dialog-scrollable', 'modal-dialog', 'modal-fullscreen' ]), '>',
-                    '<div', ...SetClass ([ 'modal-content', ...P['WrapSetCol'] ]), '>',
+                '<div', ...setClass ([ 'modal-dialog-centered', 'modal-dialog-scrollable', 'modal-dialog', 'modal-fullscreen' ]), '>',
+                    '<div', ...setClass ([ 'modal-content', ...P['WrapSetCol'] ]), '>',
                         '<button',
-                            ...SetClass ([ 'btn-close', 'position-absolute', 'z-3' ]),
+                            ...setClass ([ 'btn-close', 'position-absolute', 'z-3' ]),
                             ...SetStyle ([ 'right' => '24px', 'top' => '12px' ]),
                             ...setAttrib ('modal', 'data-bs-dismiss'),
                             ...setAttrib ('button', 'type'),
                         '>',
                         '</button>',
-                        '<div', ...SetClass ([ 'modal-body', 'modal-center', 'px-3', 'px-lg-5', 'py-5' ]), '>',
-                            '<div', ...SetClass ([ ...P['WrapSetCol'], ...P['Gap05'] ]), '>',
+                        '<div', ...setClass ([ 'modal-body', 'modal-center', 'px-3', 'px-lg-5', 'py-5' ]), '>',
+                            '<div', ...setClass ([ ...P['WrapSetCol'], ...P['Gap05'] ]), '>',
                                 ...setArray ($is_proper['content']),
                             '</div>',
                         '</div>',
@@ -1163,7 +1160,7 @@
     };
 
     function GetHeaderContainer ($is_input = []) {
-        $is_input = convertJsonfileToArray (SetJsonFilename ($is_input));
+        $is_input = jsonfileToArray (SetJsonFilename ($is_input));
         $is_archive = '';
         if (isTheKeyExists ($is_input, 'thumbnail'))
             $is_archive = doesThePathExist ($is_input['thumbnail']);
@@ -1176,7 +1173,7 @@
         return isArray ($is_input) ? [
             '<div',
                 ...setAttrib ('wrap'),
-                ...SetClass ([ 'flex-lg-row', 'gap-lg-3', 'p-5', ...P['WrapSetCol'] ]),
+                ...setClass ([ 'flex-lg-row', 'gap-lg-3', 'p-5', ...P['WrapSetCol'] ]),
                 ...SetStyle ([ ...GetStyle ('background-image', isThereAnyPath ('jpg')), ...GetStyle ('box-shadow') ]),
             '>',
                 ...isString ($is_archive) ? [
@@ -1199,38 +1196,38 @@
         ];
     };
 
-    function GetModalListContainer ($is_input = '') {
-        return isArray (GetJsonFile ($is_input)) ? array_map (function ($is_index) use ($is_input) {
+    function getModalContainerArray ($is_input = '') {
+        return isArray (getJsonfile ($is_input)) ? array_map (function ($is_index) use ($is_input) {
             $is_function = setTarget ([ 'get', 'modal', $is_input, 'container' ]);
             if (function_exists ($is_function))
-                return implode ('', GetModalContainer ([ 'content' => ($is_function) ($is_index), 'title' => $is_index ]));
-        }, GetJsonFile ($is_input)) : [];
+                return implode ('', getModalContainer ([ 'content' => ($is_function) ($is_index), 'title' => $is_index ]));
+        }, getJsonfile ($is_input)) : [];
     };
 
     function GetModalFormularioContainer ($is_input = '', $is_stage = 'front') {
-        $is_content = convertJsonfileToArray (SetJsonFilename ($is_input));
+        $is_content = jsonfileToArray (SetJsonFilename ($is_input));
         return isArray ($is_content) ? [
             '<main',
-                ...SetClass ([ 'mt-3', 'p-0', ...P['Gap05'], ...P['WrapSetCol'] ]),
+                ...setClass ([ 'mt-3', 'p-0', ...P['Gap05'], ...P['WrapSetCol'] ]),
             '>',
                 ...array_map (function ($is_index, $is_key) use ($is_stage) {
                     return implode ('', [
-                        '<section', ...SetClass ([ 'p-0', ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
+                        '<section', ...setClass ([ 'p-0', ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
                             ...in_array ($is_stage, [ 'modal' ]) ? GetHeadline ([ 'lineup' => 'start', 'content' => $is_index, 'heading' => 3 ]) : [],
                             '<article',
-                                ...SetClass ([ 'p-3', ...P['WrapSetCol'], ...P['WrapColorLight'], ...P['Gap03'] ]),
+                                ...setClass ([ 'p-3', ...P['WrapSetCol'], ...P['WrapColorLight'], ...P['Gap03'] ]),
                             '>',
                                 ...GetHeadline ([ 'content' => $is_index, 'heading' => 3 ]),
                                 ...isTheKeyFilled ($is_index, 'container') ? [
                                     '<form',
-                                        ...SetClass ([ ...P['Gap02'], ...P['WrapSetCol'] ]),
+                                        ...setClass ([ ...P['Gap02'], ...P['WrapSetCol'] ]),
                                         ...formAttrib (setProper ($is_index, [ 'action', 'id', 'method', 'target' ])),
                                     '>',
                                         ...array_map (function ($is_index) {
                                             return implode ('', isArray ($is_index) ? [
-                                                '<div', ...SetClass (P['WrapSetCol']), '>',
+                                                '<div', ...setClass (P['WrapSetCol']), '>',
                                                     ...!theButtonRow ($is_index) ? [
-                                                        '<div', ...SetClass (P['WrapSetRow']), ...SetStyle ([ 'min-height' => '12px' ]), '>',
+                                                        '<div', ...setClass (P['WrapSetRow']), ...SetStyle ([ 'min-height' => '12px' ]), '>',
                                                             ...array_map (function ($is_element) use ($is_index) {
                                                                 $is_title = $is_element['label'];
                                                                 if (in_array ($is_element['label'], [ 'arrival', 'checkin' ])) $is_title = 'Data de chegada';
@@ -1244,11 +1241,11 @@
                                                                     return implode ('', [
                                                                         '<label',
                                                                             ...setAttrib ($is_element['label'], 'for'),
-                                                                            ...SetClass ([ 'px-2', ...P['HtmlLabel'] ]),
+                                                                            ...setClass ([ 'px-2', ...P['HtmlLabel'] ]),
                                                                             ...SetStyle ([ 'width' => 'calc(100% / ' . sizeof ($is_index) . ')', 'min-height' => '12px' ]),
                                                                         '>',
                                                                             ...!in_array ($is_element['type'], [ 'button', 'submit' ]) ? [
-                                                                                '<p', ...SetClass (P['Text']), ...SetStyle ([ 'min-height' => '12px' ]), '>',
+                                                                                '<p', ...setClass (P['Text']), ...SetStyle ([ 'min-height' => '12px' ]), '>',
                                                                                     setCamelcase ($is_title),
                                                                                 '</p>',
                                                                             ] : [
@@ -1260,8 +1257,8 @@
                                                         '</div>',
                                                     ] : [
                                                     ],
-                                                    ...theButtonRow ($is_index) ? [ '<div', ...SetClass (P['WrapSetToolbar']), '>' ] : [],
-                                                        '<div', ...SetClass (theButtonRow ($is_index) ? P['WrapSetButton'] : P['WrapSetInput']), '>',
+                                                    ...theButtonRow ($is_index) ? [ '<div', ...setClass (P['WrapSetToolbar']), '>' ] : [],
+                                                        '<div', ...setClass (theButtonRow ($is_index) ? P['WrapSetButton'] : P['WrapSetInput']), '>',
                                                             ...array_map (function ($is_element) use ($is_index) {
                                                                 $is_option = [];
                                                                 if (in_array ($is_element['selector'], [ 'select' ]))
@@ -1273,12 +1270,12 @@
                                                                             '<',
                                                                                 $is_element['selector'],
                                                                                 ...in_array ($is_element['selector'], [ 'button' ]) ? [
-                                                                                    ...SetClass (P['LineButtonLight']),
+                                                                                    ...setClass (P['LineButtonLight']),
                                                                                     ...in_array ($is_element['label'], [ 'fechar' ]) ? setAttrib ('modal', 'data-bs-dismiss') : [],
                                                                                 ] : [
                                                                                 ],
                                                                                 ...!in_array ($is_element['selector'], [ 'button' ]) ? [
-                                                                                    ...SetClass (P['HtmlInput']),
+                                                                                    ...setClass (P['HtmlInput']),
                                                                                     ...setAttrib ($is_element['label'], 'name'),
                                                                                 ] : [
                                                                                 ],
@@ -1325,7 +1322,7 @@
                                                     ...theButtonRow ($is_index) ? [ '</div>' ] : [],
                                                 '</div>',
                                             ] : [
-                                                '<hr', ...SetClass (P['HtmlHr']), ...SetStyle ([ 'border-top' => 'dotted 2px #000' ]), '>',
+                                                '<hr', ...setClass (P['HtmlHr']), ...SetStyle ([ 'border-top' => 'dotted 2px #000' ]), '>',
                                             ]);
                                         }, $is_index['container']),
                                     '</form>',
@@ -1341,21 +1338,21 @@
     };
 
     function GetModalCardContainer ($is_input = []) {
-        return GetModalContainerTemplate ($is_input, 'GetModalCardTemplate');
+        return getModalContainerTemplate ($is_input, 'GetModalCardTemplate');
     };
 
     function GetModalAccordionContainer ($is_input = []) {
-        return GetModalContainerTemplate ($is_input, 'GetModalAccordionTemplate');
+        return getModalContainerTemplate ($is_input, 'GetModalAccordionTemplate');
     };
 
     function GetModalArticleContainer ($is_input = []) {
-        return GetModalContainerTemplate ($is_input, 'GetModalArticleTemplate');
+        return getModalContainerTemplate ($is_input, 'GetModalArticleTemplate');
     };
 
     function GetLink ($is_input = []) {
         return [
             '<a',
-                ...SetClass ([ ...P['Link'] ]),
+                ...setClass ([ ...P['Link'] ]),
                 ...setAttrib ('#', 'href'),
                 ...setAttrib ([ '#', setTarget ([ $is_input, 'target' ]) ], 'data-bs-target'),
                 ...setAttrib ('modal', 'data-bs-toggle'),
@@ -1375,16 +1372,16 @@
         return [
             ...isArray (setArray ($is_input)) ? [
                 ...isArray (setArray ($is_input)) ? [
-                    '<div', ...SetClass ([ 'row-gap-3', 'm-0', 'px-5', 'py-3', ...P['Gap00'], ...P['WrapSetRow'] ]), '>',
+                    '<div', ...setClass ([ 'row-gap-3', 'm-0', 'px-5', 'py-3', ...P['Gap00'], ...P['WrapSetRow'] ]), '>',
                         ...array_map (function ($is_index) use ($is_number) {
                             return implode ('', [
-                                '<div', ...SetClass ([ 'p-0', 'flex-column', ...P[$is_number], ...P['Gap01'] ]), '>',
-                                    '<h5', ...SetClass ([ 'text-lg-start', ...P['H5'] ]), '>', setCamelcase ($is_index), '</h5>',
-                                    '<div', ...SetClass ([ 'justify-content-center', 'justify-content-lg-start', 'row-gap-1', ...P['Gap02'], ...P['WrapSetRow'] ]), '>',
+                                '<div', ...setClass ([ 'p-0', 'flex-column', ...P[$is_number], ...P['Gap01'] ]), '>',
+                                    '<h5', ...setClass ([ 'text-lg-start', ...P['H5'] ]), '>', setCamelcase ($is_index), '</h5>',
+                                    '<div', ...setClass ([ 'justify-content-center', 'justify-content-lg-start', 'row-gap-1', ...P['Gap02'], ...P['WrapSetRow'] ]), '>',
                                         ...array_map (function ($is_index) {
                                             return implode ('', [
                                                 '<a',
-                                                    ...SetClass ([ 'text-lg-start', ...P['Link'] ]),
+                                                    ...setClass ([ 'text-lg-start', ...P['Link'] ]),
                                                     ...setAttrib ('#', 'href'),
                                                     ...setAttrib ([ '#', setTarget ([ $is_index, 'target' ]) ], 'data-bs-target'),
                                                     ...setAttrib ('modal', 'data-bs-toggle'),
@@ -1392,7 +1389,7 @@
                                                     setCamelcase ($is_index),
                                                 '</a>',
                                             ]);
-                                        }, GetJsonFile ($is_index)),
+                                        }, getJsonfile ($is_index)),
                                     '</div>',
                                 '</div>',
                             ]);
@@ -1400,9 +1397,9 @@
                     '</div>',
                 ] : [
                 ],
-                '<div', ...SetClass ([ 'px-5', 'pb-5', ...P['WrapSetCol'] ]), '>',
-                    '<div', ...SetClass ([ 'border-top', ...P['WrapSetCol'] ]), '>',
-                        '<p', ...SetClass ([ 'text-lg-start', ...P['Text'] ]), '>',
+                '<div', ...setClass ([ 'px-5', 'pb-5', ...P['WrapSetCol'] ]), '>',
+                    '<div', ...setClass ([ 'border-top', ...P['WrapSetCol'] ]), '>',
+                        '<p', ...setClass ([ 'text-lg-start', ...P['Text'] ]), '>',
                             implode (' ', [ '©', date ('Y'), 'Company,', 'Inc.', 'All', 'rights', 'reserved.' ]),
                         '</p>',
                     '</div>',
@@ -1421,19 +1418,19 @@
         $is_proper = setProper ($is_input, [ 'cnpj', 'link', 'name' ]);
         return [
             ...isString ($is_proper['name']) || IsCNPJ ($is_proper['cnpj']) ? [
-                '<div', ...SetClass ([ 'p-3', ...P['WrapSetCol'], ...P['WrapColorDark'] ]), '>',
-                    '<ul', ...SetClass ([ 'navbar-nav', 'p-0', ...P['Gap01'], ...P['WrapSetCol'] ]), '>',
+                '<div', ...setClass ([ 'p-3', ...P['WrapSetCol'], ...P['WrapColorDark'] ]), '>',
+                    '<ul', ...setClass ([ 'navbar-nav', 'p-0', ...P['Gap01'], ...P['WrapSetCol'] ]), '>',
                         ...isString ($is_proper['name']) ? [
-                            '<li', ...SetClass ([ 'd-inline-block', 'lh-1', 'm-0', 'nav-item', 'p-0', 'text-center' ]), '>',
-                                ...isURL ($is_proper['link']) ? [ '<a', ...SetClass (P['Link']), ...setAttrib ($is_proper['link'], 'href'), '>' ] : [],
+                            '<li', ...setClass ([ 'd-inline-block', 'lh-1', 'm-0', 'nav-item', 'p-0', 'text-center' ]), '>',
+                                ...isURL ($is_proper['link']) ? [ '<a', ...setClass (P['Link']), ...setAttrib ($is_proper['link'], 'href'), '>' ] : [],
                                     setCamelcase ($is_proper['name']),
                                 ...isURL ($is_proper['link']) ? [ '</a>' ] : [],
                             '</li>',
                         ] : [
                         ],
                         ...IsCNPJ ($is_proper['cnpj']) ? [
-                            '<li', ...SetClass ([ 'd-inline-block', 'lh-1', 'm-0', 'nav-item', 'p-0', 'text-center' ]), '>',
-                                ...isURL ($is_proper['link']) ? [ '<a', ...SetClass (P['Link']), ...setAttrib ($is_proper['link'], 'href'), '>' ] : [],
+                            '<li', ...setClass ([ 'd-inline-block', 'lh-1', 'm-0', 'nav-item', 'p-0', 'text-center' ]), '>',
+                                ...isURL ($is_proper['link']) ? [ '<a', ...setClass (P['Link']), ...setAttrib ($is_proper['link'], 'href'), '>' ] : [],
                                     IsCNPJ ($is_proper['cnpj']),
                                 ...isURL ($is_proper['link']) ? [ '</a>' ] : [],
                             '</li>',
@@ -1451,7 +1448,7 @@
             ...isArray (setArray ($is_input)) ? [
                 ...array_map (function ($is_index) {
                     return implode ('', [
-                        '<li', ...SetClass (P['NavItem']), '>',
+                        '<li', ...setClass (P['NavItem']), '>',
                             ...GetLink ($is_index),
                         '</li>',
                     ]);
@@ -1467,12 +1464,12 @@
         return [
             '<div',
                 ...setAttrib ('scroll-bar'),
-                ...SetClass ([ 'bg-black', 'd-flex', 'fixed-top', 'justify-content-start', 'position-fixed', 'start-0', 'top-0', 'w-100' ]),
+                ...setClass ([ 'bg-black', 'd-flex', 'fixed-top', 'justify-content-start', 'position-fixed', 'start-0', 'top-0', 'w-100' ]),
                 ...SetStyle ([ 'height' => '.5rem', 'z-index' => 5 ]),
             '>',
                 '<div', 
                     ...setAttrib ('scroll'),
-                    ...SetClass ([ 'd-flex', 'justify-content-end' ]),
+                    ...setClass ([ 'd-flex', 'justify-content-end' ]),
                     ...SetStyle ([ 'background-color' => '#ffc107', 'height' => '.25rem', 'width' => '0' ]),
                 '>',
                 '</div>',
@@ -1486,7 +1483,7 @@
             ...isString ($is_proper['class']) ? [
                 '<div',
                     ...setAttrib ($is_proper['id']),
-                    ...SetClass ([
+                    ...setClass ([
                         'align-items-center',
                         'd-flex',
                         'justify-content-center',
@@ -1500,7 +1497,7 @@
                     ]),
                 '>',
                     '<i',
-                        ...SetClass ([ 'bi', 'fw-bold', 'text-white', $is_proper['class'] ]),
+                        ...setClass ([ 'bi', 'fw-bold', 'text-white', $is_proper['class'] ]),
                         ...SetStyle ([ 'font-size' => '1.25rem' ]),
                     '>',
                     '</i>',
@@ -1517,7 +1514,7 @@
             ...GetScrollBar (),
             '<div',
                 ...setAttrib ('navbar-container'),
-                ...SetClass ([
+                ...setClass ([
                     'align-items-center',
                     'd-flex',
                     'flex-column',
@@ -1534,17 +1531,17 @@
                 ]),
             '>',
 
-                '<div', ...SetClass ([ 'align-items-center', 'd-flex', 'd-lg-none', 'flex-column', 'justify-content-center', 'my-3', 'w-100' ]), '>',
+                '<div', ...setClass ([ 'align-items-center', 'd-flex', 'd-lg-none', 'flex-column', 'justify-content-center', 'my-3', 'w-100' ]), '>',
                     ...GetDotButton ([ 'class' => 'bi-arrow-down-up', 'id' => 'navbar-icon' ]),
                 '</div>',
 
                 '<div',
                     ...setAttrib ('hidden'),
-                    ...SetClass ([ 'd-flex', 'flex-column', 'justify-content-center', 'overflow-hidden', 'w-100' ]),
+                    ...setClass ([ 'd-flex', 'flex-column', 'justify-content-center', 'overflow-hidden', 'w-100' ]),
                     // ...SetStyle ([ 'height' => '0' ]),
                 '>',
                     '<div',
-                        ...SetClass ([
+                        ...setClass ([
                             'd-flex',
                             'flex-column',
                             'flex-lg-row',
@@ -1560,7 +1557,7 @@
                         ...array_map (function ($is_index) {
                             return implode ('', [
                                 '<a',
-                                    ...SetClass ([ ...P['Link'] ]),
+                                    ...setClass ([ ...P['Link'] ]),
                                     ...setAttrib ('#', 'href'),
                                     ...setAttrib ([ '#', setTarget ([ $is_index, 'target' ]) ], 'data-bs-target'),
                                     ...setAttrib ('modal', 'data-bs-toggle'),
@@ -1577,19 +1574,22 @@
         ];
     };
 
-    function GetWrapper ($is_input = [], $is_propertie = []) {
-        $is_proper = setProper ($is_propertie, [ 'selector', 'id' ], '');
-        $is_id = is_string ($is_proper['id']) ? $is_proper['id'] : '';
-        $is_selector = in_array ($is_proper['selector'], defineSelector) ? $is_proper['selector'] : 'section';
-        return isArray (setArray ($is_input)) ? [
-            '<',
-                $is_selector,
-                ...SetClass ([ ...P['WrapSetCol'] ]),
-                ...$is_id ? setAttrib ($is_id) : [],
-            '>',
-                ...setArray ($is_input),
-            '</', $is_selector, '>',
-        ] : [
+    // FABIO
+
+    function setWrapper (array $is_input = [], array $is_attrib = []): array {
+        $is_proper = setProper ($is_attrib, [ 'id', 'wrap' ]);
+        $is_wrap = in_array ($is_proper['wrap'], defineSelector) ? $is_proper['wrap'] : 'div';
+        return [
+            ...isArray ($is_input) ? [
+                '<',
+                    $is_wrap,
+                    ...setClass ([ ...P['WrapSetCol'] ]),
+                    ...isString ($is_proper['id']) ? setAttrib ($is_proper['id']) : [],
+                '>',
+                    ...$is_input,
+                '</', $is_wrap, '>',
+            ] : [
+            ],
         ];
     };
 
@@ -1607,7 +1607,7 @@
         return [
             ...$is_final && $is_url ? [
                 '<section',
-                    ...SetClass ([
+                    ...setClass ([
                         ...[ 'bg-dark-subtle', 'border-dark-subtle' ],
                         'align-items-center',
                         'border-1',
@@ -1622,41 +1622,41 @@
                     ...SetStyle ([ 'width' => 'fit-content' ]),
                 '>',
                     ...$is_discount ? [
-                        '<p', ...SetClass ([ 'wrapper-principal', ...P['TextSetDisabled'], ...P['TextSetMono'] ]), ...SetStyle ([ 'width' => 'fit-content' ]), '>',
-                            'R$', '<span', ...SetClass ([ 'principal' ]), '>', GetNumberFormat ($is_value), '</span>',
+                        '<p', ...setClass ([ 'wrapper-principal', ...P['TextSetDisabled'], ...P['TextSetMono'] ]), ...SetStyle ([ 'width' => 'fit-content' ]), '>',
+                            'R$', '<span', ...setClass ([ 'principal' ]), '>', GetNumberFormat ($is_value), '</span>',
                         '</p>',
                     ] : [
                     ],
-                    '<div', ...SetClass ([ 'wrapper-valor', ...P['WrapSetRow'] ]), ...SetStyle ([ 'width' => 'fit-content' ]), '>',
-                        '<h3', ...SetClass ([ 'wrapper-negociado', ...P['H3'], ...P['TextSetMono'] ]), '>',
-                            'R$', '<span', ...SetClass ([ 'negociado' ]), '>', GetNumberFormat ($is_final), '</span>',
+                    '<div', ...setClass ([ 'wrapper-valor', ...P['WrapSetRow'] ]), ...SetStyle ([ 'width' => 'fit-content' ]), '>',
+                        '<h3', ...setClass ([ 'wrapper-negociado', ...P['H3'], ...P['TextSetMono'] ]), '>',
+                            'R$', '<span', ...setClass ([ 'negociado' ]), '>', GetNumberFormat ($is_final), '</span>',
                         '</h3>',
                         ...$is_discount ? [
-                            '<h6', ...SetClass ([ 'wrapper-desconto', 'ms-1', 'mt-1', ...P['H6'], ...P['TextSetMono'] ]), '>',
-                                '%off', '<span', ...SetClass ([ 'desconto' ]), '>', GetNumberFormat ($is_discount), '</span>',
+                            '<h6', ...setClass ([ 'wrapper-desconto', 'ms-1', 'mt-1', ...P['H6'], ...P['TextSetMono'] ]), '>',
+                                '%off', '<span', ...setClass ([ 'desconto' ]), '>', GetNumberFormat ($is_discount), '</span>',
                             '</h6>',
                         ] : [
                         ],
                     '</div>',
                     ...$is_divisor ? [
-                        '<p', ...SetClass ([ 'wrapper-parcelado', ...P['Text'], ...P['TextSetMono'] ]), ...SetStyle ([ 'width' => 'fit-content' ]), '>',
-                            'Em ', $is_divisor, ' x R$', '<span', ...SetClass ([ 'parcelado' ]), '>', GetNumberFormat ($is_final / $is_divisor), '</span>', ' sem juros.',
+                        '<p', ...setClass ([ 'wrapper-parcelado', ...P['Text'], ...P['TextSetMono'] ]), ...SetStyle ([ 'width' => 'fit-content' ]), '>',
+                            'Em ', $is_divisor, ' x R$', '<span', ...setClass ([ 'parcelado' ]), '>', GetNumberFormat ($is_final / $is_divisor), '</span>', ' sem juros.',
                         '</p>',
                     ] : [
                     ],
                     ...$is_value - $is_final ? [
-                        '<p', ...SetClass ([ 'wrapper-economia', ...P['Text'], ...P['TextSetMono'] ]), ...SetStyle ([ 'width' => 'fit-content' ]), '>',
-                            'Economia de R$', '<span', ...SetClass ([ 'economia' ]), '>', GetNumberFormat ($is_value - $is_final), '</span>', '.',
+                        '<p', ...setClass ([ 'wrapper-economia', ...P['Text'], ...P['TextSetMono'] ]), ...SetStyle ([ 'width' => 'fit-content' ]), '>',
+                            'Economia de R$', '<span', ...setClass ([ 'economia' ]), '>', GetNumberFormat ($is_value - $is_final), '</span>', '.',
                         '</p>',
                     ] : [
                     ],
                 '</section>',
-                '<section', ...SetClass ([ 'btn-toolbar' ]), '>',
-                    '<div', ...SetClass ([ 'btn-group' ]), '>',
+                '<section', ...setClass ([ 'btn-toolbar' ]), '>',
+                    '<div', ...setClass ([ 'btn-group' ]), '>',
                         '<a',
                             ...setAttrib ('_blank', 'target'),
                             ...setAttrib ($is_url, 'href'),
-                            ...SetClass ([ 'btn', 'btn-outline-light' ]),
+                            ...setClass ([ 'btn', 'btn-outline-light' ]),
                         '>',
                             'Pagar',
                         '</a>',
@@ -1686,13 +1686,13 @@
         $is_input = hasValidPath ($is_input);
         $is_attrib = [ 'content' => $is_input, 'id' => $is_id ];
         return [ ...$is_input ] ? [
-            '<div', ...setAttrib ($is_id), ...SetClass (SetCarouselWrapper ()), ...SetStyle ([ 'min-height' => $is_height . 'rem' ]), '>',
+            '<div', ...setAttrib ($is_id), ...setClass (SetCarouselWrapper ()), ...SetStyle ([ 'min-height' => $is_height . 'rem' ]), '>',
                 ...GetCarouselIndicator ($is_attrib),
-                '<div', ...SetClass ([ 'carousel-inner', 'h-100', 'w-100' ]), '>',
+                '<div', ...setClass ([ 'carousel-inner', 'h-100', 'w-100' ]), '>',
                     ...array_map (function ($is_index, $is_key) use ($is_height) {
                         return implode ('', [
                             '<div',
-                                ...SetClass ([ ...!$is_key ? [ 'active' ] : [], 'carousel-item', 'h-100', 'w-100' ]),
+                                ...setClass ([ ...!$is_key ? [ 'active' ] : [], 'carousel-item', 'h-100', 'w-100' ]),
                                 ...SetStyle ([
                                     ...GetStyle ('background-image', $is_index),
                                     'min-height' => $is_height . 'rem',
@@ -1712,7 +1712,7 @@
         $is_proper = GetHeadlineProper ($is_input);
         return isArray ($is_proper['content']) ? [
             '<ul',
-                ...SetClass ([
+                ...setClass ([
                     'bg-transparent',
                     'd-flex',
                     'flex-column',
@@ -1739,7 +1739,7 @@
                     $is_number++;
                     return implode ('', isString ($is_index) ? [
                         '<li',
-                            ...SetClass ([
+                            ...setClass ([
                                 ...in_array ($is_proper['lineup'], [ 'start' ]) ? [ 'text-lg-start' ] : [],
                                 ...in_array ($is_proper['lineup'], [ 'end' ]) ? [ 'text-lg-end' ] : [],
                                 ...in_array ($is_proper['bullet'], [ 'yes' ]) ? [ 'list-group-item', 'px-0', 'py-2' ] : [ 'p-0' ],
@@ -1774,7 +1774,7 @@
                     $is_head = in_array ($is_input['heading'], range (1, 6)) ? 'h' . $is_input['heading'] : 'p';
                     return implode ('', [
                         '<', $is_head,
-                            ...SetClass ([
+                            ...setClass ([
                                 'title',
                                 ...GetSubstring (FontWeight, $is_input['weight']),
                                 ...GetSubstring (TextSolid, $is_input['color']),
@@ -1813,7 +1813,7 @@
                 ...array_map (function ($is_index) use ($is_input) {
                     return implode ('', [
                         '<p',
-                            ...SetClass ([
+                            ...setClass ([
                                 'subtitle',
                                 ...GetSubstring (FontWeight, $is_input['weight']),
                                 ...GetSubstring (TextSolid, $is_input['color']),
@@ -1864,7 +1864,7 @@
             if (isArray (setArray ($is_proper['content']['description'])))
                 $is_description = true;
         $is_content = [
-            ...$is_description ? [ '<div', ...SetClass (P['WrapSetCol']), '>' ] : [],
+            ...$is_description ? [ '<div', ...setClass (P['WrapSetCol']), '>' ] : [],
                 ...GetHeadlineTitle ($is_proper),
                 ...GetHeadlineSubtitle ($is_proper),
             ...$is_description ? [ '</div>' ] : [],
@@ -1873,7 +1873,7 @@
         return [
             ...isArray ($is_content) ? [
                 '<header',
-                    ...SetClass ([
+                    ...setClass ([
                         ...P['Gap01'],
                         ...P['WrapSetCol'],
                         ...in_array ($is_proper['padding'], range (1, 5)) ? [ 'px-' . $is_proper['padding'] ] : [],
@@ -1896,7 +1896,7 @@
             if (isArray (setArray ($is_proper['content']['description'])))
                 $is_description = true;
         $is_content = [
-            ...$is_description ? [ '<div', ...SetClass (P['WrapSetCol']), '>' ] : [],
+            ...$is_description ? [ '<div', ...setClass (P['WrapSetCol']), '>' ] : [],
                 ...$is_subtitle || $is_description ? GetHeadlineTitle ($is_proper) : [],
                 ...GetHeadlineSubtitle ($is_proper),
             ...$is_description ? [ '</div>' ] : [],
@@ -1905,7 +1905,7 @@
         return [
             ...isArray ($is_content) ? [
                 '<header',
-                    ...SetClass ([
+                    ...setClass ([
                         ...P['Gap01'],
                         ...P['WrapSetCol'],
                         ...in_array ($is_proper['padding'], range (1, 5)) ? [ 'px-' . $is_proper['padding'] ] : [],
@@ -1944,7 +1944,7 @@
     function GetAccordionBody ($is_input = []) {
         return [
             ...isArray ($is_input) ? [
-                '<div', ...SetClass ([ 'accordion-body', 'm-0', 'p-3', ...P['Gap03'], ...P['WrapSetCol'], ...P['WrapColorLight'] ]), '>',
+                '<div', ...setClass ([ 'accordion-body', 'm-0', 'p-3', ...P['Gap03'], ...P['WrapSetCol'], ...P['WrapColorLight'] ]), '>',
                     ...$is_input,
                 '</div>',
             ] : [
@@ -1955,20 +1955,20 @@
     function GetModalAccordionTemplate ($is_input = []) {
         $is_master = setRandomPassword ();
         return implode ('', [
-            '<article', ...setAttrib ($is_master, 'id'), ...SetClass ([ 'accordion', ...P['Col12'], ...P['Gap03'] ]), '>',
+            '<article', ...setAttrib ($is_master, 'id'), ...setClass ([ 'accordion', ...P['Col12'], ...P['Gap03'] ]), '>',
                 ...GetHeadlineTemplate ($is_input, 4),
                 ...isTheKeyExists ($is_input, 'container') ? [
                     ...thereAreFilledKeys ($is_input['container']) ? [
-                        '<section', ...SetClass (P['WrapSetCol']), '>',
+                        '<section', ...setClass (P['WrapSetCol']), '>',
                             ...array_map (function ($is_index) use ($is_master) {
                                 $is_slave = setRandomPassword ();
                                 return implode ('', [
-                                    '<article', ...SetClass ([ 'accordion-item', 'w-100' ]), '>',
+                                    '<article', ...setClass ([ 'accordion-item', 'w-100' ]), '>',
                                         ...isTheKeyExists ($is_index, 'title') ? [
                                             ...istrue ($is_index['title']) ? [
-                                                '<h2', ...SetClass ([ 'accordion-header', 'm-0', 'p-0' ]), '>',
+                                                '<h2', ...setClass ([ 'accordion-header', 'm-0', 'p-0' ]), '>',
                                                     '<button',
-                                                        ...SetClass ([ 'accordion-button', 'collapsed' ]),
+                                                        ...setClass ([ 'accordion-button', 'collapsed' ]),
                                                         ...GetCollapse ($is_slave),
                                                     '>',
                                                         setCamelcase ($is_index['title']),
@@ -1982,7 +1982,7 @@
                                             '<div',
                                                 ...setAttrib ($is_slave, 'id'),
                                                 ...setAttrib ([ '#', $is_master ], 'data-bs-parent'),
-                                                ...SetClass ([ 'accordion-collapse', 'collapse' ]),
+                                                ...setClass ([ 'accordion-collapse', 'collapse' ]),
                                             '>',
                                                 ...GetAccordionBody (GetHeadline ([ 'content' => $is_index, 'heading' => 5, 'lineup' => 'start' ])),
                                             '</div>',
@@ -2002,7 +2002,7 @@
 
     function GetHeadlineTemplate ($is_input = [], $is_heading = 4) {
         return isArray (GetHeadline ([ 'content' => $is_input ])) ? [
-            '<div', ...SetClass ([ 'px-3', 'px-lg-5', ...P['WrapSetCol'] ]), '>',
+            '<div', ...setClass ([ 'px-3', 'px-lg-5', ...P['WrapSetCol'] ]), '>',
                 ...GetHeadline ([ 'content' => $is_input, 'heading' => $is_heading ]),
             '</div>',
         ] : [
@@ -2015,7 +2015,7 @@
                 ...GetHeadlineTemplate ($is_input, 4),
                 ...isTheKeyExists ($is_input, 'container') ? [
                     ...isArray ($is_input['container']) ? [
-                        '<section', ...SetClass ([ 'wrapper', ...P['WrapSetCol'] ]), '>',
+                        '<section', ...setClass ([ 'wrapper', ...P['WrapSetCol'] ]), '>',
                             ...array_map (function ($is_index, $is_key) {
                                 $is_number = getArrayRandomIndex (range (0, sizeof (SmallCollection) - 1));
                                 $is_classes = [ BackgroundSubtle[$is_number], BorderSubtle[$is_number], TextEmphasis[$is_number] ];
@@ -2024,10 +2024,10 @@
                                     if (hasValidPath ($is_index['gallery']))
                                         $is_gallery = true;
                                 return implode ('', [
-                                    '<article', ...SetClass ([ 'wrap', ...P['WrapSetRow'] ]), '>',
+                                    '<article', ...setClass ([ 'wrap', ...P['WrapSetRow'] ]), '>',
                                         ...$is_gallery ? [
                                             '<div',
-                                                ...SetClass ([ 'gallery', ...P['Col06'] ]),
+                                                ...setClass ([ 'gallery', ...P['Col06'] ]),
                                                 ...SetStyle ([ 'height' => 'auto', 'min-height' => '30rem' ]),
                                             '>',
                                                 ...GetSlider ($is_index['gallery']),
@@ -2036,7 +2036,7 @@
                                         ],
                                         ...GetHeadline ([ 'content' => $is_index ]) ? [
                                             '<div',
-                                                ...SetClass ([
+                                                ...setClass ([
                                                     ...$is_classes,
                                                     'headline',
                                                     'border-1',
@@ -2084,7 +2084,7 @@
             ...GetHeadlineTemplate ($is_input, 4),
             ...isTheKeyExists ($is_input, 'container') ? [
                 ...isArray ($is_input['container']) ? [
-                    '<section', ...SetClass ([ 'card-container', ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
+                    '<section', ...setClass ([ 'card-container', ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
                         ...array_map (function ($is_index) {
                             $is_gallery = [];
                             if (isTheKeyExists ($is_index, 'gallery'))
@@ -2095,10 +2095,10 @@
                             ];
                             return implode ('', [
                                 ...[ ...$is_gallery, ...$is_content ] ? [
-                                    '<article', ...SetClass ([ 'card-wrapper', 'overflow-hidden', 'p-0', ...P['WrapSetCol'], ...P['WrapColorLight'] ]), '>',
+                                    '<article', ...setClass ([ 'card-wrapper', 'overflow-hidden', 'p-0', ...P['WrapSetCol'], ...P['WrapColorLight'] ]), '>',
                                         ...$is_gallery ? GetSlider ($is_gallery, 15) : [],
                                         ...$is_content ? [
-                                            '<div', ...SetClass ([ 'align-items-center', 'card-content', 'p-3', ...P['Gap02'], ...P['WrapSetCol'] ]), '>',
+                                            '<div', ...setClass ([ 'align-items-center', 'card-content', 'p-3', ...P['Gap02'], ...P['WrapSetCol'] ]), '>',
                                                 ...$is_content,
                                             '</div>',
                                         ] : [
@@ -2116,10 +2116,10 @@
         ]);        
     };
 
-    function GetModalContainerTemplate ($is_input = [], $is_function = '') {
-        $is_input = convertJsonfileToArray (SetJsonFilename ($is_input));
+    function getModalContainerTemplate ($is_input = [], $is_function = '') {
+        $is_input = jsonfileToArray (SetJsonFilename ($is_input));
         return isArray ($is_input) ? [
-            '<section', ...SetClass ([ 'mt-3', 'p-0', ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
+            '<section', ...setClass ([ 'mt-3', 'p-0', ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
                 ...array_map (function ($is_index) use ($is_function) {
                     return implode ('', [
                         ...GetHeadlineTemplate ($is_index, 3),
@@ -2139,9 +2139,9 @@
 
     function GetAboutContainer ($is_input = []) {
         $is_input = SetJsonFilename ($is_input);
-        $is_input = convertJsonfileToArray ($is_input);
+        $is_input = jsonfileToArray ($is_input);
         return isArray ($is_input) ? [
-            '<main', ...SetClass ([ 'mt-3', 'p-0', ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
+            '<main', ...setClass ([ 'mt-3', 'p-0', ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
                 ...array_map (function ($is_index) {
                     return implode ('', [
                         ...GetHeadline ([ 'content' => $is_index, 'heading' => 2, 'lineup' => 'start' ]),
@@ -2152,11 +2152,11 @@
                                         ...GetHeadline ([ 'content' => $is_index, 'heading' => 3, 'lineup' => 'start' ]),
                                         ...isTheKeyExists ($is_index, 'container') ? [
                                             ...isArray ($is_index['container']) ? [
-                                                '<section', ...SetClass ([ ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
+                                                '<section', ...setClass ([ ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
                                                     ...array_map (function ($is_index) {
                                                         if (isArray (GetHeadline ([ 'content' => $is_index ]))):
                                                             return implode ('', [
-                                                                '<article', ...SetClass ([ 'p-3', ...P['WrapSetCol'] ]), '>',
+                                                                '<article', ...setClass ([ 'p-3', ...P['WrapSetCol'] ]), '>',
                                                                     ...GetHeadline ([ 'content' => $is_index, 'heading' => 4, 'lineup' => 'start' ]),
                                                                 '</article>',
                                                             ]);
@@ -2199,8 +2199,8 @@
         return '';
     };
 
-    function GetJsonFile ($is_input = []) {
-        return array_values (array_filter (setArray (convertJsonfileToArray (SetJsonFilename ($is_input))), function ($is_index) {
+    function getJsonfile ($is_input = []) {
+        return array_values (array_filter (setArray (jsonfileToArray (SetJsonFilename ($is_input))), function ($is_index) {
             if (doesThePathExist (SetJsonFilename ($is_index)))
                 return $is_index;
         }));
@@ -2255,32 +2255,32 @@
     };
 
     function GetModalAccordionContentTemplate ($is_input = [], $is_function = '') {
-        $is_input = convertJsonfileToArray (SetJsonFilename ($is_input));
+        $is_input = jsonfileToArray (SetJsonFilename ($is_input));
         return isArray ($is_input) ? [
-            '<main', ...SetClass ([ 'm-0', 'p-0', ...P['Gap05'], ...P['WrapSetCol'] ]), '>',
+            '<main', ...setClass ([ 'm-0', 'p-0', ...P['Gap05'], ...P['WrapSetCol'] ]), '>',
                 ...array_map (function ($is_index) use ($is_function) {
                     return implode ('', [
                         ...GetHeadline ([ 'content' => $is_index, 'heading' => 3, 'lineup' => 'start' ]),
                         ...isTheKeyExists ($is_index, 'container') ? [
                             ...isArray ($is_index['container']) ? [
-                                '<section', ...SetClass ([ ...P['Gap05'], ...P['WrapSetCol'] ]), '>',
+                                '<section', ...setClass ([ ...P['Gap05'], ...P['WrapSetCol'] ]), '>',
                                     ...array_map (function ($is_index) use ($is_function) {
                                         $is_master = setRandomPassword ();
                                         return implode ('', thereAreFilledKeys ($is_index) ? [
-                                            '<article', ...SetClass ([ ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
+                                            '<article', ...setClass ([ ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
                                                 ...GetHeadline ([ 'content' => $is_index, 'heading' => 4, 'lineup' => 'start' ]),
                                                 ...isTheKeyExists ($is_index, 'container') ? [
                                                     ...isArray ($is_index['container']) ? [
-                                                        '<section', ...setAttrib ($is_master, 'id'), ...SetClass ([ 'accordion' ]), '>',
+                                                        '<section', ...setAttrib ($is_master, 'id'), ...setClass ([ 'accordion' ]), '>',
                                                             ...array_map (function ($is_index) use ($is_function, $is_master) {
                                                                 $is_slave = setRandomPassword ();
                                                                 return implode ('', [
                                                                     ...isTheKeyExists ($is_index, 'title') ? [
                                                                         ...isArray ($is_index['title']) ? [
-                                                                            '<article', ...SetClass ([ 'accordion-item' ]), '>',
-                                                                                '<h2', ...SetClass ([ 'accordion-header' ]), '>',
+                                                                            '<article', ...setClass ([ 'accordion-item' ]), '>',
+                                                                                '<h2', ...setClass ([ 'accordion-header' ]), '>',
                                                                                     '<button',
-                                                                                        ...SetClass ([ 'accordion-button', 'collapsed', ...!($is_function) ($is_index) ? P['TextSetDisabled'] : [] ]),
+                                                                                        ...setClass ([ 'accordion-button', 'collapsed', ...!($is_function) ($is_index) ? P['TextSetDisabled'] : [] ]),
                                                                                         ...GetCollapse ($is_slave),
                                                                                     '>',
                                                                                         setCamelcase ($is_index['title']),
@@ -2288,7 +2288,7 @@
                                                                                 '</h2>',
                                                                                 ...($is_function) ($is_index) ? [
                                                                                     '<div',
-                                                                                        ...SetClass ([ 'accordion-collapse', 'collapse' ]),
+                                                                                        ...setClass ([ 'accordion-collapse', 'collapse' ]),
                                                                                         ...setAttrib ([ '#', $is_master ], 'data-bs-parent'),
                                                                                         ...setAttrib ($is_slave, 'id'),
                                                                                     '>',
@@ -2327,16 +2327,16 @@
     function GetModalThumbnailContainer () {
         return [
             ...isArray (isThereAnyPath ('jpg')) ? [
-                '<article', ...SetClass ([ 'thumbnail-inner', 'mt-3', ...P['WrapSetCol'] ]), '>',
+                '<article', ...setClass ([ 'thumbnail-inner', 'mt-3', ...P['WrapSetCol'] ]), '>',
                     ...array_map (function ($is_index) {
-                        $is_index = SetResize ($is_index);
+                        $is_index = setResize ($is_index);
                         return implode ('', [
                             '<div',
-                                ...SetClass ([ 'col-12', 'col-lg-3', 'col-sm-6', 'overflow-hidden', 'position-relative', 'thumbnail-item' ]),
+                                ...setClass ([ 'col-12', 'col-lg-3', 'col-sm-6', 'overflow-hidden', 'position-relative', 'thumbnail-item' ]),
                                 ...SetStyle ([ 'min-height' => '20rem' ]),
                             '>',
                                 '<div',
-                                    ...SetClass ([ 'bg-black', 'h-100', 'position-absolute', 'thumbnail-filter', 'w-100' ]),
+                                    ...setClass ([ 'bg-black', 'h-100', 'position-absolute', 'thumbnail-filter', 'w-100' ]),
                                     ...SetStyle ([ 'inset' => 0, 'min-height' => '20rem', 'opacity' => 0, 'z-index' => 2 ]),
                                 '>',
                                 '</div>',
@@ -2344,7 +2344,7 @@
                                     ...setAttrib (strval (getimagesize ($is_index)[1]), 'data-height'),
                                     ...setAttrib ($is_index, 'data-url'),
                                     ...setAttrib (strval (getimagesize ($is_index)[0]), 'data-width'),
-                                    ...SetClass ([ 'h-100', 'position-absolute', 'thumbnail-background', 'w-100' ]),
+                                    ...setClass ([ 'h-100', 'position-absolute', 'thumbnail-background', 'w-100' ]),
                                     ...SetStyle ([
                                         ...SetBackground (),
                                         'background-image' => 'url(' . $is_index . ')',
@@ -2363,74 +2363,92 @@
         ];
     };
 
-    function GetHtmlContainer ($is_input = [], $is_proper = []) {
-        $is_proper = [
-            ...setProper ($is_proper, 'headline', 'headline.json'),
-            ...setProper ($is_proper, [ 'container', 'keyword' ]),
-            ...setProper ($is_proper, 'margin', 0),
-        ];
-        $is_headline = convertJsonfileToArray ($is_proper['headline']);        
+    function setMetaline (array $is_input = []): array {
+        return isArray (setArray ($is_input)) ? [ '<meta', ...setArray ($is_input), '>' ] : [];
+    };
+
+    function setMetaArray (): array {
+        $is_headline = jsonfileToArray ('headline.json');
         return [
-            ...isArray (setArray ($is_input)) ? [
-                '<!doctype html>',
-                '<html',
-                    ...SetClass (P['Html']),
-                    ' lang=\'en\'',
-                    ' data-bs-theme=\'dark\'',
-                    // ' data-bs-theme=\'light\'',
-                '>',
-                    '<head>',
-                        ...isArray (setArray ($is_headline)) ? [
-                            '<title>',
-                                implode (' | ', array_map (function ($is_index) use ($is_headline) {
-                                    if (isTheKeyExists ($is_headline, $is_index))
-                                        if (isArray (setArray ($is_headline[$is_index])))
-                                            return setCamelcase ($is_headline[$is_index]);
-                                }, [ 'title', 'subtitle', 'description' ])),
-                            '</title>',
-                        ] : [
-                        ],
-                        '<meta', ...setAttrib ('utf-8', 'charset'), '>',
-                        ...isArray (setArray ($is_headline)) ? [
-                            ...array_map (function ($is_index) use ($is_headline) {
-                                if (isTheKeyExists ($is_headline, $is_index)):
-                                    if (isArray (setArray ($is_headline[$is_index]))):
-                                        $is_name = [ ...in_array ($is_index, [ 'title' ]) ? [ 'author' ] : [], ...in_array ($is_index, [ 'subtitle' ]) ? [ 'description' ] : [] ];
-                                        return implode ('', [ '<meta', ...setAttrib ($is_name, 'name'), ...setAttrib ($is_headline[$is_index], 'content'), '>' ]);
-                                    endif;
-                                endif;
-                            }, [ 'title', 'subtitle' ]),
-                        ] : [
-                        ],
-                        ...isArray (setArray ($is_proper['keyword'])) ? [
-                            '<meta',
-                                ...setAttrib ('keywords', 'name'),
-                                ...setAttrib (implode (', ', setArray ($is_proper['keyword'])), 'content'),
-                            '>',
-                        ] : [
-                        ],
-                        '<meta',
-                            ...setAttrib ('viewport', 'name'),
-                            ...setAttrib (implode (', ', [ 'width=device-width', 'initial-scale=1', 'shrink-to-fit=no' ]), 'content'),
-                        '>',
-                        ...setStyleLines (),
-                    '</head>',
-                    '<body', ...SetClass (P['HtmlBody']), '>',
-                        ...$is_proper['margin'] > 0 ? [
-                            '<div',
-                                ...SetClass ([ 'd-flex', 'flex-column', 'justify-content-center' ]),
-                                ...SetStyle ([ 'width' => 'calc(100% - ' . $is_proper['margin'] . 'rem)' ]),
-                            '>',
-                        ] : [
-                        ],
-                            ...setArray ($is_input),
-                        ...$is_proper['margin'] > 0 ? [ '</div>' ] : [],
-                        ...isArray (setArray ($is_proper['container'])) ? setArray ($is_proper['container']) : [],
-                        ...setScriptLines (),
-                    '</body>',
-                '</html>',
+            ...setMetaline (setAttrib ('utf-8', 'charset')),
+            ...setMetaline ([
+                ...setAttrib ('viewport', 'name'),
+                ...setAttrib (implode (', ', [ 'width=device-width', 'initial-scale=1', 'shrink-to-fit=no' ]), 'content'),
+            ]),
+            ...isArray (setArray ($is_headline)) ? [
+                ...array_map (function ($is_index) use ($is_headline) {
+                    if (isTheKeyExists ($is_headline, $is_index)):
+                        if (isArray (setArray ($is_headline[$is_index]))):
+                            $is_name = [ 
+                                ...in_array ($is_index, [ 'title' ]) ? [ 'author' ] : [],
+                                ...in_array ($is_index, [ 'subtitle' ]) ? [ 'description' ] : [],
+                            ];
+                            return implode ('', setMetaline ([ ...setAttrib ($is_name, 'name'), ...setAttrib ($is_headline[$is_index], 'content') ]));
+                        endif;
+                    endif;
+                }, [ 'title', 'subtitle' ]),
             ] : [
             ],
+            // ...isArray (setArray ($is_proper['keyword'])) ? [
+            //     '<meta',
+            //         ...setAttrib ('keywords', 'name'),
+            //         ...setAttrib (implode (', ', setArray ($is_proper['keyword'])), 'content'),
+            //     '>',
+            // ] : [
+            // ],
+        ];
+    };
+
+    function setTitleContainer (string $is_input = 'headline.json'): array {
+        $is_input = jsonfileToArray ($is_input);
+        return [
+            ...isArray (setArray ($is_input)) ? [
+                ...setWrapper ([
+                    implode (' | ', array_map (function ($is_index) use ($is_input) {
+                        if (isTheKeyExists ($is_input, $is_index))
+                            if (isArray (setArray ($is_input[$is_index])))
+                                return setCamelcase ($is_input[$is_index]);
+                    }, [ 'title', 'subtitle', 'description' ])),
+                ], [ 'wrap' => 'title' ]),
+            ] : [
+            ],
+        ];
+    };
+
+    function setHeadContainer (): array {
+        return setWrapper ([
+            ...setMetaArray (),
+            ...setTitleContainer (),
+            ...setStyleArray (),
+        ], [
+            'wrap' => 'head',
+        ]);
+    };
+
+    function setBodyContainer (array $is_input = []): array {
+        return setWrapper ([
+            ...isArray ($is_input) ? [ ...$is_input ] : [],
+            ...array_map (function ($is_index) {
+                return implode ('', getModalContainerArray ($is_index));
+            }, [ 'catalogo', 'contrato', 'formulario', 'institutional' ]),
+            ...setScriptArray (),
+        ], [
+            'wrap' => 'body',
+        ]);
+    };
+
+    function setHTMLContainer (array $is_input = []): array {
+        return [
+            '<!doctype html>',
+            '<html',
+                ...setClass (P['Html']),
+                ' lang=\'en\'',
+                ' data-bs-theme=\'dark\'',
+                // ' data-bs-theme=\'light\'',
+            '>',
+                ...setHeadContainer (),
+                ...setBodyContainer ($is_input),
+            '</html>',
         ];
     };
 
@@ -2472,18 +2490,18 @@
 
     function GetBootstrap () {
         return [
-            SetKey ([ 'html' ]) => [ 'h-100', 'm-0', 'p-0', 'w-100' ],
-            SetKey ([ 'html', 'body' ]) => [ 'h-100', 'm-0', 'p-0', 'w-100' ],
-            SetKey ([ 'html', 'frame' ]) => [ 'm-0', 'p-0', 'w-100' ],
-            SetKey ([ 'html', 'hr' ]) => [ 'mx-0', 'my-2', 'p-0', 'w-100' ],
-            SetKey ([ 'html', 'input' ]) => [ 'form-control', 'pe-5', 'ps-2', 'py-2' ],
-            SetKey ([ 'html', 'label' ]) => [ 'align-items-end', 'd-flex', 'justify-content-start', 'label', 'text-start', 'm-0', 'p-0' ],
-            SetKey ([ 'html', 'table' ]) => [ 'table', 'table-striped', 'table-hover', 'm-0', 'p-0', 'row', 'w-100' ],
-            SetKey ([ 'html', 'table', 'body' ]) => [ 'm-0', 'p-0', 'row', 'w-100' ],
-            SetKey ([ 'html', 'table', 'head' ]) => [ 'm-0', 'p-0', 'row', 'w-100' ],
-            SetKey ([ 'html', 'table', 'td' ]) => [ 'm-0', 'p-2', 'row', 'w-100' ],
-            SetKey ([ 'html', 'table', 'th' ]) => [ 'm-0', 'p-2', 'row', 'w-100' ],
-            SetKey ([ 'html', 'table', 'tr' ]) => [ 'm-0', 'p-0', 'row', 'w-100' ],
+            setTarget ([ 'html' ]) => [ 'h-100', 'm-0', 'p-0', 'w-100' ],
+            setTarget ([ 'html', 'body' ]) => [ 'h-100', 'm-0', 'p-0', 'w-100' ],
+            setTarget ([ 'html', 'frame' ]) => [ 'm-0', 'p-0', 'w-100' ],
+            setTarget ([ 'html', 'hr' ]) => [ 'mx-0', 'my-2', 'p-0', 'w-100' ],
+            setTarget ([ 'html', 'input' ]) => [ 'form-control', 'pe-5', 'ps-2', 'py-2' ],
+            setTarget ([ 'html', 'label' ]) => [ 'align-items-end', 'd-flex', 'justify-content-start', 'label', 'text-start', 'm-0', 'p-0' ],
+            setTarget ([ 'html', 'table' ]) => [ 'table', 'table-striped', 'table-hover', 'm-0', 'p-0', 'row', 'w-100' ],
+            setTarget ([ 'html', 'table', 'body' ]) => [ 'm-0', 'p-0', 'row', 'w-100' ],
+            setTarget ([ 'html', 'table', 'head' ]) => [ 'm-0', 'p-0', 'row', 'w-100' ],
+            setTarget ([ 'html', 'table', 'td' ]) => [ 'm-0', 'p-2', 'row', 'w-100' ],
+            setTarget ([ 'html', 'table', 'th' ]) => [ 'm-0', 'p-2', 'row', 'w-100' ],
+            setTarget ([ 'html', 'table', 'tr' ]) => [ 'm-0', 'p-0', 'row', 'w-100' ],
         ];
     };
 
@@ -2498,17 +2516,17 @@
         $is_wrap_ = [ 'd-flex', 'justify-content-center', 'm-0', 'w-100' ];
 
         foreach (FullCollection as $is_key => $is_color):
-            $is_array = array_merge ($is_array, [ SetKey ([ 'button', $is_color ]) => [ ...$is_button_, ButtonSolid[$is_key] ] ]);
-            $is_array = array_merge ($is_array, [ SetKey ([ 'line', 'button', $is_color ]) => [ ...$is_button_, ButtonLine[$is_key] ] ]);
-            $is_array = array_merge ($is_array, [ SetKey ([ 'link', $is_color ]) => [ ...$is_text_, ...$is_link_, LinkSolid[$is_key] ] ]);
+            $is_array = array_merge ($is_array, [ setTarget ([ 'button', $is_color ]) => [ ...$is_button_, ButtonSolid[$is_key] ] ]);
+            $is_array = array_merge ($is_array, [ setTarget ([ 'line', 'button', $is_color ]) => [ ...$is_button_, ButtonLine[$is_key] ] ]);
+            $is_array = array_merge ($is_array, [ setTarget ([ 'link', $is_color ]) => [ ...$is_text_, ...$is_link_, LinkSolid[$is_key] ] ]);
         endforeach;
 
         foreach (Direction as $is_direction)
-            $is_array = array_merge ($is_array, [ SetKey ([ 'wrap', 'set', $is_direction ]) => [ ...$is_wrap_, ...SetFlex ($is_direction) ] ]);
+            $is_array = array_merge ($is_array, [ setTarget ([ 'wrap', 'set', $is_direction ]) => [ ...$is_wrap_, ...SetFlex ($is_direction) ] ]);
 
         foreach (SmallCollection as $is_key => $is_color):
             $is_emphasi = [ BackgroundSubtle[$is_key], BorderSubtle[$is_key], TextEmphasis[$is_key] ];
-            $is_array = array_merge ($is_array, [ SetKey ([ 'wrap', 'color', $is_color ]) => [
+            $is_array = array_merge ($is_array, [ setTarget ([ 'wrap', 'color', $is_color ]) => [
                     ...$is_border_,
                     ...$is_text_,
                     ...$is_emphasi,
@@ -2520,12 +2538,12 @@
                 TextEmphasis[$is_key],
             ];
 
-            $is_array = array_merge ($is_array, [ SetKey ([ 'text', 'color', $is_color ]) => [ ...$is_text ] ]);
+            $is_array = array_merge ($is_array, [ setTarget ([ 'text', 'color', $is_color ]) => [ ...$is_text ] ]);
 
 
             foreach (range (1, 6) as $is_head):
                 $is_array = array_merge ($is_array, [
-                    SetKey ([ implode ('', [ 'h', $is_head ]), $is_color ]) => [
+                    setTarget ([ implode ('', [ 'h', $is_head ]), $is_color ]) => [
                         implode ('', [ 'h', $is_head ]),
                         ...$is_text,
                     ],
@@ -2537,7 +2555,7 @@
 
 
 
-        $is_array = array_merge ($is_array, [ SetKey ([ 'wrap', 'set', 'alert' ]) => [
+        $is_array = array_merge ($is_array, [ setTarget ([ 'wrap', 'set', 'alert' ]) => [
                 'd-flex',
                 'flex-column',
                 'justify-content-center',
@@ -2550,15 +2568,15 @@
 
 
 
-        $is_array = array_merge ($is_array, [ SetKey ([ 'text' ]) => [ ...$is_text_ ] ]);
+        $is_array = array_merge ($is_array, [ setTarget ([ 'text' ]) => [ ...$is_text_ ] ]);
 
 
-        $is_array = array_merge ($is_array, [ SetKey ([ 'link' ]) => [ ...$is_text_, ...$is_link_ ] ]);
+        $is_array = array_merge ($is_array, [ setTarget ([ 'link' ]) => [ ...$is_text_, ...$is_link_ ] ]);
 
 
         foreach (range (1, 6) as $is_head):
             $is_array = array_merge ($is_array, [
-                SetKey ([ implode ('', [ 'h', $is_head ]) ]) => [
+                setTarget ([ implode ('', [ 'h', $is_head ]) ]) => [
                     implode ('', [ 'h', $is_head ]),
                     ...$is_text_,
                 ],
@@ -2566,7 +2584,7 @@
         endforeach;
 
         foreach (range (1, 12) as $is_col):
-            $is_array = array_merge ($is_array, [ SetKey ([ 'col', str_pad ($is_col, 2, '0', STR_PAD_LEFT) ]) => [
+            $is_array = array_merge ($is_array, [ setTarget ([ 'col', str_pad ($is_col, 2, '0', STR_PAD_LEFT) ]) => [
                     implode ('-', [ 'col', 'lg', $is_col ]),
                     'col-12',
                     'd-flex',
@@ -2578,12 +2596,12 @@
 
         $is_anyone = [ 'd-flex', 'flex-nowrap', 'justify-content-center', 'm-0', 'p-0' ];
 
-        $is_array = array_merge ($is_array, [ SetKey ([ 'wrap', 'set', 'button' ]) => [ 'btn-group', ...$is_anyone ] ]);
-        $is_array = array_merge ($is_array, [ SetKey ([ 'wrap', 'set', 'input' ]) => [ 'input-group', ...$is_anyone ] ]);
-        $is_array = array_merge ($is_array, [ SetKey ([ 'wrap', 'set', 'toolbar' ]) => [ 'btn-toolbar', ...$is_anyone ] ]);
+        $is_array = array_merge ($is_array, [ setTarget ([ 'wrap', 'set', 'button' ]) => [ 'btn-group', ...$is_anyone ] ]);
+        $is_array = array_merge ($is_array, [ setTarget ([ 'wrap', 'set', 'input' ]) => [ 'input-group', ...$is_anyone ] ]);
+        $is_array = array_merge ($is_array, [ setTarget ([ 'wrap', 'set', 'toolbar' ]) => [ 'btn-toolbar', ...$is_anyone ] ]);
 
         foreach (range (0, 5) as $is_gap)
-            $is_array = array_merge ($is_array, [ SetKey ([ 'gap', str_pad ($is_gap, 2, '0', STR_PAD_LEFT) ]) => [ 'grid', implode ('-', [ 'gap', $is_gap ]) ] ]);
+            $is_array = array_merge ($is_array, [ setTarget ([ 'gap', str_pad ($is_gap, 2, '0', STR_PAD_LEFT) ]) => [ 'grid', implode ('-', [ 'gap', $is_gap ]) ] ]);
 
 
         foreach (GetBootstrap () as $is_key => $is_value)
@@ -2592,8 +2610,8 @@
 
         $is_array = [
             ...$is_array,
-            SetKey ([ 'text', 'set', 'disabled' ]) => [ 'text-decoration-line-through' ],
-            SetKey ([ 'text', 'set', 'mono' ]) => [ 'font-monospace', 'fw-semibold', ...$is_text_ ],
+            setTarget ([ 'text', 'set', 'disabled' ]) => [ 'text-decoration-line-through' ],
+            setTarget ([ 'text', 'set', 'mono' ]) => [ 'font-monospace', 'fw-semibold', ...$is_text_ ],
         ];
 
 
@@ -2610,14 +2628,14 @@
     };
 
     if (doesThePathExist ('pool.json')):
-        if (SetJsonFileComparator (GetPool (), 'pool.json')): else:
-            setJsonfileCreator (GetPool (), 'pool.json');
+        if (jsonfileComparator (GetPool (), 'pool.json')): else:
+            arrayToJsonfile (GetPool (), 'pool.json');
         endif;
     else:
-        setJsonfileCreator (GetPool (), 'pool.json');
+        arrayToJsonfile (GetPool (), 'pool.json');
     endif;
 
-    define ('P', convertJsonfileToArray ('pool.json'));
+    define ('P', jsonfileToArray ('pool.json'));
 
     function GetClass ($is_input = '') {
         if (is_string ($is_input))
@@ -2626,7 +2644,7 @@
         return [];
     };
 
-    function SetClass ($is_input = []) {
+    function setClass ($is_input = []) {
         if (isArray (setArray ($is_input))):
             $is_input = array_values (array_unique (setArray ($is_input)));
             sort ($is_input);
@@ -2664,7 +2682,7 @@
     function SetReplace ($is_input = []) {
         $is_result = $is_input;
         foreach (array_keys (GetBootstrap ()) as $is_key)
-            $is_result = str_replace (implode ('', [ '<', $is_key, '>' ]), implode ('', [ '<', $is_key, ...SetClass (GetClass ($is_key)), '>' ]), $is_result);
+            $is_result = str_replace (implode ('', [ '<', $is_key, '>' ]), implode ('', [ '<', $is_key, ...setClass (GetClass ($is_key)), '>' ]), $is_result);
         return $is_result;
     };
 
@@ -2679,59 +2697,52 @@
 ?>
 
 <?php
-    define ('Footer', [
-        ...GetWrapper (GetWidgetContainer ()),
-        ...GetWrapper (GetSignatureContainer ()),
+    define ('defineFooterContent', [
+        ...setWrapper (GetWidgetContainer ()),
+        ...setWrapper (GetSignatureContainer ()),
     ]);
 
-    define ('Main', [
+    define ('defineMainContent', [
         
-        ...GetWrapper (GetHeaderContainer ('headline'), [
-            'selector' => 'header',
+        ...setWrapper (GetHeaderContainer ('headline'), [
+            'wrap' => 'header',
             'id' => 'headline',
         ]),
 
-        ...GetWrapper (GetCarouselContainer ('carrossel'), [
+        ...setWrapper (GetCarouselContainer ('carrossel'), [
             'id' => 'carrossel',
         ]),
 
-        ...GetWrapper ([
-            '<div', ...SetClass ([ 'd-flex', 'flex-wrap' ]), '>',
-                '<div', ...SetClass ([ 'col-0', 'col-lg-2', 'd-lg-flex', 'd-none' ]), '>', '</div>',
-                '<div', ...SetClass ([ 'col-12', 'col-lg-8', 'd-flex', 'flex-column', 'px-3', 'px-lg-0' ]), '>',
+        ...setWrapper ([
+            '<div', ...setClass ([ 'd-flex', 'flex-wrap' ]), '>',
+                '<div', ...setClass ([ 'col-0', 'col-lg-2', 'd-lg-flex', 'd-none' ]), '>', '</div>',
+                '<div', ...setClass ([ 'col-12', 'col-lg-8', 'd-flex', 'flex-column', 'px-3', 'px-lg-0' ]), '>',
                     ...GetModalFormularioContainer ('booking'),
                     ...GetModalCardContainer ('cartoes'),
                 '</div>',
-                '<div', ...SetClass ([ 'col-0', 'col-lg-2', 'd-lg-flex', 'd-none' ]), '>', '</div>',
+                '<div', ...setClass ([ 'col-0', 'col-lg-2', 'd-lg-flex', 'd-none' ]), '>', '</div>',
             '</div>',
         ]),
 
-        // ...GetWrapper (GetModalThumbnailContainer (), [
+        // ...setWrapper (GetModalThumbnailContainer (), [
         //     'id' => 'thumbnail',
         // ]),
 
-        ...GetWrapper (GetModalArticleContainer ('pontos turísticos')),
+        ...setWrapper (GetModalArticleContainer ('pontos turísticos')),
 
     ]);
 
-    define ('Body', [
-        ...GetWrapper (GetNavbarContainer ([ ...GetJsonFile ('catalogo'), ...GetJsonFile ('institutional') ]), [
-            'selector' => 'nav', 
+    define ('defineBodyContent', [
+        ...setWrapper (GetNavbarContainer ([ ...getJsonfile ('catalogo'), ...getJsonfile ('institutional') ]), [
+            'wrap' => 'nav', 
             'id' => 'navbar',
         ]),
-        ...GetWrapper ([
-            ...GetWrapper (Main, [ 'selector' => 'main' ]),
-            ...GetWrapper (Footer, [ 'selector' => 'footer' ]),
+        ...setWrapper ([
+            ...setWrapper (defineMainContent, [ 'wrap' => 'main' ]),
+            ...setWrapper (defineFooterContent, [ 'wrap' => 'footer' ]),
         ], [ 'id' => 'wrapper' ]),
     ]);
 
-    echo implode ('', GetHtmlContainer (Body, [
-        'container' => [
-            ...array_map (function ($is_index) {
-                return implode ('', GetModalListContainer ($is_index));
-            }, [ 'catalogo', 'contrato', 'formulario', 'institutional' ])
-        ],
-        'style' => 'minify.css',
-    ]));
+    echo implode ('', setHTMLContainer (defineBodyContent));
 
 ?>

@@ -6,7 +6,7 @@
   "main": "./index.js",
   "scripts": {
     "dev": "concurrently \"npm run sass\" \"npm run nodemon\"",
-    "sass": "sass ./scss/style.scss ./css/style.css --watch",
+    "sass": "sass ./scss/style.scss ./css/_style.css --watch",
     "nodemon": "nodemon ./index.js"
   },
   "keywords": [],

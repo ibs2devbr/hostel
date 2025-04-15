@@ -521,14 +521,14 @@
         return '';
     };
 
-    function isTheKeyExists (array $is_input = [], string $is_key = ''): bool {
+    function isTheKeyExist (array $is_input = [], string $is_key = ''): bool {
         if (!isset ($is_input)) return false;
         if (!array_key_exists ($is_key, $is_input)) return false;
         return true;
     };
 
     function isTheKeyFilled (array $is_input = [], string $is_key = ''): bool {
-        if (!isTheKeyExists ($is_input, $is_key)) return false;
+        if (!isTheKeyExist ($is_input, $is_key)) return false;
         if (empty ($is_input[$is_key])) return false;
         return true;
     };
@@ -554,7 +554,7 @@
         if (!isArray ($is_input)) return false;
         if (!array_is_list ($is_input)) return false;
         foreach ($is_input as $is_index):
-            if (isTheKeyExists ($is_index, 'selector')):
+            if (isTheKeyExist ($is_index, 'selector')):
                 if (!in_array ($is_index['selector'], [ 'button' ])):
                     return false;
                 endif;
@@ -576,11 +576,11 @@
         return true;
     };
 
-    function objectToArray (array|object $is_input = []): array {
+    function setObject2Array (array|object $is_input = []): array {
         $is_result = [];
         foreach ($is_input as $is_key => $is_value):
-            if (is_object ($is_value)): $is_result[$is_key] = objectToArray (get_object_vars ($is_value));
-            elseif (is_array ($is_value)): $is_result[$is_key] = objectToArray ($is_value);
+            if (is_object ($is_value)): $is_result[$is_key] = setObject2Array (get_object_vars ($is_value));
+            elseif (is_array ($is_value)): $is_result[$is_key] = setObject2Array ($is_value);
             else: $is_result[$is_key] = $is_value; endif;
         endforeach;
         return $is_result;
@@ -589,6 +589,9 @@
     function getObjectVar ($is_input = []) {
         return is_object ($is_input) ? get_object_vars ($is_input) : $is_input;
     };
+
+
+    
 
     function isArray (mixed $is_input = []): bool {
         $is_input = getObjectVar ($is_input);
@@ -601,7 +604,7 @@
 
     function getKeyValue (array $is_input = [], string $is_key = '', array|string $is_backup = []): array|string {
         $is_input = getObjectVar ($is_input);
-        if (isTheKeyExists ($is_input, $is_key))
+        if (isTheKeyExist ($is_input, $is_key))
             if (isTrue (getObjectVar ($is_input[$is_key])))
                 return getObjectVar ($is_input[$is_key]);
         return $is_backup;
@@ -706,7 +709,7 @@
     };
 
     function setStyleArray (string $is_input = 'style.json'): array {
-        $is_input = [ ...jsonfileToArray ($is_input), ...isThereAnyPath ('css') ];
+        $is_input = [ ...setJsonfile2Array ($is_input), ...isThereAnyPath ('css') ];
         if (isArray (setArray ($is_input))):
             return array_map (function ($is_index) {
                 return implode ('', [
@@ -722,7 +725,7 @@
     };
 
     function setScriptArray (string $is_input = 'script.json'): array {
-        $is_input = [ ...jsonfileToArray ($is_input), ...isThereAnyPath ('js') ];
+        $is_input = [ ...setJsonfile2Array ($is_input), ...isThereAnyPath ('js') ];
         if (isArray (setArray ($is_input))):
             return array_map (function ($is_index) {
                 return implode ('', [
@@ -745,19 +748,13 @@
         return serverAddress ('HTTP_HOST');
     };
 
-    function isFiletype (string $is_input = '', string $is_extension = 'json'): bool {
-        if (in_array ($is_extension, [ 'html', 'jpeg', 'jpg', 'json', 'php', 'png', 'txt' ]))
-            if (isTheKeyExists (pathinfo ($is_input), 'extension'))
-                if (in_array (pathinfo ($is_input)['extension'], [ $is_extension ]))
-                    return true;
-        return false;
-    };
+    
 
     function serverAddress (string $is_input = 'DOCUMENT_ROOT'): string {
         $is_extension = '';
         $is_server = $_SERVER[$is_input] . $_SERVER['REQUEST_URI'];
         $is_address = array_values (array_filter (explode ('/', $is_server)));
-        if (isTheKeyExists (pathinfo ($is_address[array_key_last ($is_address)]), 'extension'))
+        if (isTheKeyExist (pathinfo ($is_address[array_key_last ($is_address)]), 'extension'))
             $is_extension = pathinfo ($is_address[array_key_last ($is_address)])['extension'];
         return in_array ($is_extension, [ 'php' ]) ? implode ('/', array_slice ($is_address, 0, - 1)) . '/' : $is_server;
     };
@@ -765,7 +762,7 @@
     function setResize (string $is_input = '', string $is_extension = 'jpg'): bool|string {
         if (!is_dir ('./temp'))
             mkdir ('./temp', 0777, true);
-        if (isFiletype ($is_input, $is_extension)):
+        if (isFileType ($is_input, $is_extension)):
             $is_input = array_values (array_filter (explode ('/', $is_input)));
             $is_input = $is_input[array_key_last ($is_input)];
             $is_input = pathinfo ($is_input)['filename'] . '.' . pathinfo ($is_input)['extension'];
@@ -798,7 +795,7 @@
 
     function setID (array|string $is_input = ''): string {
         $is_input = implode ('-', setArray ($is_input));
-        if (isTheKeyExists (pathinfo ($is_input), 'extension')) $is_input = pathinfo ($is_input)['filename'];
+        if (isTheKeyExist (pathinfo ($is_input), 'extension')) $is_input = pathinfo ($is_input)['filename'];
         $is_input = setTonicSyllable ($is_input);
         $is_input = preg_replace ('/[^0-9a-zA-Z_]/i', '-', $is_input);
         $is_input = preg_replace ('/-+/', '-', $is_input);
@@ -827,11 +824,6 @@
         }, $is_input));
     };
 
-    function SetHead ($is_input = [], $is_head = 5) {
-        $is_head = in_array ($is_head, range (1, 6)) ? $is_head : 5;
-        return [ '<h' . $is_head, ...setClass (P['H' . $is_head]), '>', setCamelcase ($is_input), '</h' . $is_head . '>' ];
-    };
-
     function setTonicSyllable (string $is_input = ''): string {
         foreach ([
             'A' => '/(' . implode ('|', [ 'À', 'Á', 'Â', 'Ã', 'Ä', 'Å' ]) . ')/',
@@ -855,22 +847,9 @@
         return trim ($is_input);
     };
 
-    function jsonfileToArray (string $is_input = ''): array {
-        if (isFiletype ($is_input, 'json')):
-            return getFileContents ($is_input) ? objectToArray (json_decode (getFileContents ($is_input))) : [];
-        endif;
-        return [];
-    };
-
-    function getFileContents (string $is_input = ''): string {
-        if (doesThePathExist ($is_input))
-            return file_get_contents (doesThePathExist ($is_input));
-        return '';
-    };
-
-    function arrayToJsonfile (array $is_array = [], string $is_input = '') {
+    function setArray2Jsonfile (array $is_array = [], string $is_input = '') {
         if (isArray ($is_array)):
-            if (isTheKeyExists (pathinfo ($is_input), 'extension')):
+            if (isTheKeyExist (pathinfo ($is_input), 'extension')):
                 if (pathinfo ($is_input)['extension'] === 'json'):
                     $is_dir = setDir (pathinfo ($is_input)['extension']);
                     if (!is_dir ($is_dir)) mkdir ($is_dir, 0755, true);
@@ -882,18 +861,14 @@
         endif;
     };
 
-    function jsonfileComparator (array $is_array = [], string $is_input = ''): bool {
-        if (isArray ($is_array)):
-            if (isFiletype ($is_input, 'json')):
-                return json_encode ($is_array) === json_decode (getFileContents ($is_input));
-            endif;
-        endif;
-        return false;
-    };
+    
 
-    function doesThePathExist (array|string $is_input = []): string {
-        return file_exists (setPath ($is_input)) ? setPath ($is_input) : '';
-    };
+
+    
+
+    
+
+    
 
     function hasValidPath (array|string $is_input = []): array {
         return array_values (array_map (function ($is_index) {
@@ -912,7 +887,7 @@
         if (isString ($is_input)):
             $is_input = explode ('/', $is_input);
             $is_input = $is_input[array_key_last ($is_input)];
-            if (isTheKeyExists (pathinfo ($is_input), 'extension')):
+            if (isTheKeyExist (pathinfo ($is_input), 'extension')):
                 return implode ('.', array_map (function ($is_index) use ($is_input) {
                     return pathinfo ($is_input)[$is_index];
                 }, [ 'filename', 'extension' ])) === $is_input ? $is_input : '';
@@ -932,7 +907,7 @@
             return array_values (array_filter (scandir (setDir ($is_input)), function ($is_index) use ($is_input) {
                 if (in_array (pathinfo ($is_index)['extension'], [ $is_input ]))
                     if (!in_array (substr ($is_index, 0, 1), [ '_' ]))
-                        if (getFileContents ($is_index))
+                        if (getFileContent ($is_index))
                             return $is_index;
             }));
         return [];
@@ -1012,7 +987,7 @@
 
     function getCarouselContainer ($is_input = []) {
         $is_id = setRandomPassword ();
-        $is_input = jsonfileToArray (SetJsonFilename ($is_input));
+        $is_input = setJsonfile2Array (doesTheFileExist ($is_input));
         $is_attrib = [ 'content' => $is_input, 'id' => $is_id ];
         return isArray ($is_input) ? [
             '<div', ...setAttrib ($is_id, 'id'), ...setClass (SetCarouselWrapper ()), '>',
@@ -1064,7 +1039,7 @@
                                 ...setStyle ([
                                     ...getStyle ('box-shadow'),
                                     ...getStyle ('min-height'),
-                                    ...isTheKeyExists ($is_index, 'gallery') ? getStyle ('background-image', $is_index['gallery']) : [],
+                                    ...isTheKeyExist ($is_index, 'gallery') ? getStyle ('background-image', $is_index['gallery']) : [],
                                 ]),
                             '>',
                                 '<div',
@@ -1166,9 +1141,9 @@
     };
 
     function getHeaderContainer ($is_input = []) {
-        $is_input = jsonfileToArray (SetJsonFilename ($is_input));
+        $is_input = setJsonfile2Array (doesTheFileExist ($is_input));
         $is_archive = '';
-        if (isTheKeyExists ($is_input, 'thumbnail'))
+        if (isTheKeyExist ($is_input, 'thumbnail'))
             $is_archive = doesThePathExist ($is_input['thumbnail']);
         $is_style = [];
         if (isString ($is_archive))
@@ -1202,7 +1177,9 @@
         ];
     };
 
-    function getModalContainerArray ($is_input = '') {
+    // FABIO
+
+    function getModalContainerArray (string $is_input = ''): array {
         return isArray (getJsonfile ($is_input)) ? array_map (function ($is_index) use ($is_input) {
             $is_function = setTarget ([ 'get', 'modal', $is_input, 'container' ]);
             if (function_exists ($is_function))
@@ -1211,7 +1188,7 @@
     };
 
     function getModalFormularioContainer ($is_input = '', $is_stage = 'front') {
-        $is_content = jsonfileToArray (SetJsonFilename ($is_input));
+        $is_content = setJsonfile2Array (doesTheFileExist ($is_input));
         return isArray ($is_content) ? [
             '<main',
                 ...setClass ([ 'mt-3', 'p-0', ...P['Gap05'], ...P['WrapSetCol'] ]),
@@ -1268,7 +1245,7 @@
                                                             ...array_map (function ($is_element) use ($is_index) {
                                                                 $is_option = [];
                                                                 if (in_array ($is_element['selector'], [ 'select' ]))
-                                                                    if (isTheKeyExists (defineOption, setTarget ($is_element['label'])))
+                                                                    if (isTheKeyExist (defineOption, setTarget ($is_element['label'])))
                                                                         $is_option = defineOption[setTarget ($is_element['label'])];
                                                                 return implode ('', [
                                                                     ...isTheKeyFilled ($is_element, 'selector') ? [
@@ -1774,7 +1751,7 @@
     };
 
     function GetHeadlineTitle ($is_input = []) {
-        return isTheKeyExists ($is_input['content'], 'title') ? [
+        return isTheKeyExist ($is_input['content'], 'title') ? [
             ...isArray (setArray ($is_input['content']['title'])) ? [
                 ...array_map (function ($is_index) use ($is_input) {
                     $is_head = in_array ($is_input['heading'], range (1, 6)) ? 'h' . $is_input['heading'] : 'p';
@@ -1814,7 +1791,7 @@
     };
 
     function GetHeadlineSubtitle ($is_input = []) {
-        return isTheKeyExists ($is_input['content'], 'subtitle') ? [
+        return isTheKeyExist ($is_input['content'], 'subtitle') ? [
             ...isArray (setArray ($is_input['content']['subtitle'])) ? [
                 ...array_map (function ($is_index) use ($is_input) {
                     return implode ('', [
@@ -1840,7 +1817,7 @@
     };
 
     function GetHeadlineDescription ($is_input = []) {
-        return isTheKeyExists ($is_input['content'], 'description') ? [
+        return isTheKeyExist ($is_input['content'], 'description') ? [
             ...isArray (setArray ($is_input['content']['description'])) ? [
                 ...GetOrdered ([
                     ...GetHeadlineProper ($is_input, 'content'),
@@ -1863,10 +1840,10 @@
     function GetHeadline ($is_input = []) {
         $is_proper = GetHeadlineProper ($is_input);
         $is_subtitle = $is_description = false;
-        if (isTheKeyExists ($is_proper['content'], 'subtitle'))
+        if (isTheKeyExist ($is_proper['content'], 'subtitle'))
             if (isArray (setArray ($is_proper['content']['subtitle'])))
                 $is_subtitle = true;
-        if (isTheKeyExists ($is_proper['content'], 'description'))
+        if (isTheKeyExist ($is_proper['content'], 'description'))
             if (isArray (setArray ($is_proper['content']['description'])))
                 $is_description = true;
         $is_content = [
@@ -1895,10 +1872,10 @@
     function GetAccordionHeadline ($is_input = []) {
         $is_proper = GetHeadlineProper ($is_input);
         $is_subtitle = $is_description = false;
-        if (isTheKeyExists ($is_proper['content'], 'subtitle'))
+        if (isTheKeyExist ($is_proper['content'], 'subtitle'))
             if (isArray (setArray ($is_proper['content']['subtitle'])))
                 $is_subtitle = true;
-        if (isTheKeyExists ($is_proper['content'], 'description'))
+        if (isTheKeyExist ($is_proper['content'], 'description'))
             if (isArray (setArray ($is_proper['content']['description'])))
                 $is_description = true;
         $is_content = [
@@ -1963,14 +1940,14 @@
         return implode ('', [
             '<article', ...setAttrib ($is_master, 'id'), ...setClass ([ 'accordion', ...P['Col12'], ...P['Gap03'] ]), '>',
                 ...GetHeadlineTemplate ($is_input, 4),
-                ...isTheKeyExists ($is_input, 'container') ? [
+                ...isTheKeyExist ($is_input, 'container') ? [
                     ...thereAreFilledKeys ($is_input['container']) ? [
                         '<section', ...setClass (P['WrapSetCol']), '>',
                             ...array_map (function ($is_index) use ($is_master) {
                                 $is_slave = setRandomPassword ();
                                 return implode ('', [
                                     '<article', ...setClass ([ 'accordion-item', 'w-100' ]), '>',
-                                        ...isTheKeyExists ($is_index, 'title') ? [
+                                        ...isTheKeyExist ($is_index, 'title') ? [
                                             ...istrue ($is_index['title']) ? [
                                                 '<h2', ...setClass ([ 'accordion-header', 'm-0', 'p-0' ]), '>',
                                                     '<button',
@@ -2019,14 +1996,14 @@
         return implode ('', [
             ...isArray ($is_input) ? [
                 ...GetHeadlineTemplate ($is_input, 4),
-                ...isTheKeyExists ($is_input, 'container') ? [
+                ...isTheKeyExist ($is_input, 'container') ? [
                     ...isArray ($is_input['container']) ? [
                         '<section', ...setClass ([ 'wrapper', ...P['WrapSetCol'] ]), '>',
                             ...array_map (function ($is_index, $is_key) {
                                 $is_number = getArrayRandomIndex (range (0, sizeof (SmallCollection) - 1));
                                 $is_classes = [ BackgroundSubtle[$is_number], BorderSubtle[$is_number], TextEmphasis[$is_number] ];
                                 $is_gallery = false;
-                                if (isTheKeyExists ($is_index, 'gallery'))
+                                if (isTheKeyExist ($is_index, 'gallery'))
                                     if (hasValidPath ($is_index['gallery']))
                                         $is_gallery = true;
                                 return implode ('', [
@@ -2088,12 +2065,12 @@
     function GetModalCardTemplate ($is_input = []) {
         return implode ('', [
             ...GetHeadlineTemplate ($is_input, 4),
-            ...isTheKeyExists ($is_input, 'container') ? [
+            ...isTheKeyExist ($is_input, 'container') ? [
                 ...isArray ($is_input['container']) ? [
                     '<section', ...setClass ([ 'card-container', ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
                         ...array_map (function ($is_index) {
                             $is_gallery = [];
-                            if (isTheKeyExists ($is_index, 'gallery'))
+                            if (isTheKeyExist ($is_index, 'gallery'))
                                 $is_gallery = hasValidPath ($is_index['gallery']);
                             $is_content = [
                                 ...GetHeadline ([ 'content' => $is_index, 'heading' => 5 ]),
@@ -2123,13 +2100,13 @@
     };
 
     function getModalContainerTemplate ($is_input = [], $is_function = '') {
-        $is_input = jsonfileToArray (SetJsonFilename ($is_input));
+        $is_input = setJsonfile2Array (doesTheFileExist ($is_input));
         return isArray ($is_input) ? [
             '<section', ...setClass ([ 'mt-3', 'p-0', ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
                 ...array_map (function ($is_index) use ($is_function) {
                     return implode ('', [
                         ...GetHeadlineTemplate ($is_index, 3),
-                        ...isTheKeyExists ($is_index, 'container') ? [
+                        ...isTheKeyExist ($is_index, 'container') ? [
                             ...isArray ($is_index['container']) ? array_map (function ($is_index) use ($is_function) {
                                     return $is_function ($is_index);
                                 }, $is_index['container']) : [
@@ -2144,19 +2121,19 @@
     };
 
     function GetAboutContainer ($is_input = []) {
-        $is_input = SetJsonFilename ($is_input);
-        $is_input = jsonfileToArray ($is_input);
+        $is_input = doesTheFileExist ($is_input);
+        $is_input = setJsonfile2Array ($is_input);
         return isArray ($is_input) ? [
             '<main', ...setClass ([ 'mt-3', 'p-0', ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
                 ...array_map (function ($is_index) {
                     return implode ('', [
                         ...GetHeadline ([ 'content' => $is_index, 'heading' => 2, 'lineup' => 'start' ]),
-                        ...isTheKeyExists ($is_index, 'container') ? [
+                        ...isTheKeyExist ($is_index, 'container') ? [
                             ...isArray ($is_index['container']) ? [
                                 ...array_map (function ($is_index) {
                                     return implode ('', [
                                         ...GetHeadline ([ 'content' => $is_index, 'heading' => 3, 'lineup' => 'start' ]),
-                                        ...isTheKeyExists ($is_index, 'container') ? [
+                                        ...isTheKeyExist ($is_index, 'container') ? [
                                             ...isArray ($is_index['container']) ? [
                                                 '<section', ...setClass ([ ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
                                                     ...array_map (function ($is_index) {
@@ -2200,18 +2177,78 @@
         ];
     };
 
-    function SetJsonFilename ($is_input = '') {
-        $is_input = implode ('.', [ setID ($is_input), 'json' ]);
-        if (doesThePathExist ($is_input))
-            return $is_input;
-        return '';
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+    function getFileFormat (): array {
+        return [ 'html', 'jpeg', 'jpg', 'json', 'php', 'png', 'txt' ];
     };
 
-    function getJsonfile ($is_input = []) {
-        return array_values (array_filter (setArray (jsonfileToArray (SetJsonFilename ($is_input))), function ($is_index) {
-            if (doesThePathExist (SetJsonFilename ($is_index)))
-                return $is_index;
-        }));
+
+    function getFileContent (string $is_input = '', string $is_extension = 'json'): string {
+        return doesTheFileExist ($is_input, $is_extension) ? file_get_contents (doesTheFileExist ($is_input, $is_extension)) : '';
+    };
+
+    function doesThePathExist (array|string $is_input = []): string {
+        return file_exists (setPath ($is_input)) ? setPath ($is_input) : '';
+    };
+
+    
+    
+
+    
+
+    
+
+    function getJsonfile (string $is_input = ''): array {
+        if (doesTheFileExist ($is_input, 'json')):
+            return array_values (array_filter (setJsonfile2Array (doesTheFileExist ($is_input, 'json')), function ($is_index) {
+                if (doesTheFileExist ($is_index, 'json')):
+                    return $is_index;
+                endif;
+            }));
+        endif;
+        return [];
+    };
+
+    function isFileType (string $is_input = '', string $is_extension = 'json'): bool {
+        if (isTheKeyExist (pathinfo ($is_input), 'extension'))
+            if (in_array ($is_extension, getFileFormat ()))
+                if (in_array (pathinfo ($is_input)['extension'], [ $is_extension ]))
+                    return true;
+        return false;
+    };
+    
+    function setJsonfile2Array (string $is_input = ''): array {
+        if (isFileType ($is_input, 'json')):
+            return getFileContent ($is_input) ? setObject2Array (json_decode (getFileContent ($is_input))) : [];
+        endif;
+        return [];
+    };
+
+
+    function doesTheFileExist (string $is_input = '', string $is_extension = 'json'): string {
+        if (isTheKeyExist (pathinfo ($is_input), 'extension')):
+            return doesThePathExist (pathinfo ($is_input)['basename']);
+        else:
+            if (in_array ($is_extension, getFileFormat ())):
+                return doesThePathExist (implode ('.', [ setID ($is_input), $is_extension ]));
+            else:
+                return '';
+            endif;
+        endif;
+        return '';
     };
 
     function GetModalContratoContainer ($is_input = []) {
@@ -2240,7 +2277,7 @@
 
     function GetModalCatalogoContent ($is_input = []) {
         return isArray ($is_input) ? [
-            ...isTheKeyExists ($is_input, 'gallery') ? GetSlider ($is_input['gallery'], 15) : [],
+            ...isTheKeyExist ($is_input, 'gallery') ? GetSlider ($is_input['gallery'], 15) : [],
             ...GetAccordionHeadline ([
                 'bullet' => 'yes',
                 'content' => $is_input,
@@ -2263,13 +2300,13 @@
     };
 
     function GetModalAccordionContentTemplate ($is_input = [], $is_function = '') {
-        $is_input = jsonfileToArray (SetJsonFilename ($is_input));
+        $is_input = setJsonfile2Array (doesTheFileExist ($is_input));
         return isArray ($is_input) ? [
             '<main', ...setClass ([ 'm-0', 'p-0', ...P['Gap05'], ...P['WrapSetCol'] ]), '>',
                 ...array_map (function ($is_index) use ($is_function) {
                     return implode ('', [
                         ...GetHeadline ([ 'content' => $is_index, 'heading' => 3, 'lineup' => 'start' ]),
-                        ...isTheKeyExists ($is_index, 'container') ? [
+                        ...isTheKeyExist ($is_index, 'container') ? [
                             ...isArray ($is_index['container']) ? [
                                 '<section', ...setClass ([ ...P['Gap05'], ...P['WrapSetCol'] ]), '>',
                                     ...array_map (function ($is_index) use ($is_function) {
@@ -2277,13 +2314,13 @@
                                         return implode ('', thereAreFilledKeys ($is_index) ? [
                                             '<article', ...setClass ([ ...P['Gap03'], ...P['WrapSetCol'] ]), '>',
                                                 ...GetHeadline ([ 'content' => $is_index, 'heading' => 4, 'lineup' => 'start' ]),
-                                                ...isTheKeyExists ($is_index, 'container') ? [
+                                                ...isTheKeyExist ($is_index, 'container') ? [
                                                     ...isArray ($is_index['container']) ? [
                                                         '<section', ...setAttrib ($is_master, 'id'), ...setClass ([ 'accordion' ]), '>',
                                                             ...array_map (function ($is_index) use ($is_function, $is_master) {
                                                                 $is_slave = setRandomPassword ();
                                                                 return implode ('', [
-                                                                    ...isTheKeyExists ($is_index, 'title') ? [
+                                                                    ...isTheKeyExist ($is_index, 'title') ? [
                                                                         ...isArray ($is_index['title']) ? [
                                                                             '<article', ...setClass ([ 'accordion-item' ]), '>',
                                                                                 '<h2', ...setClass ([ 'accordion-header' ]), '>',
@@ -2544,18 +2581,38 @@
         return $is_result;
     };
 
-    if (doesThePathExist ('pool.json')):
-        if (jsonfileComparator (getPool (), 'pool.json')): else:
-            arrayToJsonfile (getPool (), 'pool.json');
+    function isArrayLike2Jsonfile (array $is_array = [], string $is_filename = ''): bool {
+        if (isArray ($is_array)):
+            if (isFileType ($is_filename, 'json')):
+                if (getFileContent ($is_filename)):
+                    return json_decode (getFileContent ($is_filename)) === json_encode ($is_array);
+                else:
+                    return false;
+                endif;
+            endif;
         endif;
-    else:
-        arrayToJsonfile (getPool (), 'pool.json');
-    endif;
+        return false;
+    };
 
-    define ('P', jsonfileToArray ('pool.json'));
+
+    function createJsonfile (array $is_array = [], string $is_filename = '') {
+        if (isFileType ($is_filename, 'json')):
+            if (doesThePathExist ($is_filename)):
+                if (isArrayLike2Jsonfile ($is_array, $is_filename)): else:
+                    setArray2Jsonfile ($is_array, $is_filename);
+                endif;
+            else:
+                setArray2Jsonfile ($is_array, $is_filename);
+            endif;
+        endif;
+    };
+
+    createJsonfile (getPool (), 'pool.json');
+
+    define ('P', setJsonfile2Array ('pool.json'));
 
     function getClass (string $is_input = ''): array {
-        if (isTheKeyExists (P, $is_input)) return P[$is_input];
+        if (isTheKeyExist (P, $is_input)) return P[$is_input];
         return [];
     };
 
@@ -2588,7 +2645,7 @@
             ] : [
             ],
         ];
-        if (isTheKeyExists ($is_result, $is_key))
+        if (isTheKeyExist ($is_result, $is_key))
             return $is_result[$is_key];
         return [];
     };
@@ -2643,11 +2700,11 @@
     };
 
     function setMetaLineDescription (string $is_input = 'headline.json'): array {
-        $is_input = jsonfileToArray ($is_input);
+        $is_input = setJsonfile2Array ($is_input);
         return [
             ...isArray ($is_input) ? [
                 ...array_map (function ($is_index) use ($is_input) {
-                    if (isTheKeyExists ($is_input, $is_index)):
+                    if (isTheKeyExist ($is_input, $is_index)):
                         if (isArray (setArray ($is_input[$is_index]))):
                             $is_name = [ 
                                 ...in_array ($is_index, [ 'title' ]) ? [ 'author' ] : [],
@@ -2663,7 +2720,7 @@
     };
 
     function setMetaLineKeyword (string $is_input = 'keyword.json'): array {
-        $is_input = jsonfileToArray ($is_input);
+        $is_input = setJsonfile2Array ($is_input);
         return [
             ...isArray ($is_input) ? [
                 ...setMetaLine ([ ...setAttrib ('keywords', 'name'), ...setAttrib (implode (', ', $is_input), 'content') ])
@@ -2687,12 +2744,12 @@
     };
 
     function setTitleContainer (string $is_input = 'headline.json'): array {
-        $is_input = jsonfileToArray ($is_input);
+        $is_input = setJsonfile2Array ($is_input);
         return [
             ...isArray ($is_input) ? [
                 '<title>',
                     implode (' | ', array_map (function ($is_index) use ($is_input) {
-                        if (isTheKeyExists ($is_input, $is_index))
+                        if (isTheKeyExist ($is_input, $is_index))
                             if (isArray (setArray ($is_input[$is_index])))
                                 return setCamelcase ($is_input[$is_index]);
                     }, [ 'title', 'subtitle', 'description' ])),
@@ -2703,11 +2760,7 @@
     };
 
     function setHeadContainer (): array {
-        return setWrapper ([
-            ...setMetaArray (),
-            ...setTitleContainer (),
-            ...setStyleArray (),
-        ], [
+        return setWrapper ([ ...setMetaArray (), ...setTitleContainer (), ...setStyleArray () ], [
             'wrap' => 'head',
         ]);
     };

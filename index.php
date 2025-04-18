@@ -1,6 +1,6 @@
 <?php
 
-    define ('defineDay', [
+    define ('defineDia', [
         'Sunday',
         'Monday',
         'Tuesday',
@@ -10,11 +10,7 @@
         'Saturday',
     ]);
 
-    define ('defineShortDay', array_map (function ($i) { return substr ($i, 0, 2); }, defineDay));
-
-    define ('defineMediumDay', array_map (function ($i) { return substr ($i, 0, 3); }, defineDay));
-
-    define ('defineMonth', [
+    define ('defineMes', [
         'January',
         'February',
         'March',
@@ -28,8 +24,6 @@
         'November',
         'December',
     ]);
-
-    define ('defineMediumMonth', array_map (function ($i) { return substr ($i, 0, 3); }, defineMonth));
 
     define ('definePrimeiroContato', [
         'Whatsapp',
@@ -142,7 +136,7 @@
         }, range (1, 9)),
     ]);
 
-    define ('defineFuncionarios', [
+    define ('defineFuncionario', [
         implode (' ', [ 1, ' a ', 10, ' funcionarios.' ]),
         ...array_map (function ($i) {
             return implode ('', [ ($i * 10 + 1), ' a ', ($i * 10), ' funcionarios.' ]);
@@ -197,20 +191,20 @@
     define ('defineAdultos', array_map (function ($i) { return strval ($i); }, range (1, 10)));
 
     define ('defineOption', [
-        'Funcionarios' => defineFuncionarios,
-        'Dia' => defineDay,
-        'Mes' => defineMonth,
-        'PrimeiroContato' => definePrimeiroContato,
-        'Genero' => defineGenero,
-        'Cargo' => defineCargo,
-        'Periodo' => definePeriodo,
-        'Segmento' => defineSegmento,
-        'ComoVoceNosConheceu' => defineComoVoceNosConheceu,
-        'Faturamento' => defineFaturamento,
-        'Assunto' => defineAssunto,
-        'Voluntario' => defineVoluntario,
-        'GroupAdults' => defineAdultos,
-        'Adultos' => defineAdultos,
+        'funcionario' => defineFuncionario,
+        'dia' => defineDia,
+        'mes' => defineMes,
+        'primeiroContato' => definePrimeiroContato,
+        'genero' => defineGenero,
+        'cargo' => defineCargo,
+        'periodo' => definePeriodo,
+        'segmento' => defineSegmento,
+        'comoVoceNosConheceu' => defineComoVoceNosConheceu,
+        'faturamento' => defineFaturamento,
+        'assunto' => defineAssunto,
+        'voluntario' => defineVoluntario,
+        'groupAdults' => defineAdultos,
+        'adultos' => defineAdultos,
     ]);
 
     define ('defineHighlighted', [
@@ -761,7 +755,8 @@
         $is_input = setTonicSyllable ($is_input);
         $is_input = preg_replace ('/[^0-9a-zA-Z]/i', ' ', $is_input);
         $is_input = preg_replace ('/\s+/', ' ', $is_input);
-        return implode ('', array_map (function ($i) { return ucfirst ($i); }, explode (' ', trim ($is_input))));
+        $is_input = explode (' ', trim ($is_input));
+        return implode ('', array_map (function ($i, $k) { return !$k ? strtolower ($i) : ucfirst ($i); }, $is_input, array_keys ($is_input)));
     };
 
     function setCamelcase (array|string $is_input = ''): string {
@@ -863,13 +858,7 @@
         ];
     };
 
-    function setHyperlink (string $is_href = '', string $is_node = ''): string {
-        return isURL ($is_href) ? implode ('', [
-            '<a', ...setAttrib ($is_href, 'href'), ...setAttrib ('_blank', 'target'), '>',
-                isString ($is_node) ? setCamelcase ($is_node) : $is_href,
-            '</a>',
-        ]) : '';
-    };
+    
 
     function IsCNPJ (string $is_input = ''): bool|string {
         $is_input = preg_replace ('/[^0-9]/', '', $is_input);
@@ -900,7 +889,7 @@
     function getCarouselIndicator (array $is_input = []): array {
         $is_proper = setProper ($is_input, [ 'content', 'id' ]);
         return sizeof ($is_proper['content']) > 1 ? [
-            '<div', ...setClass ([ 'carousel-indicators', 'mx-auto', 'mb-3', getClass ('Gap01') ]), '>',
+            '<div', ...setClass ([ 'carousel-indicators', 'mx-auto', 'mb-3', getClass ('gap01') ]), '>',
                 ...array_map (function ($is_index, $is_key) use ($is_proper) {
                     return implode ('', [
                         '<button',
@@ -1017,7 +1006,7 @@
                     ...setClass ([ 'modal', 'fade' ]),
                 '>',
                     '<div', ...setClass ([ 'modal-dialog-centered', 'modal-dialog-scrollable', 'modal-dialog', 'modal-fullscreen' ]), '>',
-                        '<div', ...setClass ([ 'modal-content', getClass ('WrapSetCol') ]), '>',
+                        '<div', ...setClass ([ 'modal-content', getClass ('wrapSetCol') ]), '>',
                             '<button',
                                 ...setClass ([ 'btn-close', 'position-absolute', 'z-3' ]),
                                 ...setStyle ([ 'right' => '24px', 'top' => '12px' ]),
@@ -1026,7 +1015,7 @@
                             '>',
                             '</button>',
                             '<div', ...setClass ([ 'modal-body', 'modal-center', 'px-3', 'px-lg-5', 'py-5' ]), '>',
-                                '<div', ...setClass ([ getClass ('WrapSetCol'), getClass ('Gap05') ]), '>',
+                                '<div', ...setClass ([ getClass ('wrapSetCol'), getClass ('gap05') ]), '>',
                                     ...setArray ($is_proper['content']),
                                 '</div>',
                             '</div>',
@@ -1067,7 +1056,7 @@
             ...isArray ($is_input) ? [
                 '<div',
                     ...setAttrib ('wrap'),
-                    ...setClass ([ 'flex-lg-row', 'gap-lg-3', 'p-5', getClass ('WrapSetCol') ]),
+                    ...setClass ([ 'flex-lg-row', 'gap-lg-3', 'p-5', getClass ('wrapSetCol') ]),
                     ...setStyle (getStyle ('background-image', isAnyPathExist ('jpg'))),
                 '>',
                     ...isString ($is_thumbnail) ? [
@@ -1095,26 +1084,26 @@
         $is_content = setJson2Array ($is_input);
         return isArray ($is_content) ? [
             '<main',
-                ...setClass ([ 'mt-3', 'p-0', getClass ('Gap05'), getClass ('WrapSetCol') ]),
+                ...setClass ([ 'mt-3', 'p-0', getClass ('gap05'), getClass ('wrapSetCol') ]),
             '>',
                 ...array_map (function ($is_index, $is_key) use ($is_stage) {
                     return implode ('', [
-                        '<section', ...setClass ([ 'p-0', getClass ('Gap03'), getClass ('WrapSetCol') ]), '>',
+                        '<section', ...setClass ([ 'p-0', getClass ('gap03'), getClass ('wrapSetCol') ]), '>',
                             ...in_array ($is_stage, [ 'modal' ]) ? getHeadlineTemplate ([ 'lineup' => 'start', 'content' => $is_index, 'heading' => 3 ]) : [],
                             '<article',
-                                ...setClass ([ 'p-3', getClass ('WrapSetCol'), getClass ('WrapColorLight'), getClass ('Gap03') ]),
+                                ...setClass ([ 'p-3', getClass ('wrapSetCol'), getClass ('wrapColorLight'), getClass ('gap03') ]),
                             '>',
                                 ...getHeadlineTemplate ([ 'content' => $is_index, 'heading' => 3 ]),
                                 ...isKeyTrue ($is_index, 'container') ? [
                                     '<form',
-                                        ...setClass ([ getClass ('Gap02'), getClass ('WrapSetCol') ]),
+                                        ...setClass ([ getClass ('gap02'), getClass ('wrapSetCol') ]),
                                         ...setAttribForm (setProper ($is_index, [ 'action', 'id', 'method', 'target' ])),
                                     '>',
                                         ...array_map (function ($is_index) {
                                             return implode ('', isArray ($is_index) ? [
-                                                '<div', ...setClass (getClass ('WrapSetCol')), '>',
+                                                '<div', ...setClass (getClass ('wrapSetCol')), '>',
                                                     ...!onlyButtons ($is_index) ? [
-                                                        '<div', ...setClass (getClass ('WrapSetRow')), ...setStyle ([ 'min-height' => '12px' ]), '>',
+                                                        '<div', ...setClass (getClass ('wrapSetRow')), ...setStyle ([ 'min-height' => '12px' ]), '>',
                                                             ...array_map (function ($is_element) use ($is_index) {
                                                                 $is_title = $is_element['label'];
                                                                 if (in_array ($is_element['label'], [ 'arrival', 'checkin' ])) $is_title = 'Data de chegada';
@@ -1128,11 +1117,11 @@
                                                                     return implode ('', [
                                                                         '<label',
                                                                             ...setAttrib ($is_element['label'], 'for'),
-                                                                            ...setClass ([ 'px-2', getClass ('HtmlLabel') ]),
+                                                                            ...setClass ([ 'px-2', getClass ('htmlLabel') ]),
                                                                             ...setStyle ([ 'width' => 'calc(100% / ' . sizeof ($is_index) . ')', 'min-height' => '12px' ]),
                                                                         '>',
                                                                             ...!in_array ($is_element['type'], [ 'button', 'submit' ]) ? [
-                                                                                '<p', ...setClass (getClass ('Text')), ...setStyle ([ 'min-height' => '12px' ]), '>',
+                                                                                '<p', ...setClass (getClass ('text')), ...setStyle ([ 'min-height' => '12px' ]), '>',
                                                                                     setCamelcase ($is_title),
                                                                                 '</p>',
                                                                             ] : [
@@ -1144,25 +1133,33 @@
                                                         '</div>',
                                                     ] : [
                                                     ],
-                                                    ...onlyButtons ($is_index) ? [ '<div', ...setClass (getClass ('WrapSetToolbar')), '>' ] : [],
-                                                        '<div', ...setClass (onlyButtons ($is_index) ? getClass ('WrapSetButton') : getClass ('WrapSetInput')), '>',
+                                                    ...onlyButtons ($is_index) ? [ '<div', ...setClass (getClass ('wrapSetToolbar')), '>' ] : [],
+                                                        '<div', ...setClass (onlyButtons ($is_index) ? getClass ('wrapSetButton') : getClass ('wrapSetInput')), '>',
                                                             ...array_map (function ($is_element) use ($is_index) {
                                                                 $is_option = [];
+
+
+
+                                                                // FABIO
+
                                                                 if (in_array ($is_element['selector'], [ 'select' ]))
                                                                     if (isKeyTrue (defineOption, setTarget ($is_element['label'])))
                                                                         $is_option = defineOption[setTarget ($is_element['label'])];
+
+
+
                                                                 return implode ('', [
                                                                     ...isKeyTrue ($is_element, 'selector') ? [
                                                                         ...in_array ($is_element['selector'], [ 'button', 'input', 'select', 'textarea' ]) ? [
                                                                             '<',
                                                                                 $is_element['selector'],
                                                                                 ...in_array ($is_element['selector'], [ 'button' ]) ? [
-                                                                                    ...setClass (POOL['LineButtonLight']),
+                                                                                    ...setClass (getClass ('lineButtonLight')),
                                                                                     ...in_array ($is_element['label'], [ 'fechar' ]) ? setAttrib ('modal', 'data-bs-dismiss') : [],
                                                                                 ] : [
                                                                                 ],
                                                                                 ...!in_array ($is_element['selector'], [ 'button' ]) ? [
-                                                                                    ...setClass (POOL['HtmlInput']),
+                                                                                    ...setClass (getClass ('htmlInput')),
                                                                                     ...setAttrib ($is_element['label'], 'name'),
                                                                                 ] : [
                                                                                 ],
@@ -1210,7 +1207,7 @@
                                                     ...onlyButtons ($is_index) ? [ '</div>' ] : [],
                                                 '</div>',
                                             ] : [
-                                                '<hr', ...setClass (POOL['HtmlHr']), ...setStyle ([ 'border-top' => 'dotted 2px #000' ]), '>',
+                                                '<hr', ...setClass (getClass ('htmlHr')), ...setStyle ([ 'border-top' => 'dotted 2px #000' ]), '>',
                                             ]);
                                         }, $is_index['container']),
                                     '</form>',
@@ -1237,34 +1234,45 @@
         return getModalContainerTemplate ($is_input, 'getModalArticleTemplate');
     };
 
+
+    function setHyperlink (string $is_href = '', string $is_node = ''): string {
+        return isURL ($is_href) ? implode ('', [
+            '<a', ...setAttrib ($is_href, 'href'), ...setAttrib ('_blank', 'target'), '>',
+                isString ($is_node) ? setCamelcase ($is_node) : $is_href,
+            '</a>',
+        ]) : '';
+    };
+
+    function getDataToggle (string $is_input = ''): array {
+        return [
+            '<a',
+                ...setAttrib ('#', 'href'),
+                ...setAttrib ('modal', 'data-bs-toggle'),
+                ...setAttrib ([ '#', setTarget ([ $is_input, 'target' ]) ], 'data-bs-target'),
+                ...setClass (getClass ('link')),
+            '>',
+                setCamelcase ($is_input),
+            '</a>',
+        ];
+    };
+
     function getWidgetContainer (array|string $is_input = [ 'contrato', 'formulario' ]): array {
         $is_number = str_pad (3, 2, '0', STR_PAD_LEFT);
         if (sizeof ($is_input) % 2 === 0) $is_number = str_pad (6, 2, '0', STR_PAD_LEFT);
         if (sizeof ($is_input) % 3 === 0) $is_number = str_pad (4, 2, '0', STR_PAD_LEFT);
         if (sizeof ($is_input) % 4 === 0) $is_number = str_pad (3, 2, '0', STR_PAD_LEFT);
-        $is_number = setTarget ([ 'Col', $is_number ]);
+        $is_number = setTarget ([ 'col', $is_number ]);
         return [
             ...isArray (setArray ($is_input)) ? [
-                '<div', ...setClass ([ 'row-gap-3', 'm-0', 'px-5', 'py-3', ...POOL['Gap00'], ...POOL['WrapSetRow'] ]), '>',
+                '<div', ...setClass ([ 'row-gap-3', 'm-0', 'px-5', 'py-3', getClass ('gap00'), getClass ('wrapSetRow') ]), '>',
                     ...array_map (function ($is_index) use ($is_number) {
                         return implode ('', [
-                            '<div', ...setClass ([ 'p-0', 'flex-column', ...POOL[$is_number], ...POOL['Gap01'] ]), '>',
-                                '<h5', ...setClass ([ 'text-lg-start', ...POOL['H5'] ]), '>',
+                            '<div', ...setClass ([ 'p-0', 'flex-column', getClass ($is_number), getClass ('gap01') ]), '>',
+                                '<h5', ...setClass ([ 'text-lg-start', getClass ('h5') ]), '>',
                                     setCamelcase ($is_index),
                                 '</h5>',
-                                '<div', ...setClass ([ 'justify-content-center', 'justify-content-lg-start', 'row-gap-1', ...POOL['Gap02'], ...POOL['WrapSetRow'] ]), '>',
-                                    ...array_map (function ($is_index) {
-                                        return implode ('', [
-                                            '<a',
-                                                ...setAttrib ('#', 'href'),
-                                                ...setAttrib ([ '#', setTarget ([ $is_index, 'target' ]) ], 'data-bs-target'),
-                                                ...setAttrib ('modal', 'data-bs-toggle'),
-                                                ...setClass ([ 'text-lg-start', ...POOL['Link'] ]),
-                                            '>',
-                                                setCamelcase ($is_index),
-                                            '</a>',
-                                        ]);
-                                    }, getJsonArray ($is_index)),
+                                '<div', ...setClass ([ 'justify-content-center', 'justify-content-lg-start', 'row-gap-1', getClass ('gap02'), getClass ('wrapSetRow') ]), '>',
+                                    ...array_map (function ($is_index) { return implode ('', getDataToggle ($is_index)); }, getJsonArray ($is_index)),
                                 '</div>',
                             '</div>',
                         ]);
@@ -1272,9 +1280,9 @@
                 '</div>',
             ] : [
             ],
-            '<div', ...setClass ([ 'px-5', 'pb-5', ...POOL['WrapSetCol'] ]), '>',
-                '<div', ...setClass ([ 'border-top', ...POOL['WrapSetCol'] ]), '>',
-                    '<p', ...setClass ([ 'text-lg-start', ...POOL['Text'] ]), '>',
+            '<div', ...setClass ([ 'px-5', 'pb-5', getClass ('wrapSetCol') ]), '>',
+                '<div', ...setClass ([ 'border-top', getClass ('wrapSetCol') ]), '>',
+                    '<p', ...setClass ([ 'text-lg-start', getClass ('text') ]), '>',
                         implode (' ', [ '©', date ('Y'), 'Company,', 'Inc.', 'All', 'rights', 'reserved.' ]),
                     '</p>',
                 '</div>',
@@ -1289,7 +1297,7 @@
             return [
                 ...isString ($is_content) && isString ($is_hyperlink) ? [
                     '<li', ...setClass ([ 'd-inline-block', 'lh-1', 'm-0', 'nav-item', 'p-0', 'text-center' ]), '>',
-                        '<a', ...setAttrib ('_blank', 'target'), ...setAttrib ($is_hyperlink, 'href'), ...setClass (POOL['Link']), '>',
+                        '<a', ...setAttrib ('_blank', 'target'), ...setAttrib ($is_hyperlink, 'href'), ...setClass (getClass ('link')), '>',
                             $is_content,
                         '</a>',
                     '</li>',
@@ -1299,8 +1307,8 @@
         };
         return [
             ...isTrue ($is_true) ? [
-                '<div', ...setClass ([ 'p-3', ...POOL['WrapSetCol'], ...POOL['WrapColorDark'] ]), '>',
-                    '<ul', ...setClass ([ 'navbar-nav', 'p-0', ...POOL['Gap01'], ...POOL['WrapSetCol'] ]), '>',
+                '<div', ...setClass ([ 'p-3', getClass ('wrapSetCol'), getClass ('wrapColorDark') ]), '>',
+                    '<ul', ...setClass ([ 'navbar-nav', 'p-0', getClass ('gap01'), getClass ('wrapSetCol') ]), '>',
                         ...setUnit (setCamelcase ($is_proper['name']), $is_proper['link']),
                         ...setUnit (IsCNPJ ($is_proper['cnpj']), $is_proper['link']),
                     '</ul>',
@@ -1404,19 +1412,7 @@
                             'w-100',
                         ]),
                     '>',
-                        ...array_map (function ($is_index) {
-                            return implode ('', [
-                                '<a',
-                                    ...setClass ([ ...POOL['Link'] ]),
-                                    ...setAttrib ('#', 'href'),
-                                    ...setAttrib ([ '#', setTarget ([ $is_index, 'target' ]) ], 'data-bs-target'),
-                                    ...setAttrib ('modal', 'data-bs-toggle'),
-                                    ...setStyle ([ 'color' => '#212529' ]),
-                                '>',
-                                    setCamelcase ($is_index),
-                                '</a>',
-                            ]);
-                        }, setArray ($is_input)),
+                        ...array_map (function ($is_index) { return implode ('', getDataToggle ($is_index)); }, setArray ($is_input)),
                     '</div>',
                 '</div>',
             '</div>',
@@ -1429,7 +1425,7 @@
         $is_wrap = in_array ($is_proper['wrap'], defineSelector) ? $is_proper['wrap'] : 'div';
         return [
             ...isArray ($is_input) ? [
-                '<', $is_wrap, ...setClass (POOL['WrapSetCol']), ...setAttrib ($is_proper['id']), '>',
+                '<', $is_wrap, ...setClass (getClass ('wrapSetCol')), ...setAttrib ($is_proper['id']), '>',
                     ...$is_input,
                 '</', $is_wrap, '>',
             ] : [
@@ -1467,30 +1463,30 @@
                     ...setStyle ([ 'width' => 'fit-content' ]),
                 '>',
                     ...isTrue ($is_discount) ? [
-                        '<p', ...setClass ([ 'wrapper-principal', ...POOL['TextSetDisabled'], ...POOL['TextSetMono'] ]), ...setStyle ([ 'width' => 'fit-content' ]), '>',
+                        '<p', ...setClass ([ 'wrapper-principal', getClass ('textSetDisabled'), getClass ('textSetMono') ]), ...setStyle ([ 'width' => 'fit-content' ]), '>',
                             'R$', '<span', ...setClass ([ 'principal' ]), '>', setNumberFormat ($is_value), '</span>',
                         '</p>',
                     ] : [
                     ],
-                    '<div', ...setClass ([ 'wrapper-valor', ...POOL['WrapSetRow'] ]), ...setStyle ([ 'width' => 'fit-content' ]), '>',
-                        '<h3', ...setClass ([ 'wrapper-negociado', ...POOL['H3'], ...POOL['TextSetMono'] ]), '>',
+                    '<div', ...setClass ([ 'wrapper-valor', getClass ('wrapSetRow') ]), ...setStyle ([ 'width' => 'fit-content' ]), '>',
+                        '<h3', ...setClass ([ 'wrapper-negociado', getClass ('h3'), getClass ('textSetMono') ]), '>',
                             'R$', '<span', ...setClass ([ 'negociado' ]), '>', setNumberFormat ($is_final), '</span>',
                         '</h3>',
                         ...isTrue ($is_discount) ? [
-                            '<h6', ...setClass ([ 'wrapper-desconto', 'ms-1', 'mt-1', ...POOL['H6'], ...POOL['TextSetMono'] ]), '>',
+                            '<h6', ...setClass ([ 'wrapper-desconto', 'ms-1', 'mt-1', getClass ('h6'), getClass ('textSetMono') ]), '>',
                                 '%off', '<span', ...setClass ([ 'desconto' ]), '>', setNumberFormat ($is_discount), '</span>',
                             '</h6>',
                         ] : [
                         ],
                     '</div>',
                     ...isTrue ($is_divisor) ? [
-                        '<p', ...setClass ([ 'wrapper-parcelado', ...POOL['Text'], ...POOL['TextSetMono'] ]), ...setStyle ([ 'width' => 'fit-content' ]), '>',
+                        '<p', ...setClass ([ 'wrapper-parcelado', getClass ('text'), getClass ('textSetMono') ]), ...setStyle ([ 'width' => 'fit-content' ]), '>',
                             'Em ', $is_divisor, ' x R$', '<span', ...setClass ([ 'parcelado' ]), '>', setNumberFormat ($is_final / $is_divisor), '</span>', ' sem juros.',
                         '</p>',
                     ] : [
                     ],
                     ...isTrue ($is_value - $is_final) ? [
-                        '<p', ...setClass ([ 'wrapper-economia', ...POOL['Text'], ...POOL['TextSetMono'] ]), ...setStyle ([ 'width' => 'fit-content' ]), '>',
+                        '<p', ...setClass ([ 'wrapper-economia', getClass ('text'), getClass ('textSetMono') ]), ...setStyle ([ 'width' => 'fit-content' ]), '>',
                             'Economia de R$', '<span', ...setClass ([ 'economia' ]), '>', setNumberFormat ($is_value - $is_final), '</span>', '.',
                         '</p>',
                     ] : [
@@ -1561,7 +1557,7 @@
                                         'width' => 'calc(100% - 4rem * 2)',
                                     ]),
                                 '>',
-                                    '<div', ...setClass (POOL['Col06']), '>',
+                                    '<div', ...setClass (getClass ('col06')), '>',
                                         ...getHeadlineTemplate ([
                                             'color' => 'white',
                                             'content' => $is_index,
@@ -1671,16 +1667,14 @@
                 return implode ('', [
                     '<', $is_head,
                         ...setClass ([
-                            'title',
+                            ...in_array ($is_input['lineup'], [ 'end' ]) ? [ 'text-lg-end' ] : [],
+                            ...in_array ($is_input['lineup'], [ 'start' ]) ? [ 'text-lg-start' ] : [],
                             ...setSubstring (defineFontWeight, $is_input['weight']),
                             ...setSubstring (defineTextSolid, $is_input['color']),
-                            ...in_array ($is_input['lineup'], [ 'start' ]) ? [ 'text-lg-start' ] : [],
-                            ...in_array ($is_input['lineup'], [ 'end' ]) ? [ 'text-lg-end' ] : [],
-                            ...$is_head === 'p' ? POOL['Text'] : POOL[ucfirst ($is_head) . ''],
+                            $is_head === 'p' ? getClass ('text') : getClass ($is_head),                            
+                            'title',
                         ]),
-                        ...setStyle ([
-                            ...in_array ($is_input['shadow'], [ 'yes' ]) ? getStyle ('text-shadow') : [],
-                        ]),
+                        ...setStyle (in_array ($is_input['shadow'], [ 'yes' ]) ? getStyle ('text-shadow') : []),
                     '>',
                         setCamelcase ($is_index),
                     '</', $is_head, '>'
@@ -1711,10 +1705,10 @@
                                 ...setClass ([
                                     ...setSubstring (defineFontWeight, $is_input['weight']),
                                     ...setSubstring (defineTextSolid, $is_input['color']),
-                                    ...POOL['Text'],
+                                    getClass ('text'),
                                     'subtitle',
                                 ]),
-                                ...in_array ($is_input['shadow'], [ 'yes' ]) ? setStyle (getStyle ('text-shadow')) : [],
+                                ...setStyle (in_array ($is_input['shadow'], [ 'yes' ]) ? getStyle ('text-shadow') : []),
                             '>',
                                 setHighlighted ($is_index),
                             '</p>',
@@ -1752,32 +1746,32 @@
         return $is_attrib;
     };
 
+    function getHeadlineHeader (array $is_input = []): array {
+        return [
+            ...isArray ($is_input) ? [
+                '<header',
+                    ...setClass ([ 'px-5', getClass ('gap01'), getClass ('wrapSetCol') ]), 
+                    ...setStyle ([ 'width' => 'fit-content' ]),
+                '>',
+                    ...$is_input,
+                '</header>',
+            ] : [
+            ],
+        ];
+    };
+
     function getHeadlineTemplate (array $is_input = []): array {
         $is_proper = getHeadlineProper ($is_input);
         $is_subtitle = isKeyTrue ($is_proper['content'], 'subtitle');
         $is_description = isKeyTrue ($is_proper['content'], 'description');
         $is_content = [
-            ...isTrue ($is_description) ? [ '<div', ...setClass (POOL['WrapSetCol']), '>' ] : [],
+            ...isTrue ($is_description) ? [ '<div', ...setClass (getClass ('wrapSetCol')), '>' ] : [],
                 ...getHeadlineTitle ($is_proper),
                 ...getHeadlineSubtitle ($is_proper),
             ...isTrue ($is_description) ? [ '</div>' ] : [],
             ...getHeadlineDescription ($is_proper),
         ];
-        return [
-            ...isArray ($is_content) ? [
-                '<header',
-                    ...setClass ([
-                        ...in_array ($is_proper['padding'], range (1, 5)) ? [ 'px-' . $is_proper['padding'] ] : [],
-                        ...POOL['Gap01'],
-                        ...POOL['WrapSetCol'],
-                    ]),
-                    ...setStyle ([ 'width' => 'fit-content' ]),
-                '>',
-                    ...$is_content,
-                '</header>',
-            ] : [
-            ],
-        ];
+        return getHeadlineHeader ($is_content);
     };
 
     function getAccordionHeadlineTemplate (array $is_input = []): array {
@@ -1785,33 +1779,14 @@
         $is_subtitle = isKeyTrue ($is_proper['content'], 'subtitle');
         $is_description = isKeyTrue ($is_proper['content'], 'description');
         $is_content = [
-            ...isTrue ($is_description) ? [ '<div', ...setClass (POOL['WrapSetCol']), '>' ] : [],
+            ...isTrue ($is_description) ? [ '<div', ...setClass (getClass ('wrapSetCol')), '>' ] : [],
                 ...isTrue ($is_subtitle) || isTrue ($is_description) ? getHeadlineTitle ($is_proper) : [],
                 ...getHeadlineSubtitle ($is_proper),
             ...isTrue ($is_description) ? [ '</div>' ] : [],
             ...getHeadlineDescription ($is_proper),
         ];
-        return [
-            ...isArray ($is_content) ? [
-                '<header',
-                    ...setClass ([
-                        ...in_array ($is_proper['padding'], range (1, 5)) ? [ 'px-' . $is_proper['padding'] ] : [],
-                        ...POOL['Gap01'],
-                        ...POOL['WrapSetCol'],
-                    ]),
-                    ...setStyle ([ 'width' => 'fit-content' ]),
-                '>',
-                    ...$is_content,
-                '</header>',
-            ] : [
-            ],
-        ];
+        return getHeadlineHeader ($is_content);
     };
-
-
-    // FABIO
-
-
 
     function GetOption ($is_input = []) {
         return [
@@ -1840,9 +1815,9 @@
             ...isArray ($is_input) ? [
                 '<div',
                     ...setClass ([
-                        ...POOL['Gap03'], 
-                        ...POOL['WrapSetCol'],
-                        ...POOL['WrapColorLight'],
+                        getClass ('gap03'),
+                        getClass ('wrapSetCol'),
+                        getClass ('wrapColorLight'),
                         'accordion-body',
                         'm-0',
                         'p-3',
@@ -1858,7 +1833,7 @@
     function getHeadlineContainer ($is_input = [], float $is_heading = 4): array {
         return [
             ...isArray (getHeadlineTemplate ([ 'content' => $is_input ])) ? [
-                '<div', ...setClass ([ 'px-3', 'px-lg-5', ...POOL['WrapSetCol'] ]), '>',
+                '<div', ...setClass ([ 'px-3', 'px-lg-5', getClass ('wrapSetCol') ]), '>',
                     ...getHeadlineTemplate ([ 'content' => $is_input, 'heading' => $is_heading ]),
                 '</div>',
             ] : [
@@ -1871,13 +1846,13 @@
             ...isArray ($is_input) ? [
                 ...getHeadlineContainer ($is_input, 4),
                 ...isKeyTrue ($is_input, 'container') ? [
-                    '<section', ...setClass ([ 'wrapper', ...POOL['WrapSetCol'] ]), '>',
+                    '<section', ...setClass ([ 'wrapper', getClass ('wrapSetCol') ]), '>',
                         ...array_map (function ($is_index, $is_key) {
                             $is_number = getArrayRandomIndex (range (0, sizeof (defineSmallCollection) - 1));
                             $is_gallery = [
                                 ...isArray (isKeyTrue ($is_index, 'gallery') ? hasValidPath ($is_index['gallery']) : []) ? [
                                     '<div',
-                                        ...setClass ([ 'gallery', ...POOL['Col06'] ]),
+                                        ...setClass ([ 'gallery', getClass ('col06') ]),
                                         ...setStyle ([ 'height' => 'auto', 'min-height' => '30rem' ]),
                                     '>',
                                         ...getGalleryContainer ($is_index),
@@ -1923,7 +1898,7 @@
                             ];
                             if (isArray ([ ...$is_gallery, ...$is_content ])):
                                 return implode ('', [
-                                    '<article', ...setClass ([ 'wrap', ...POOL['WrapSetRow'] ]), '>',
+                                    '<article', ...setClass ([ 'wrap', getClass ('wrapSetRow') ]), '>',
                                         ...$is_gallery,
                                         ...$is_content,
                                     '</article>',
@@ -1942,7 +1917,7 @@
         return implode ('', [
             ...getHeadlineContainer ($is_input, 4),
             ...isKeyTrue ($is_input, 'container') ? [
-                '<section', ...setClass ([ 'card-container', ...POOL['Gap03'], ...POOL['WrapSetCol'] ]), '>',
+                '<section', ...setClass ([ 'card-container', getClass ('gap03'), getClass ('wrapSetCol') ]), '>',
                     ...array_map (function ($is_index) {
                         $is_gallery = [
                             ...isArray (isKeyTrue ($is_index, 'gallery') ? hasValidPath ($is_index['gallery']) : []) ? [
@@ -1956,7 +1931,7 @@
                         ];
                         $is_content = [
                             ...isArray ($is_content) ? [
-                                '<div', ...setClass ([ 'align-items-center', 'card-content', 'p-3', ...POOL['Gap02'], ...POOL['WrapSetCol'] ]), '>',
+                                '<div', ...setClass ([ 'align-items-center', 'card-content', 'p-3', getClass ('gap02'), getClass ('wrapSetCol') ]), '>',
                                     ...$is_content,
                                 '</div>',
                             ] : [
@@ -1964,7 +1939,7 @@
                         ];
                         if (isArray ([ ...$is_gallery, ...$is_content ])):
                             return implode ('', [
-                                '<article', ...setClass ([ 'card-wrapper', 'overflow-hidden', 'p-0', ...POOL['WrapSetCol'], ...POOL['WrapColorLight'] ]), '>',
+                                '<article', ...setClass ([ 'card-wrapper', 'overflow-hidden', 'p-0', getClass ('wrapSetCol'), getClass ('wrapColorLight') ]), '>',
                                     ...$is_gallery,
                                     ...$is_content,
                                 '</article>',
@@ -1981,16 +1956,13 @@
         $is_input = setJson2Array ($is_input);
         return [
             ...isArray ($is_input) ? [
-                '<section', ...setClass ([ 'mt-3', 'p-0', ...POOL['Gap03'], ...POOL['WrapSetCol'] ]), '>',
+                '<section', ...setClass ([ 'mt-3', 'p-0', getClass ('gap03'), getClass ('wrapSetCol') ]), '>',
                     ...array_map (function ($is_index) use ($is_function) {
                         return implode ('', [
                             ...getHeadlineContainer ($is_index, 3),
-                            ...isKeyTrue ($is_index, 'container') ? [
-                                ...array_map (function ($is_index) use ($is_function) {
-                                    return $is_function ($is_index);
-                                }, $is_index['container']),
-                            ] : [
-                            ],
+                            ...isKeyTrue ($is_index, 'container') ? array_map (function ($is_index) use ($is_function) {
+                                return $is_function ($is_index);
+                            }, $is_index['container']) : [],
                         ]);
                     }, $is_input),
                 '</section>',
@@ -2158,10 +2130,10 @@
     function getModalAccordionTemplate (array $is_input = []): string {
         $is_master = setRandomPassword ();
         return implode ('', [
-            '<article', ...setAttrib ($is_master, 'id'), ...setClass ([ 'accordion', ...POOL['Col12'], ...POOL['Gap03'] ]), '>',
+            '<article', ...setAttrib ($is_master, 'id'), ...setClass ([ 'accordion', getClass ('col12'), getClass ('gap03') ]), '>',
                 ...getHeadlineContainer ($is_input, 4),
                 ...isKeyTrue ($is_input, 'container') ? [
-                    '<section', ...setClass (POOL['WrapSetCol']), '>',
+                    '<section', ...setClass (getClass ('wrapSetCol')), '>',
                         ...array_map (function ($is_index) use ($is_master) {
                             $is_slave = setRandomPassword ();
                             $is_title = [
@@ -2206,16 +2178,16 @@
         $is_input = setJson2Array ($is_input);
         return [
             ...isArray ($is_input) ? [
-                '<main', ...setClass ([ 'm-0', 'p-0', ...POOL['Gap05'], ...POOL['WrapSetCol'] ]), '>',
+                '<main', ...setClass ([ 'm-0', 'p-0', getClass ('gap05'), getClass ('wrapSetCol') ]), '>',
                     ...array_map (function ($is_index) use ($is_function) {
                         return implode ('', [
                             ...getHeadlineTemplate ([ 'content' => $is_index, 'heading' => 3, 'lineup' => 'start' ]),
                             ...isKeyTrue ($is_index, 'container') ? [
-                                '<section', ...setClass ([ ...POOL['Gap05'], ...POOL['WrapSetCol'] ]), '>',
+                                '<section', ...setClass ([ 'm-0', 'p-0', getClass ('gap05'), getClass ('wrapSetCol') ]), '>',
                                     ...array_map (function ($is_index) use ($is_function) {
                                         $is_master = setRandomPassword ();
                                         return implode ('', getFilledKeys ($is_index) ? [
-                                            '<article', ...setClass ([ ...POOL['Gap03'], ...POOL['WrapSetCol'] ]), '>',
+                                            '<article', ...setClass ([ 'm-0', 'p-0', getClass ('gap03'), getClass ('wrapSetCol') ]), '>',
                                                 ...getHeadlineTemplate ([ 'content' => $is_index, 'heading' => 4, 'lineup' => 'start' ]),
                                                 ...isKeyTrue ($is_index, 'container') ? [
                                                     '<section', ...setAttrib ($is_master, 'id'), ...setClass ([ 'accordion' ]), '>',
@@ -2226,7 +2198,7 @@
                                                                     '<h2', ...setClass ([ 'accordion-header' ]), '>',
                                                                         '<button',
                                                                             ...setClass ([
-                                                                                ...!($is_function) ($is_index) ? POOL['TextSetDisabled'] : [],
+                                                                                ...!($is_function) ($is_index) ? [ getClass ('textSetDisabled') ] : [],
                                                                                 'accordion-button',
                                                                                 'collapsed',
                                                                             ]),
@@ -2636,7 +2608,7 @@
         return [
             '<!doctype html>',
             '<html',
-                ...setClass (getClass ('Html')),
+                ...setClass (getClass ('html')),
                 ' data-bs-theme=\'dark\'',
                 // ' data-bs-theme=\'light\'',
                 ' lang=\'en\'',

@@ -1,8 +1,6 @@
 <?php
 
-    foreach (getFileArray ([ 'search' => 'define' ]) as $is_index):
-        define (setTarget ($is_index, '-'), setJson2Array ($is_index));
-    endforeach;
+    foreach (getFileArray ([ 'search' => 'define' ]) as $is_index) define (setTarget ($is_index, '-'), setJson2Array ($is_index));
 
     define ('definePeriodo', array_map (function ($i) {
         return implode (' ', [ 'dás', $i * 6 . 'h', 'às', $i * 6 + 6 . 'h' ]);
@@ -569,7 +567,7 @@
             ...isArray ($is_input) ? [
                 '<div',
                     ...setAttrib ('wrap'),
-                    ...setClass ([ 'flex-lg-row', 'gap-lg-3', 'p-5', getClass ('wrapSetCol') ]),
+                    ...setClass ([ 'align-items-lg-start', 'align-items-center', 'flex-lg-row', 'gap-lg-3', 'p-5', getClass ('wrapSetCol') ]),
                     ...setStyle (getStyle ('background-image', getPathArray ([ 'dir' => 'jpg' ]))),
                 '>',
                     ...isString ($is_thumbnail) ? [
@@ -659,7 +657,7 @@
                                                                             '<',
                                                                                 $is_element['selector'],
                                                                                 ...in_array ($is_element['selector'], [ 'button' ]) ? [
-                                                                                    ...setClass (getClass ('lineButtonLight')),
+                                                                                    ...setClass (getClass ('buttonLightLine')),
                                                                                     ...in_array ($is_element['label'], [ 'fechar' ]) ? setAttrib ('modal', 'data-bs-dismiss') : [],
                                                                                 ] : [
                                                                                 ],
@@ -910,17 +908,17 @@
         ];
     };
 
-    function getScrollbar (): array {
+    function setScroll (float $is_input = .25): array {
         return [
             '<div',
                 ...setAttrib ('scroll-bar'),
                 ...setClass ([ 'bg-black', 'd-flex', 'fixed-top', 'justify-content-start', 'position-fixed', 'start-0', 'top-0', 'w-100' ]),
-                ...setStyle ([ 'height' => '.5rem', 'z-index' => 5 ]),
+                ...setStyle ([ 'height' => $is_input . 'rem', 'z-index' => 5 ]),
             '>',
                 '<div', 
                     ...setAttrib ('scroll'),
                     ...setClass ([ 'd-flex', 'justify-content-end' ]),
-                    ...setStyle ([ 'background-color' => '#ffc107', 'height' => '.25rem', 'width' => '0' ]),
+                    ...setStyle ([ 'background-color' => '#ffc107', 'height' => $is_input . 'rem', 'width' => '0' ]),
                 '>',
                 '</div>',
             '</div>',
@@ -964,53 +962,52 @@
         sort ($is_array);
         return [
             ...isArray ($is_array) ? [
-                ...getScrollbar (),
-                '<div',
-                    ...setAttrib ('navbar-container'),
-                    ...setClass ([
-                        'align-items-center',
-                        'd-flex',
-                        'flex-column',
-                        'justify-content-center',
-                        'px-3',
-                        'py-0',
-                        'position-fixed',
-                        'w-100',
-                    ]),
-                    ...setStyle ([
-                        'background-color' => '#f8f9fa',
-                        'top' => '.25rem',
-                        'z-index' => 5,
-                    ]),
-                '>',
+                ...setScroll (),
+                // '<div',
+                //     ...setAttrib ('navbar-container'),
+                //     ...setClass ([
+                //         'align-items-center',
+                //         'd-flex',
+                //         'flex-column',
+                //         'justify-content-center',
+                //         'px-3',
+                //         'py-0',
+                //         'position-fixed',
+                //         'w-100',
+                //     ]),
+                //     ...setStyle ([
+                //         'background-color' => '#f8f9fa',
+                //         'top' => '.25rem',
+                //         'z-index' => 5,
+                //     ]),
+                // '>',
     
-                    '<div', ...setClass ([ 'align-items-center', 'd-flex', 'd-lg-none', 'flex-column', 'justify-content-center', 'my-3', 'w-100' ]), '>',
-                        ...GetDotButton ([ 'class' => 'bi-arrow-down-up', 'id' => 'navbar-icon' ]),
-                    '</div>',
+                    // '<div', ...setClass ([ 'align-items-center', 'd-flex', 'd-lg-none', 'flex-column', 'justify-content-center', 'my-3', 'w-100' ]), '>',
+                    //     ...GetDotButton ([ 'class' => 'bi-arrow-down-up', 'id' => 'navbar-icon' ]),
+                    // '</div>',
     
-                    '<div',
-                        ...setAttrib ('hidden'),
-                        ...setClass ([ 'd-flex', 'flex-column', 'justify-content-center', 'overflow-hidden', 'w-100' ]),
-                        // ...setStyle ([ 'height' => '0' ]),
-                    '>',
-                        '<div',
-                            ...setClass ([
-                                'd-flex',
-                                'flex-column',
-                                'flex-lg-row',
-                                'flex-lg-wrap',
-                                'gap-3',
-                                'row-gap-2',
-                                'grid',
-                                'justify-content-center',
-                                'm-0',
-                                'w-100',
-                            ]),
-                        '>',
-                            ...array_map (function ($is_index) { return implode ('', getDataToggle ($is_index)); }, setArray ($is_array)),
-                        '</div>',
-                    '</div>',
-                '</div>',
+                    // '<div',
+                    //     ...setAttrib ('hidden'),
+                    //     ...setClass ([ 'd-flex', 'flex-column', 'justify-content-center', 'overflow-hidden', 'w-100' ]),
+                    // '>',
+                    //     '<div',
+                    //         ...setClass ([
+                    //             'd-flex',
+                    //             'flex-column',
+                    //             'flex-lg-row',
+                    //             'flex-lg-wrap',
+                    //             'gap-3',
+                    //             'row-gap-2',
+                    //             'grid',
+                    //             'justify-content-center',
+                    //             'm-0',
+                    //             'w-100',
+                    //         ]),
+                    //     '>',
+                    //         ...array_map (function ($is_index) { return implode ('', getDataToggle ($is_index)); }, setArray ($is_array)),
+                    //     '</div>',
+                    // '</div>',
+                // '</div>',
             ] : [
             ],
         ];
@@ -1346,7 +1343,7 @@
         return [
             ...isArray ($is_input) ? [
                 '<header',
-                    ...setClass ([ 'px-5', getClass ('gap01'), getClass ('wrapSetCol') ]), 
+                    ...setClass ([ getClass ('gap01'), getClass ('wrapSetCol') ]), 
                     ...setStyle ([ 'width' => 'fit-content' ]),
                 '>',
                     ...$is_input,
@@ -1838,50 +1835,42 @@
         ];
     };
 
-    define ('defineDarkCollection', [ 'black', 'primary', 'secondary', 'success', 'danger', 'dark' ]);
-    define ('defineDirection', [ 'col', 'row' ]);
-    define ('defineFontWeight', [ 'fw-bold', 'fw-bolder', 'fw-semibold', 'fw-medium', 'fw-normal', 'fw-light', 'fw-lighter' ]);
-    define ('defineLightCollection', [ 'warning', 'info', 'light', 'white' ]);
-
     define ('defineFullCollection', [ ...defineLightCollection, ...defineDarkCollection ]);
     define ('defineSmallCollection', array_values (array_filter (array_map (function ($i) { if (!in_array ($i, [ 'black', 'white' ])) return $i; }, defineFullCollection))));
 
     define ('defineBackgroundSubtle', array_map (function ($i) { return implode ('-', [ 'bg', $i, 'subtle' ]); }, defineSmallCollection));
     define ('defineBorderSubtle', array_map (function ($i) { return implode ('-', [ 'border', $i, 'subtle' ]); }, defineSmallCollection));
-    define ('defineButtonLine', array_map (function ($i) { return implode ('-', [ 'btn', $i, 'outline' ]); }, defineFullCollection));
+    define ('defineButtonLine', array_map (function ($i) { return implode ('-', [ 'btn', 'outline', $i ]); }, defineFullCollection));
     define ('defineButtonSolid', array_map (function ($i) { return implode ('-', [ 'btn', $i ]); }, defineFullCollection));
     define ('defineLinkSolid', array_map (function ($i) { return implode ('-', [ 'link', $i ]); }, defineFullCollection));
     define ('defineTextEmphasis', array_map (function ($i) { return implode ('-', [ 'text', $i, 'emphasis' ]); }, defineSmallCollection));
     define ('defineTextSolid', array_map (function ($i) { return implode ('-', [ 'text', $i ]); }, defineFullCollection));
 
-    function getBootstrap (): array {
-        return [
-            setTarget ([ 'html' ]) => [ 'h-100', 'm-0', 'p-0', 'w-100' ],
-            setTarget ([ 'html', 'body' ]) => [ 'h-100', 'm-0', 'p-0', 'w-100' ],
-            setTarget ([ 'html', 'frame' ]) => [ 'm-0', 'p-0', 'w-100' ],
-            setTarget ([ 'html', 'hr' ]) => [ 'mx-0', 'my-2', 'p-0', 'w-100' ],
-            setTarget ([ 'html', 'input' ]) => [ 'form-control', 'pe-5', 'ps-2', 'py-2' ],
-            setTarget ([ 'html', 'label' ]) => [ 'align-items-end', 'd-flex', 'justify-content-start', 'label', 'text-start', 'm-0', 'p-0' ],
-            setTarget ([ 'html', 'table' ]) => [ 'table', 'table-striped', 'table-hover', 'm-0', 'p-0', 'row', 'w-100' ],
-            setTarget ([ 'html', 'table', 'body' ]) => [ 'm-0', 'p-0', 'row', 'w-100' ],
-            setTarget ([ 'html', 'table', 'head' ]) => [ 'm-0', 'p-0', 'row', 'w-100' ],
-            setTarget ([ 'html', 'table', 'td' ]) => [ 'm-0', 'p-2', 'row', 'w-100' ],
-            setTarget ([ 'html', 'table', 'th' ]) => [ 'm-0', 'p-2', 'row', 'w-100' ],
-            setTarget ([ 'html', 'table', 'tr' ]) => [ 'm-0', 'p-0', 'row', 'w-100' ],
-        ];
-    };
-
-    define ('defineBorder', [ 'border', 'border-1' ]);
-    define ('defineButton', [ 'btn', 'button', 'cursor-pointer', 'm-0', 'p-2' ]);
+    define ('defineWrap', [ 'd-flex', 'justify-content-center', 'm-0', 'w-100' ]);
     define ('defineText', [ 'd-inline', 'lh-1', 'm-0', 'p-0', 'text-center' ]);
     define ('defineLink', [ 'fw-medium', 'text-decoration-none', 'link-opacity-50-hover', 'nav-link', ...defineText ]);
-    define ('defineWrap', [ 'd-flex', 'justify-content-center', 'm-0', 'w-100' ]);
+    define ('defineButton', [ 'btn', 'button', 'cursor-pointer', 'm-0', 'p-2' ]);
+    define ('defineBorder', [ 'border', 'border-1' ]);
+
+    define ('defineBootstrap', [
+        setTarget ([ 'html' ]) => [ 'h-100', 'm-0', 'p-0', 'w-100' ],
+        setTarget ([ 'html', 'body' ]) => [ 'h-100', 'm-0', 'p-0', 'w-100' ],
+        setTarget ([ 'html', 'hr' ]) => [ 'mx-0', 'my-2', 'p-0', 'w-100' ],
+        setTarget ([ 'html', 'input' ]) => [ 'form-control', 'pe-5', 'ps-2', 'py-2' ],
+        setTarget ([ 'html', 'label' ]) => [ 'align-items-end', 'd-flex', 'justify-content-start', 'label', 'text-start', 'm-0', 'p-0' ],
+        setTarget ([ 'html', 'table' ]) => [ 'table', 'table-striped', 'table-hover', 'm-0', 'p-0', 'row', 'w-100' ],
+        setTarget ([ 'html', 'table', 'body' ]) => [ 'm-0', 'p-0', 'row', 'w-100' ],
+        setTarget ([ 'html', 'table', 'head' ]) => [ 'm-0', 'p-0', 'row', 'w-100' ],
+        setTarget ([ 'html', 'table', 'td' ]) => [ 'm-0', 'p-2', 'row', 'w-100' ],
+        setTarget ([ 'html', 'table', 'th' ]) => [ 'm-0', 'p-2', 'row', 'w-100' ],
+        setTarget ([ 'html', 'table', 'tr' ]) => [ 'm-0', 'p-0', 'row', 'w-100' ],
+    ]);
 
     function getPool (): array {
         $is_array = [];
         foreach (defineFullCollection as $is_key => $is_value):
             $is_array = array_merge ($is_array, [ setTarget ([ 'button', $is_value ]) => [ ...defineButton, defineButtonSolid[$is_key] ] ]);
-            $is_array = array_merge ($is_array, [ setTarget ([ 'line', 'button', $is_value ]) => [ ...defineButton, defineButtonLine[$is_key] ] ]);
+            $is_array = array_merge ($is_array, [ setTarget ([ 'button', $is_value, 'line' ]) => [ ...defineButton, defineButtonLine[$is_key] ] ]);
             $is_array = array_merge ($is_array, [ setTarget ([ 'link', $is_value ]) => [ ...defineLink, defineLinkSolid[$is_key] ] ]);
         endforeach;
         foreach (defineDirection as $is_index):
@@ -1956,7 +1945,7 @@
                 ],
             ]);
         endforeach;
-        foreach (getBootstrap () as $is_key => $is_value):
+        foreach (defineBootstrap as $is_key => $is_value):
             $is_array = array_merge ($is_array, [ $is_key => $is_value ]);
         endforeach;
         $is_array = [
@@ -2033,33 +2022,20 @@
         return [];
     };
 
-    define ('defineBodyContent', [
-        ...setWrapper (setNavbarContainer (), [ 'wrap' => 'nav' ]),
-        ...setWrapper ([
-            ...setWrapper ([
-                ...setWrapper (getHeaderContainer ('headline'), [ 'wrap' => 'header' ]),
-                ...setWrapper (getCarouselContainer ('carrossel')),
-                ...setWrapper ([
-                    '<div', ...setClass ([ 'd-flex', 'flex-wrap' ]), '>',
-                        '<div', ...setClass ([ 'col-0', 'col-lg-2', 'd-lg-flex', 'd-none' ]), '>', '</div>',
-                        '<div', ...setClass ([ 'col-12', 'col-lg-8', 'd-flex', 'flex-column', 'px-3', 'px-lg-0' ]), '>',
-                            ...getModalFormularioContainer ('booking'),
-                            ...getModalCardContainer ('cartoes'),
-                        '</div>',
-                        '<div', ...setClass ([ 'col-0', 'col-lg-2', 'd-lg-flex', 'd-none' ]), '>', '</div>',
-                    '</div>',
-                ]),
-                ...setWrapper (getModalThumbnailContainer (), [
-                    'id' => 'thumbnail',
-                ]),
-                ...setWrapper (getModalArticleContainer ('pontos turísticos')),
-            ], [ 'wrap' => 'main' ]),
-            ...setWrapper ([
-                ...setWrapper (getWidgetContainer ()),
-                ...setWrapper (getSignatureContainer ()),
-            ], [ 'wrap' => 'footer' ]),
-        ], [ 'id' => 'wrapper' ]),
-    ]);
+    function setTitleContainer (string $is_input = 'head-description.json'): array {
+        $is_input = setJson2Array ($is_input);
+        return [
+            ...isArray ($is_input) ? [
+                '<title>',
+                    implode (' | ', array_map (function ($is_index) use ($is_input) {
+                        if (isKeyTrue ($is_input, $is_index))
+                            return setCamelcase ($is_input[$is_index]);
+                    }, [ 'title', 'subtitle', 'description' ])),
+                '</title>',
+            ] : [
+            ],
+        ];
+    };
 
     function setMetaWrapper (array $is_input = []): array {
         return [
@@ -2067,7 +2043,7 @@
         ];
     };
 
-    function setMetaDescription (string $is_input = 'headline.json'): array {
+    function setMetaDescription (string $is_input = 'head-description.json'): array {
         $is_input = setJson2Array ($is_input);
         return [
             ...isArray ($is_input) ? [
@@ -2085,7 +2061,7 @@
         ];
     };
 
-    function setMetaKeyword (string $is_input = 'keyword.json'): array {
+    function setMetaKeyword (string $is_input = 'head-keyword.json'): array {
         $is_input = setJson2Array ($is_input);
         return [
             ...isArray ($is_input) ? [
@@ -2100,61 +2076,66 @@
         return setMetaWrapper ([ ...setAttrib ('viewport', 'name'), ...setAttrib (implode (', ', $is_input), 'content') ]);
     };
 
-    function setMetaArray (): array {
-        return [
-            ...setMetaWrapper (setAttrib ('utf-8', 'charset')),
-            ...setMetaViewport (),
-            ...setMetaDescription (),
-            ...setMetaKeyword (),
-        ];
-    };
+    define ('defineMetaContent', [
+        ...setMetaWrapper (setAttrib ('utf-8', 'charset')),
+        ...setMetaViewport (),
+        ...setMetaDescription (),
+        ...setMetaKeyword (),
+    ]);
 
-    function setTitleContainer (string $is_input = 'headline.json'): array {
-        $is_input = setJson2Array ($is_input);
-        return [
-            ...isArray ($is_input) ? [
-                '<title>',
-                    implode (' | ', array_map (function ($is_index) use ($is_input) {
-                        if (isKeyTrue ($is_input, $is_index))
-                            return setCamelcase ($is_input[$is_index]);
-                    }, [ 'title', 'subtitle', 'description' ])),
-                '</title>',
-            ] : [
-            ],
-        ];
-    };
-
-    function setHeadContainer (): array {
-        return setWrapper ([ ...setMetaArray (), ...setTitleContainer (), ...setStyleArray () ], [
+    define ('defineHeadContent', [
+        ...setWrapper ([ ...defineMetaContent, ...setTitleContainer (), ...setStyleArray () ], [
             'wrap' => 'head',
-        ]);
-    };
+        ])
+    ]);
 
-    function setBodyContainer (): array {
-        return setWrapper ([
-            ...defineBodyContent,
+    define ('defineMainContent', [
+        ...setWrapper (getHeaderContainer ('headline'), [ 'wrap' => 'header' ]),
+        ...setWrapper (getCarouselContainer ('carrossel')),
+        ...setWrapper ([
+            '<div', ...setClass ([ 'd-flex', 'flex-wrap' ]), '>',
+                '<div', ...setClass ([ 'col-0', 'col-lg-2', 'd-lg-flex', 'd-none' ]), '>', '</div>',
+                '<div', ...setClass ([ 'col-12', 'col-lg-8', 'd-flex', 'flex-column', 'px-3', 'px-lg-0' ]), '>',
+                    ...getModalFormularioContainer ('booking'),
+                    ...getModalCardContainer ('cartoes'),
+                '</div>',
+                '<div', ...setClass ([ 'col-0', 'col-lg-2', 'd-lg-flex', 'd-none' ]), '>', '</div>',
+            '</div>',
+        ]),
+        ...setWrapper (getModalThumbnailContainer (), [ 'id' => 'thumbnail' ]),
+        ...setWrapper (getModalArticleContainer ('pontos turísticos')),
+    ]);
+
+    define ('defineFooterContent', [
+        ...setWrapper (getWidgetContainer ()),
+        ...setWrapper (getSignatureContainer ()),
+    ]);
+
+    define ('defineBodyContent', [
+        ...setWrapper ([
+            ...setScroll (),
+            ...setWrapper (defineMainContent, [ 'wrap' => 'main' ]),
+            ...setWrapper (defineFooterContent, [ 'wrap' => 'footer' ]),
             ...getModalArray (),
-            ...setScriptArray (),
+            ...setScriptArray ()
         ], [
             'wrap' => 'body',
-        ]);
-    };
+        ])
+    ]);
 
-    function setHTMLContainer (): array {
-        return [
-            '<!doctype html>',
-            '<html',
-                ...setClass (getClass ('html')),
-                ' data-bs-theme=\'dark\'',
-                // ' data-bs-theme=\'light\'',
-                ' lang=\'en\'',
-            '>',
-                ...setHeadContainer (),
-                ...setBodyContainer (),
-            '</html>',
-        ];
-    };
+    define ('defineHTMLContent', [
+        '<!doctype html>',
+        '<html',
+            ...setClass (getClass ('html')),
+            ' data-bs-theme=\'dark\'',
+            // ' data-bs-theme=\'light\'',
+            ' lang=\'en\'',
+        '>',
+            ...defineHeadContent,
+            ...defineBodyContent,
+        '</html>',
+    ]);
 
-    echo implode ('', setHTMLContainer ());
+    echo implode ('', defineHTMLContent);
 
 ?>

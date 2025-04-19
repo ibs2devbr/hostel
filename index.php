@@ -1,7 +1,6 @@
 <?php
 
-    foreach (getPathArray ([ 'dir' => 'json', 'search' => 'define' ]) as $is_index):
-        $is_index = pathinfo($is_index)['filename'];
+    foreach (getFileArray ([ 'search' => 'define' ]) as $is_index):
         define (setTarget ($is_index, '-'), setJson2Array ($is_index));
     endforeach;
 
@@ -25,6 +24,13 @@
 
     define ('defineAdultos', array_map (function ($i) { return strval ($i); }, range (1, 10)));
 
+    define ('defineBackground', [
+        'background-attachment' => 'scroll',
+        'background-position' => 'center',
+        'background-repeat' => 'no-repeat',
+        'background-size' => 'cover',
+    ]);
+
     define ('defineOption', [
         'funcionario' => defineFuncionario,
         'dia' => defineDia,
@@ -41,8 +47,6 @@
         'groupAdults' => defineAdultos,
         'adultos' => defineAdultos,
     ]);
-
-    define ('defineExtension', [ ...defineTextExtension, ...definePictureExtension ]);
 
     function setHighlighted (array|string $is_input = ''): string {
         $is_lighted = array_unique (defineHighlighted);
@@ -230,7 +234,7 @@
     };
 
     function setStyleArray (string $is_input = 'style.json'): array {
-        $is_input = [ ...setJson2Array ($is_input), ...isAnyPathExist ('css') ];
+        $is_input = [ ...setJson2Array ($is_input), ...getPathArray ([ 'dir' => 'css' ]) ];
         if (isArray (setArray ($is_input))):
             return array_map (function ($is_index) {
                 return implode ('', [
@@ -246,7 +250,7 @@
     };
 
     function setScriptArray (string $is_input = 'script.json'): array {
-        $is_input = [ ...setJson2Array ($is_input), ...isAnyPathExist ('js') ];
+        $is_input = [ ...setJson2Array ($is_input), ...getPathArray ([ 'dir' => 'js' ]) ];
         if (isArray (setArray ($is_input))):
             return array_map (function ($is_index) {
                 return implode ('', [
@@ -358,33 +362,8 @@
         endif;
     };
 
-    function getPathArray (array $is_input = []): array {
-        $is_proper = [ ...setProper ($is_input, 'dir', 'html'), ...setProper ($is_input, 'search', '') ];
-        return array_values (array_filter (scandir (setDir ($is_proper['dir'])), function ($is_index) use ($is_proper) {
-            if (isKeyTrue (pathinfo ($is_index), 'extension')):
-                if (isTrue (pathinfo ($is_index)['extension'] === $is_proper['dir'])):
-                    if (!in_array (substr ($is_index, 0, 1), [ '_' ])):
-                        if (isString ($is_proper['search'])):
-                            if (str_contains ($is_index, $is_proper['search'])):
-                                if (getFileContent ($is_index)):
-                                    return $is_index;
-                                endif;
-                            endif;
-                        elseif (getFileContent ($is_index)):
-                            return $is_index;
-                        endif;
-                    endif;
-                endif;
-            endif;
-        }));
-    };
-
     function isPathExist (string $is_input = ''): string {
         return file_exists (setPath ($is_input)) ? setPath ($is_input) : '';
-    };
-
-    function isAnyPathExist (string $is_input = 'html'): array {
-        return array_map (function ($i) { return isPathExist ($i); }, getPathArray ([ 'dir' => $is_input ]));
     };
 
     function setAttribForm (array $is_input = []): array {
@@ -517,20 +496,13 @@
     };
 
     function getModalArray (string $is_input = 'modal'): array {
-        $is_array = getFilenameArray ([ 'search' => $is_input ]);
-        sort ($is_array);
-        return [
-            ...isArray (setArray ($is_array)) ? [
-                ...array_map (function ($is_index) {
-                    return implode ('', array_map (function ($is_title) use ($is_index) {
-                        $is_function = setTarget ([ 'get', 'modal', $is_index, 'container' ]);
-                        if (function_exists ($is_function))
-                            return implode ('', getModalTemplate ([ 'content' => ($is_function) ($is_title), 'title' => $is_title ]));
-                    }, getJsonArray ($is_index)));
-                }, setArray ($is_array)),
-            ] : [
-            ],
-        ];
+        return array_map (function ($is_index) use ($is_input) {
+            return implode ('', array_map (function ($is_title) use ($is_index) {
+                $is_function = setTarget ([ 'get', $is_index, 'container' ]);
+                if (function_exists ($is_function))
+                    return implode ('', getModalTemplate ([ 'content' => ($is_function) ($is_title), 'title' => $is_title ]));
+            }, getJsonArray ($is_index)));
+        }, getFileArray ([ 'search' => $is_input ]));
     };
 
     function getModalTemplate (array $is_input = []): array {
@@ -567,24 +539,26 @@
     };
 
     function setSizePicture (string $is_input = '', float $is_width = 12.5): array {
-        return [
-            ...isPathExist ($is_input) ? [
+        $is_input = isPathExist ($is_input);
+        if (isString ($is_input)):
+            return [
                 'height' => strval (getimagesize ($is_input)[1]) * $is_width / strval (getimagesize ($is_input)[0]) . 'rem',
                 'width' => $is_width . 'rem'
-            ] : [
-            ],
-        ];
+            ];
+        endif;
+        return [];
     };
 
     function setAttribPicture (string $is_input = ''): array {
-        return [
-            ...isPathExist ($is_input) ? [
+        $is_input = isPathExist ($is_input);
+        if (isString ($is_input)):
+            return [
                 ...setAttrib (strval (getimagesize ($is_input)[1]), 'data-height'),
                 ...setAttrib (strval (getimagesize ($is_input)[0]), 'data-width'),
                 ...setAttrib ($is_input, 'data-url'),
-            ] : [
-            ],
-        ];
+            ];
+        endif;
+        return [];
     };
 
     function getHeaderContainer (string $is_input = ''): array {
@@ -596,7 +570,7 @@
                 '<div',
                     ...setAttrib ('wrap'),
                     ...setClass ([ 'flex-lg-row', 'gap-lg-3', 'p-5', getClass ('wrapSetCol') ]),
-                    ...setStyle (getStyle ('background-image', isAnyPathExist ('jpg'))),
+                    ...setStyle (getStyle ('background-image', getPathArray ([ 'dir' => 'jpg' ]))),
                 '>',
                     ...isString ($is_thumbnail) ? [
                         '<div', ...setAttrib ('brand'), ...setStyle ($is_style), '>',
@@ -808,19 +782,70 @@
         ];
     };
 
-    function getFilenameArray (array $is_input = []): array {
+    function setWordEraser (string $is_result = '', array $is_input = []): string {
+        $is_proper = setProper ($is_input, 'delete');
+        if (isArray (setArray ($is_proper['delete']))):
+            foreach (setArray ($is_proper['delete']) as $is_index)
+                $is_result = preg_replace ('/\b' . preg_quote ($is_index, '/') . '\b/', ' ', $is_result);
+            $is_result = preg_replace ('/-+/', ' ', $is_result);
+            $is_result = preg_replace ('/\s+/', ' ', $is_result);
+            return strtolower (trim ($is_result));
+        endif;
+        return $is_result;
+    };
+
+    function getPathProper (array $is_input = []): array {
+        return [
+            ...setProper ($is_input, 'dir', 'json'),
+            ...setProper ($is_input, 'pathinfo', 'filename'),
+            ...setProper ($is_input, 'search', ''),
+        ];
+    };
+
+    function getPathArray (array $is_input = []): array {
+        $is_proper = getPathProper ($is_input);
+        return array_map (function ($is_index) {
+            return isPathExist ($is_index);
+        }, getFileArray ([ 'dir' => $is_proper['dir'], 'pathinfo' => 'basename', 'search' => $is_proper['search'] ]));
+    };
+
+    function getFileContent (string $is_input = '', string $is_extension = 'json'): string {
+        return isFileExist ($is_input, $is_extension) ? file_get_contents (isFileExist ($is_input, $is_extension)) : '';
+    };
+
+    function isFileExist (string $is_input = '', string $is_extension = 'json'): string {
+        return isKeyTrue (pathinfo ($is_input), 'extension') ? isPathExist (pathinfo ($is_input)['basename'])
+        : isPathExist (implode ('.', [ setID ($is_input), $is_extension ]));
+    };
+
+    function getFileArray (array $is_input = []): array {
+        $is_proper = getPathProper ($is_input);
+        $is_array = array_values (array_filter (scandir (setDir ($is_proper['dir'])), function ($is_index) use ($is_proper) {
+            if (isKeyTrue (pathinfo ($is_index), 'extension')):
+                if (isTrue (pathinfo ($is_index)['extension'] === $is_proper['dir'])):
+                    if (!in_array (substr ($is_index, 0, 1), [ '_' ])):
+                        if (isString ($is_proper['search'])):
+                            if (str_contains ($is_index, $is_proper['search'])):
+                                if (getFileContent ($is_index)):
+                                    return $is_index;
+                                endif;
+                            endif;
+                        elseif (getFileContent ($is_index)):
+                            return $is_index;
+                        endif;
+                    endif;
+                endif;
+            endif;
+        }));
         $is_result = [];
-        $is_proper = [ ...setProper ($is_input, 'dir', 'json'), ...setProper ($is_input, 'search', '') ];
-        foreach (getPathArray ([ 'dir' => setID ($is_proper['dir']), 'search' => setID ($is_proper['search']) ]) as $is_index)
-            $is_result[] = implode (' ', array_values (array_filter (explode ('-', pathinfo ($is_index)['filename']), function ($is_index) use ($is_proper) {
-                return $is_index !== setID ($is_proper['search']);
-            })));
-        sort ($is_result);
+        foreach ($is_array as $is_index):
+            $is_result[] = pathinfo ($is_index)[$is_proper['pathinfo']];
+        endforeach;
         return $is_result;
     };
 
     function getWidgetContainer (string $is_input = 'widget'): array {
-        $is_array = getFilenameArray ([ 'search' => $is_input ]);
+        $is_array = getFileArray ([ 'search' => $is_input ]);
         sort ($is_array);
         $is_number = str_pad (3, 2, '0', STR_PAD_LEFT);
         if (sizeof ($is_array) % 2 === 0) $is_number = str_pad (6, 2, '0', STR_PAD_LEFT);
@@ -830,11 +855,11 @@
         return [
             ...isArray (setArray ($is_array)) ? [
                 '<div', ...setClass ([ 'row-gap-3', 'm-0', 'px-5', 'py-3', getClass ('gap00'), getClass ('wrapSetRow') ]), '>',
-                    ...array_map (function ($is_index) use ($is_number) {
+                    ...array_map (function ($is_index) use ($is_input, $is_number) {
                         return implode ('', [
                             '<div', ...setClass ([ 'p-0', 'flex-column', getClass ($is_number), getClass ('gap01') ]), '>',
                                 '<h5', ...setClass ([ 'text-lg-start', getClass ('h5') ]), '>',
-                                    setCamelcase ($is_index),
+                                    setCamelcase (setWordEraser ($is_index, [ 'delete' => $is_input ])),
                                 '</h5>',
                                 '<div', ...setClass ([ 'justify-content-center', 'justify-content-lg-start', 'row-gap-1', getClass ('gap02'), getClass ('wrapSetRow') ]), '>',
                                     ...array_map (function ($is_index) {
@@ -934,7 +959,7 @@
 
     function setNavbarContainer (string $is_input = 'navbar'): array {
         $is_array = [];
-        foreach (getFilenameArray ([ 'search' => $is_input ]) as $is_index)
+        foreach (getFileArray ([ 'search' => $is_input ]) as $is_index)
             $is_array = array_merge ($is_array, getJsonArray ($is_index));
         sort ($is_array);
         return [
@@ -993,7 +1018,7 @@
 
     function setWrapper (array $is_input = [], array $is_attrib = []): array {
         $is_proper = setProper ($is_attrib, [ 'id', 'wrap' ]);
-        $is_wrap = in_array ($is_proper['wrap'], defineSelector) ? $is_proper['wrap'] : 'div';
+        $is_wrap = in_array ($is_proper['wrap'], defineSeletor) ? $is_proper['wrap'] : 'div';
         return [
             ...isArray ($is_input) ? [
                 '<', $is_wrap, ...setClass (getClass ('wrapSetCol')), ...setAttrib ($is_proper['id']), '>',
@@ -1539,15 +1564,10 @@
         ];
     };
 
-    function getFileContent (string $is_input = '', string $is_extension = 'json'): string {
-        return isFileExist ($is_input, $is_extension) ? file_get_contents (isFileExist ($is_input, $is_extension)) : '';
-    };
-
     function isFileType (string $is_input = '', string $is_extension = 'json'): bool {
         if (isKeyTrue (pathinfo ($is_input), 'extension'))
-            if (in_array ($is_extension, defineExtension))
-                if (in_array (pathinfo ($is_input)['extension'], [ $is_extension ]))
-                    return true;
+            if (pathinfo ($is_input)['extension'] === $is_extension )
+                return true;
         return false;
     };
 
@@ -1559,16 +1579,6 @@
             else: $is_result[$is_key] = $is_value; endif;
         endforeach;
         return $is_result;
-    };
-
-    function isFileExist (string $is_input = '', string $is_extension = 'json'): string {
-        if (isKeyTrue (pathinfo ($is_input), 'extension')):
-            return isPathExist (pathinfo ($is_input)['basename']);
-        elseif (in_array ($is_extension, defineExtension)):
-            return isPathExist (implode ('.', [ setID ($is_input), $is_extension ]));
-        else:
-            return '';
-        endif;
     };
 
     function setResizePicture (string $is_input = '', string $is_extension = 'jpg'): bool|string {
@@ -1590,38 +1600,28 @@
         return isKeyTrue (pathinfo ($is_server), 'extension') ? implode ('/', array_slice (explode ('/', $is_server)), 0, - 1) . '/' : $is_server;
     };
 
-    function isJsonExist (string $is_input = ''): string {
-        if (isKeyTrue (pathinfo ($is_input), 'extension')):
-            if (in_array (pathinfo ($is_input)['extension'], [ 'json' ])):
-                return isPathExist (pathinfo ($is_input)['basename']);
-            endif;
-        else:
-            return isPathExist (implode ('.', [ setID ($is_input), 'json' ]));
-        endif;
-        return '';
-    };
+    
 
     function setJson2Array (string $is_input = ''): array {
-        $is_input = getFileContent (isJsonExist ($is_input));
+        $is_input = getFileContent ($is_input, 'json');
         return isString ($is_input) ? setObject2Array (json_decode ($is_input)) : [];
     };
 
     function getJsonArray (string $is_input = ''): array {
         return array_values (array_filter (setJson2Array ($is_input), function ($is_index) {
-            if (isJsonExist ($is_index))
+            if (isFileExist ($is_index, 'json'))
                 return $is_index;
         }));
     };
 
-    function isTheSame (array $is_array = [], string $is_filename = ''): bool {
+    function isArrayLikeJson (array $is_array = [], string $is_filename = ''): bool {
         if (isArray ($is_array))
-            if (isFileExist ($is_filename, 'json'))
-                return json_decode (getFileContent ($is_filename)) === json_encode ($is_array);
+            return json_decode (getFileContent ($is_filename)) === json_encode ($is_array);
         return false;
     };
 
     function setPath (string $is_input = ''): string {
-        return isKeyTrue (pathinfo ($is_input), 'extension') ? implode ('/', [ '.', setDir (pathinfo ($is_input)['extension']), pathinfo ($is_input)['basename'] ]) : '';
+        return isKeyTrue (pathinfo ($is_input), 'extension') ? implode ('/', [ setDir (pathinfo ($is_input)['extension']), pathinfo ($is_input)['basename'] ]) : '';
     };
 
     function getModalContratoContainer (string $is_input = ''): array {
@@ -1801,8 +1801,9 @@
     };
 
     function getModalThumbnailContainer (string $is_input = 'jpg'): array {
+        $is_input = getPathArray ([ 'dir' => $is_input ]);
         return [
-            ...isAnyPathExist ($is_input) ? [
+            ...isArray (setArray ($is_input)) ? [
                 '<article', ...setClass ([ 'd-flex', 'flex-wrap', 'justify-content-center', 'mt-3', 'thumbnail-inner' ]), '>',
                     ...array_map (function ($is_index) {
                         $is_index = setResizePicture ($is_index);
@@ -1820,7 +1821,7 @@
                                     ...setAttribPicture ($is_index),
                                     ...setClass ([ 'h-100', 'position-absolute', 'thumbnail-background', 'w-100' ]),
                                     ...setStyle ([
-                                        ...setBackgroundStyle (),
+                                        ...defineBackground,
                                         'background-image' => 'url(' . $is_index . ')',
                                         'inset' => 0,
                                         'min-height' => '20rem',
@@ -1830,7 +1831,7 @@
                                 '</div>',
                             '</div>',
                         ]);
-                    }, isAnyPathExist ($is_input)),
+                    }, setArray ($is_input)),
                 '</article>',
             ] : [
             ],
@@ -1847,7 +1848,7 @@
 
     define ('defineBackgroundSubtle', array_map (function ($i) { return implode ('-', [ 'bg', $i, 'subtle' ]); }, defineSmallCollection));
     define ('defineBorderSubtle', array_map (function ($i) { return implode ('-', [ 'border', $i, 'subtle' ]); }, defineSmallCollection));
-    define ('defineButtonLine', array_map (function ($i) { return implode ('-', [ 'btn', 'outline', $i ]); }, defineFullCollection));
+    define ('defineButtonLine', array_map (function ($i) { return implode ('-', [ 'btn', $i, 'outline' ]); }, defineFullCollection));
     define ('defineButtonSolid', array_map (function ($i) { return implode ('-', [ 'btn', $i ]); }, defineFullCollection));
     define ('defineLinkSolid', array_map (function ($i) { return implode ('-', [ 'link', $i ]); }, defineFullCollection));
     define ('defineTextEmphasis', array_map (function ($i) { return implode ('-', [ 'text', $i, 'emphasis' ]); }, defineSmallCollection));
@@ -1978,7 +1979,7 @@
     function getJsonCreator (array $is_array = [], string $is_filename = '') {
         if (isFileType ($is_filename, 'json')):
             if (isPathExist ($is_filename)):
-                if (!isTheSame ($is_array, $is_filename)):
+                if (!isArrayLikeJson ($is_array, $is_filename)):
                     setArray2Json ($is_array, $is_filename);
                 endif;
             else:
@@ -2010,21 +2011,12 @@
         return [];
     };
 
-    function setBackgroundStyle (): array {
-        return [
-            'background-attachment' => 'scroll',
-            'background-position' => 'center',
-            'background-repeat' => 'no-repeat',
-            'background-size' => 'cover',
-        ];
-    };
-
     function getStyle (string $is_key = '', $is_input = []): array {
         $is_result = [
             'text-shadow' => [ 'text-shadow' => '0 1.5px 3px rgba(0, 0, 0, .75)' ],
             'background-image' => hasValidPath ($is_input) ? [
                 'background-image' => 'url(' . getArrayRandomIndex (hasValidPath ($is_input)) . ')',
-                ...setBackgroundStyle (),
+                ...defineBackground,
             ] : [
             ],
         ];

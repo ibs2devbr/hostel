@@ -79,7 +79,7 @@
             [
                 {
                     "disabled": false,
-                    "label": "funcionários",
+                    "label": "funcionário",
                     "maxlength": "",
                     "minlength": "",
                     "placeholder": "",

@@ -1,0 +1,38 @@
+[
+    [
+        "Agronegócio",
+        "Agricultura",
+        "Pecuária",
+        "Pesca",
+        "Florestal"
+    ],
+    [
+        "Indústria",
+        "Alimentícia",
+        "Têxtil",
+        "Automotiva",
+        "Metalúrgica",
+        "Química e petroquímica",
+        "Eletroeletrônica"
+    ],
+    [
+        "Comércio",
+        "Comércio varejista",
+        "Comércio atacadista",
+        "Comércio exterior",
+        "Veículos automotores"
+    ],
+    [
+        "Serviços",
+        "Serviços financeiros",
+        "Serviços profissionais",
+        "Serviços de informação e comunicação",
+        "Serviços de transporte",
+        "Serviços de turismo",
+        "Serviços de saúde"
+    ],
+    [
+        "Administração Pública",
+        "Governo Federal"
+    ]
+]
